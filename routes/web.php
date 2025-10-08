@@ -1,25 +1,17 @@
 <?php
 
 use App\Http\Controllers\homeController;
-use App\Http\Controllers\mahasiswaController;
-use App\Http\Controllers\mhsController;
-use App\Http\Controllers\prodiController;
-use App\Models\mhs;
+use App\Http\Controllers\PendaftaranController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('mhs/index');
 });
 
-Route::get('/welcome', function () {
-    echo "Selamat datang";
-});
-
 Route::get('/', function () {
     $title = "WebSaya.Com";
     $slug = "home";
-    $konten = "Ini adalah konten RavWeb.Com";
-    return view('konten.home', compact('title','slug','konten'));
+    return view('konten.home', compact('title','slug'));
 });
 
 Route::get('/home', function(){
@@ -87,20 +79,5 @@ Route::get('/prodi', function () {
     return view('konten.prodi', compact('title','slug','prodi'));
 });
 
-// Route::get('/home', function () {
-//     return view('home');
-// });
-
-// Route::get('/mahasiswa', function () {
-//     return view('mahasiswa');
-// });
-
-// Route::get('/prodi', function () {
-//     return view('prodi');
-// });
-
-Route::get('/mhs', [mhsController::class, 'index'])->name('mhs');
-// Route::get('home', [homeController::class, 'index'])->name('home');
-// Route::get('/mahasiswa', [mahasiswaController::class, 'index'])->name('mahasiswa');
-// Route::get('/prodi', [prodiController::class, 'index'])->name('prodi');
-// Route::get('/mhs', [mhsController::class, 'index'])->name('mhs');
+Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');
+Route::post('/pendaftaran', [PendaftaranController::class, 'store'])->name('pendaftaran.store');
