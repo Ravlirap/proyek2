@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-lg-center">
         <li class="nav-item mx-2">
-          <a class="nav-link {{ ($slug === 'home') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/home">Home</a>
+          <a class="nav-link {{ ($slug === 'home') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/home">Beranda</a>
         </li>
         <li class="nav-item mx-2">
           <a class="nav-link {{ ($slug === 'profil') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/profil">Profil</a>
