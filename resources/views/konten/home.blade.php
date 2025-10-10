@@ -159,7 +159,7 @@
             gap: 40px;
             align-items: center;
             background: var(--light-bg);
-            margin-top: 90px;
+            margin-top: 130px;
             padding: 40px;
             border-radius: var(--radius);
             position: relative;

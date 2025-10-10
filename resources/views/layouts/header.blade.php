@@ -24,7 +24,7 @@
           <a class="nav-link {{ ($slug === 'profil') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/profil">Profil</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="nav-link {{ ($slug === 'program') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/program">Program</a>
+          <a class="nav-link {{ ($slug === 'program_pelatihan') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/program_pelatihan">Program</a>
         </li>
         <li class="nav-item mx-2">
           <a class="nav-link {{ ($slug === 'galeri') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/galeri">Galeri</a>
