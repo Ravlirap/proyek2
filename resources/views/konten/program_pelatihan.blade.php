@@ -99,7 +99,7 @@
                 <!-- Program Card 4: SSW Food Service -->
                 <article class="program-card">
                     <div class="program-image">
-                        <img src="{{ asset('img/food-service.jpg') }}" alt="Program SSW Food Service" loading="lazy">
+                        <img src="{{ asset('img/lpk5.jpg') }}" alt="Program SSW Food Service" loading="lazy">
                         <div class="program-overlay">
                             <div class="program-type">SSW</div>
                         </div>
@@ -126,7 +126,7 @@
                 <!-- Program Card 5: Bahasa Jepang N5-N4 -->
                 <article class="program-card">
                     <div class="program-image">
-                        <img src="{{ asset('img/nihongo-basic.jpg') }}" alt="Kursus Bahasa Jepang N5-N4" loading="lazy">
+                        <img src="{{ asset('img/lpk6.jpg') }}" alt="Kursus Bahasa Jepang N5-N4" loading="lazy">
                         <div class="program-overlay">
                             <div class="program-type">Kursus Bahasa</div>
                         </div>
@@ -153,7 +153,7 @@
                 <!-- Program Card 6: Bahasa Jepang N3-N2 -->
                 <article class="program-card">
                     <div class="program-image">
-                        <img src="{{ asset('img/nihongo-advanced.jpg') }}" alt="Kursus Bahasa Jepang N3-N2" loading="lazy">
+                        <img src="{{ asset('img/lpk7.jpg') }}" alt="Kursus Bahasa Jepang N3-N2" loading="lazy">
                         <div class="program-overlay">
                             <div class="program-type">Kursus Bahasa</div>
                         </div>

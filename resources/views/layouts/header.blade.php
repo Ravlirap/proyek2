@@ -4,7 +4,7 @@
     <a class="navbar-brand fw-bold d-flex align-items-center" href="/home">
       <img src="img/logo1.png" alt="logo" width="42" height="42" 
            class="me-2 rounded-circle border border-2 border-light">
-      <span class="fs-5">SEIKOU <span class="text-primary">JAPAN</span></span>
+      <span class="fs-5">SEIKOU </span> <span class="text-primary">JAPAN</span>
     </a>
 
     <!-- Toggle (mobile) -->
@@ -20,6 +20,19 @@
         <li class="nav-item mx-2">
           <a class="nav-link {{ ($slug === 'home') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/home">Beranda</a>
         </li>
+        <li class="nav-item dropdown mx-2">
+          <a class="nav-link dropdown-toggle {{ in_array($slug, ['visi-misi', 'program_pelatihan', 'tim-kami', 'grup-perusahaan', 'sarana-prasarana', 'dokumentasi-kegiatan']) ? 'active text-primary fw-semibold' : 'text-light' }}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tentang Kami
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/visi-misi">Visi & Misi</a></li>
+            <li><a class="dropdown-item" href="/program_pelatihan">Program</a></li>
+            <li><a class="dropdown-item" href="/tim-kami">Tim Seikou</a></li>
+            <li><a class="dropdown-item" href="/grup-perusahaan">Grup Perusahaan</a></li>
+            <li><a class="dropdown-item" href="/sarana-prasarana">Fasilitas</a></li>
+            <li><a class="dropdown-item" href="/dokumentasi-kegiatan">Dokumentasi Kegiatan</a></li>
+          </ul>
+        </li>
         <li class="nav-item mx-2">
           <a class="nav-link {{ ($slug === 'profil') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/profil">Profil</a>
         </li>
@@ -32,8 +45,8 @@
         <li class="nav-item mx-2">
           <a class="nav-link {{ ($slug === 'kontak') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/kontak">Kontak</a>
         </li>
-        <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-          <a href="/daftar" class="btn btn-primary rounded-pill px-4 fw-semibold shadow-sm">Daftar Sekarang</a>
+        <li class="nav-item mx-2 mt-2 mt-lg-0">
+          <a href="/daftar" class="btn btn-primary rounded-pill px-4 fw-semibold shadow-sm">Login</a>
         </li>
       </ul>
     </div>
@@ -68,6 +81,7 @@
     position: relative;
     transition: color 0.3s ease;
   }
+
   .navbar .nav-link::after {
     content: "";
     position: absolute;
@@ -81,12 +95,18 @@
   .navbar .nav-link:hover::after {
     width: 100%;
   }
-  .navbar-brand img {
-    transition: transform 0.3s ease;
+  .navbar .nav-link:hover {
+    color: #0d6efd !important;
   }
-  .navbar-brand:hover img {
-    transform: rotate(-8deg) scale(1.08);
+  .navbar .dropdown-menu {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
+  .navbar .dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #0d6efd;
+  }
+
 </style>
 
 <script>
