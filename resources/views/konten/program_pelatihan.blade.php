@@ -18,7 +18,7 @@
                 <!-- Program Card 1: Magang Manufaktur -->
                 <article class="program-card">
                     <div class="program-image">
-                        <img src="{{ asset('img/manufaktur.jpg') }}" alt="Program Magang Manufaktur" loading="lazy">
+                        <img src="{{ asset('img/lpk2.jpg') }}" alt="Program Magang Manufaktur" loading="lazy">
                         <div class="program-overlay">
                             <div class="program-type">Magang (IM Japan)</div>
                         </div>
@@ -45,7 +45,7 @@
                 <!-- Program Card 2: SSW Kaigo -->
                 <article class="program-card">
                     <div class="program-image">
-                        <img src="{{ asset('img/kaigo.jpg') }}" alt="Program SSW Kaigo" loading="lazy">
+                        <img src="{{ asset('img/lpk3.jpg') }}" alt="Program SSW Kaigo" loading="lazy">
                         <div class="program-overlay">
                             <div class="program-type">SSW</div>
                         </div>
@@ -72,7 +72,7 @@
                 <!-- Program Card 3: Magang Konstruksi -->
                 <article class="program-card">
                     <div class="program-image">
-                        <img src="{{ asset('img/konstruksi.jpg') }}" alt="Program Magang Konstruksi" loading="lazy">
+                        <img src="{{ asset('img/lpk4.jpg') }}" alt="Program Magang Konstruksi" loading="lazy">
                         <div class="program-overlay">
                             <div class="program-type">Magang (IM Japan)</div>
                         </div>

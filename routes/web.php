@@ -21,6 +21,5 @@ Route::get('/home', function(){
     return view('konten.home', compact('title','slug','konten'));
 })->name('home');
 
-
 Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');
 Route::post('/pendaftaran', [PendaftaranController::class, 'store'])->name('pendaftaran.store');
