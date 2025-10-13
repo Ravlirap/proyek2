@@ -12,8 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('gallery', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id(); // otomatis primary key
+            $table->string('judul', 100);
+            $table->text('deskripsi')->nullable();
+            $table->string('kategori', 50)->nullable();
+            $table->string('gambar', 255);
+            $table->date('tgl_upload')->default(now());
+            $table->string('upload_by', 50)->nullable();
+            $table->enum('status', ['aktif', 'nonaktif'])->default('aktif');
+            $table->timestamps(); // created_at & updated_at
         });
     }
 
