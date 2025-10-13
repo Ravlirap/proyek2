@@ -11,24 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pendaftaran', function (Blueprint $table) {
-            $table->id()->primary();
-            $table->string('nama_lengkap');
-            $table->string('tempat_lahir');
-            $table->date('tanggal_lahir');
-            $table->enum('jenis_kelamin', ['laki-laki', 'perempuan']);
-            $table->integer('tinggi_badan');
-            $table->integer('berat_badan');
-            $table->string('alamat');
-            $table->string('asal_sekolah');
-            $table->string('no_hp');
-            $table->string('email')->unique();
-            $table->string('foto')->nullable();
-            $table->string('ijazah')->nullable();
-            $table->string('ktp')->nullable();
-            $table->string('kk')->nullable();
-            $table->string('status')->default('pending');
-            $table->timestamps();
+        Schema::create('gallery', function (Blueprint $table) {
+            $table->id(); // otomatis primary key
+            $table->string('judul', 100);
+            $table->text('deskripsi')->nullable();
+            $table->string('kategori', 50)->nullable();
+            $table->string('gambar', 255);
+            $table->date('tgl_upload')->default(now());
+            $table->string('upload_by', 50)->nullable();
+            $table->enum('status', ['aktif', 'nonaktif'])->default('aktif');
+            $table->timestamps(); // created_at & updated_at
         });
     }
 
@@ -37,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pendaftaran');
+        Schema::dropIfExists('gallery');
     }
 };
