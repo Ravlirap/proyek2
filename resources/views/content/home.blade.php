@@ -10,7 +10,7 @@
                     Transformasi karir Anda dimulai di sini. Kami menyediakan pelatihan intensif Bahasa Jepang (N5-N2), pembinaan budaya, dan jaminan penyaluran untuk program Magang (IM) dan Tokutei Ginou (SSW).
                 </p>
                 <div class="cta-group">
-                    <a href="{{ route('pendaftaran') }}" class="btn btn-primary">Daftar Sekarang!</a>
+                    <a href="{{ route('pendaftaran') }}" class="btn btn-primary">Daftar & Konsultasi Gratis</a>
                     <a href="#legalitas" class="btn btn-outline">Cek Legalitas Kami</a>
                 </div>
                 <ul class="hero-meta">
@@ -135,18 +135,19 @@
     <style>
         :root {
             --primary: #c9003c;
-            --secondary: #2c3e50;
             --accent: #ff4d6d;
-            --gray: #718096;
-            --light: #f7fafc;
-            --dark: #2d3748;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --radius: 8px ;
+            --secondary: #123456;
+            --muted: #6b7280;
+            --bg: #fdfefe;
+            --light-bg: #fff0f5;
+            --card: #ffffff;
+            --radius: 14px;
+            --container: 1200px;
         }
 
         .container {
             max-width: var(--container);
-            padding: 0 10px;
+            padding: 0 20px;
             font-family: 'Poppins', Roboto, system-ui, -apple-system, sans-serif;
             color: var(--secondary);
         }
@@ -155,10 +156,10 @@
         /* HERO */
         .hero-section {
             display: flex;
-            gap: 30px;
+            gap: 40px;
             align-items: center;
             background: var(--light-bg);
-            margin-top: 110px;
+            margin-top: 130px;
             padding: 40px;
             border-radius: var(--radius);
             position: relative;
