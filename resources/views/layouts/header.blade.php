@@ -3,7 +3,7 @@
     <!-- Logo -->
     <a class="navbar-brand fw-bold d-flex align-items-center" href="/home">
       <img src="img/logo1.png" alt="logo" width="42" height="42" 
-           class="me-2 rounded-circle border border-2 border-light">
+           class="me-2 rounded-circle border-2 border-light">
       <span class="fs-5">SEIKOU </span> <span class="text-primary">JAPAN</span>
     </a>
 

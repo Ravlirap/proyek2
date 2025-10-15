@@ -12,7 +12,7 @@ class pendaftaranController extends Controller
     public function index(){
         $title = "Form Pendaftaran";
         $slug = "form-pendaftaran"; // Add this for consistency with other views
-        return view('konten.pendaftaran', compact('title', 'slug'));
+        return view('content.pendaftaran', compact('title', 'slug'));
     }
 
     public function submit(Request $request){
@@ -52,7 +52,7 @@ class pendaftaranController extends Controller
     {
         // For now, just return to a generic detail view
         // In the future, you can fetch registration details from a database
-        return view('konten.pendaftaran_detail', [
+        return view('content.pendaftaran_detail', [
             'slug' => $slug
         ]);
     }

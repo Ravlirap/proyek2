@@ -14,12 +14,12 @@ Route::get('/pendaftaran/{slug}', [pendaftaranController::class, 'show'])->name(
 Route::get('/', function () {
     $title = "WebSaya.Com";
     $slug = "home";
-    return view('konten.home', compact('title','slug'));
+    return view('content.home', compact('title','slug'));
 });
 
 Route::get('/home', function(){
     $title = "WebSaya.Com";
     $slug = "home";
-    $konten = "Ini adalah konten WebSaya.Com";
-    return view('konten.home', compact('title','slug','konten'));
+    $content = "Ini adalah content WebSaya.Com";
+    return view('content.home', compact('title','slug','content'));
 })->name('home');
