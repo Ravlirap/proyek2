@@ -9,16 +9,15 @@ class program_pelatihanController extends Controller
     public function index()
     {
         $title = "Program Pelatihan";
-        $slug = "program-pelatihan"; // Add this for consistency with other views
+        $slug = "program_pelatihan";
         return view('content.program_pelatihan', compact('title', 'slug'));
     }
 
-    public function show($slug)
+    
+    public function sswKaigo()
     {
-        // For now, just return to a generic detail view
-        // In the future, you can fetch program details from a database
-        return view('content.program_detail', [
-            'slug' => $slug
-        ]);
+        $title = "Program SSW Kaigo";
+        $slug = "ssw-kaigo";
+        return view('detail_program.ssw-kaigo', compact('title', 'slug'));
     }
 }

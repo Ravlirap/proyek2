@@ -1,5 +1,4 @@
 @extends('layouts.main')
-
 @section('content')
 <div class="program-page">
     <!-- Hero Section -->
@@ -35,7 +34,7 @@
                                 <span class="stat"><i class="fas fa-clock"></i> 3-5 tahun</span>
                                 <span class="stat"><i class="fas fa-yen-sign"></i> 150,000¥/bulan</span>
                             </div>
-                            <a href="{{ route('program.detail', 'magang-manufaktur') }}" class="btn-detail">
+                            <a href="{{ route('detail_program.magang-manufaktur') }}" class="btn-detail">
                                 Lihat Detail <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -89,7 +88,7 @@
                                 <span class="stat"><i class="fas fa-clock"></i> 3-5 tahun</span>
                                 <span class="stat"><i class="fas fa-yen-sign"></i> 160,000¥/bulan</span>
                             </div>
-                            <a href="{{ route('program.detail', 'magang-konstruksi') }}" class="btn-detail">
+                            <a href="{{ route('detail_program.magang-konstruksi') }}" class="btn-detail">
                                 Lihat Detail <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -116,7 +115,7 @@
                                 <span class="stat"><i class="fas fa-clock"></i> 5 tahun</span>
                                 <span class="stat"><i class="fas fa-yen-sign"></i> 170,000¥/bulan</span>
                             </div>
-                            <a href="{{ route('program.detail', 'ssw-food-service') }}" class="btn-detail">
+                            <a href="{{ route('detail_program.ssw-food-service') }}" class="btn-detail">
                                 Lihat Detail <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -143,7 +142,7 @@
                                 <span class="stat"><i class="fas fa-clock"></i> 6 bulan</span>
                                 <span class="stat"><i class="fas fa-user-graduate"></i> Level Dasar</span>
                             </div>
-                            <a href="{{ route('program.detail', 'bahasa-n5-n4') }}" class="btn-detail">
+                            <a href="{{ route('detail_program.bahasa-n5-n4') }}" class="btn-detail">
                                 Lihat Detail <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -170,7 +169,7 @@
                                 <span class="stat"><i class="fas fa-clock"></i> 8 bulan</span>
                                 <span class="stat"><i class="fas fa-user-graduate"></i> Level Lanjut</span>
                             </div>
-                            <a href="{{ route('program.detail', 'bahasa-n3-n2') }}" class="btn-detail">
+                            <a href="{{ route('detail_program.bahasa-n3-n2') }}" class="btn-detail">
                                 Lihat Detail <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>

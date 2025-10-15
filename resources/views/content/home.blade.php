@@ -10,7 +10,7 @@
                     Transformasi karir Anda dimulai di sini. Kami menyediakan pelatihan intensif Bahasa Jepang (N5-N2), pembinaan budaya, dan jaminan penyaluran untuk program Magang (IM) dan Tokutei Ginou (SSW).
                 </p>
                 <div class="cta-group">
-                    <a href="{{ route('pendaftaran') }}" class="btn btn-primary">Daftar & Konsultasi Gratis</a>
+                    <a href="{{ route('pendaftaran') }}" class="btn btn-primary">Daftar Sekarang!</a>
                     <a href="#legalitas" class="btn btn-outline">Cek Legalitas Kami</a>
                 </div>
                 <ul class="hero-meta">
