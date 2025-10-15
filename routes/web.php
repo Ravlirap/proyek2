@@ -7,6 +7,9 @@ use App\Http\Controllers\program_pelatihanController;
 
 Route::get('/program_pelatihan', [program_pelatihanController::class, 'index'])->name('program_pelatihan');
 Route::get('/program_pelatihan/{slug}', [program_pelatihanController::class, 'show'])->name('program.detail');
+Route::get('/pendaftaran', [pendaftaranController::class, 'index'])->name('pendaftaran');
+Route::post('/pendaftaran', [pendaftaranController::class, 'submit'])->name('pendaftaran.submit');
+Route::get('/pendaftaran/{slug}', [pendaftaranController::class, 'show'])->name('pendaftaran.detail');
 
 Route::get('/', function () {
     $title = "WebSaya.Com";
@@ -20,6 +23,3 @@ Route::get('/home', function(){
     $konten = "Ini adalah konten WebSaya.Com";
     return view('konten.home', compact('title','slug','konten'));
 })->name('home');
-
-Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');
-Route::post('/pendaftaran', [PendaftaranController::class, 'store'])->name('pendaftaran.store');

@@ -7,7 +7,7 @@
       <span class="fs-5">SEIKOU </span> <span class="text-primary">JAPAN</span>
     </a>
 
-    <!-- Toggle (mobile) -->
+    <!-- Toggle (mobile) -->   
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" 
             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
             aria-label="Toggle navigation">
