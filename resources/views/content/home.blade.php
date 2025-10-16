@@ -28,17 +28,17 @@
             <h2 class="section-title text-center">Terdaftar Resmi & Terjamin Kualitas</h2>
             <div class="trust-grid">
                 <article class="trust-card">
-                    <img src="{{ asset('images/legal.svg') }}" alt="Izin Kemenaker" class="trust-icon">
+                    <img src="{{ asset('img/kemenker.jpg') }}" alt="Izin Kemenaker" class="trust-icon">
                     <h3>Izin Resmi SO (Sending Organization)</h3>
                     <p>Memiliki izin resmi dari Kementerian Ketenagakerjaan RI sebagai penyelenggara program magang dan kerja ke Jepang.</p>
                 </article>
                 <article class="trust-card">
-                    <img src="{{ asset('images/partner.svg') }}" alt="Mitra Perusahaan Jepang" class="trust-icon">
+                    <img src="{{ asset('img/mitra.jpg') }}" alt="Mitra Perusahaan Jepang" class="trust-icon">
                     <h3>Mitra Perusahaan Jepang Terkemuka</h3>
                     <p>Jaringan luas dengan perusahaan di bidang Manufaktur, Konstruksi, dan Kaigo (Perawat Lansia) di berbagai prefektur Jepang.</p>
                 </article>
                 <article class="trust-card">
-                    <img src="{{ asset('images/certified.svg') }}" alt="Instruktur Bersertifikat" class="trust-icon">
+                    <img src="{{ asset('img/n4.jpg') }}" alt="Instruktur Bersertifikat" class="trust-icon">
                     <h3>Instruktur N1 & Bersertifikat</h3>
                     <p>Pengajar kami adalah alumni Jepang dengan kualifikasi N1/N2 JLPT dan berpengalaman dalam melatih calon tenaga kerja.</p>
                 </article>
@@ -134,8 +134,8 @@
 
     <style>
         :root {
-            --primary: #c9003c;
-            --accent: #ff4d6d;
+            --primary: #c61c1c;
+            --accent: #914dff;
             --secondary: #123456;
             --muted: #6b7280;
             --bg: #fdfefe;
@@ -147,7 +147,7 @@
 
         .container {
             max-width: var(--container);
-            padding: 0 20px;
+            padding:0 25px ;
             font-family: 'Poppins', Roboto, system-ui, -apple-system, sans-serif;
             color: var(--secondary);
         }
@@ -160,7 +160,7 @@
             align-items: center;
             background: var(--light-bg);
             margin-top: 130px;
-            padding: 40px;
+            padding: 30px;
             border-radius: var(--radius);
             position: relative;
             overflow: hidden;
@@ -250,35 +250,78 @@
             aspect-ratio: 4/3;
         }
 
-        /* TRUST SECTION */
-        .trust-section { margin: 40px 0; }
+       /* TRUST SECTION */
+        .trust-section { 
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .trust-section .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 40px;
+        }
+
         .trust-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-top: 24px;
+            gap: 32px;
+            justify-items: center;
         }
+
         .trust-card {
             background: var(--card);
-            padding: 20px;
+            padding: 30px 24px;
             border-radius: var(--radius);
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            max-width: 360px;
         }
+
+        .trust-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+
         .trust-icon {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 10px;
+            width: 100%;
+            max-width: 180px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid rgba(201,0,60,0.2);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            margin-bottom: 16px;
+            transition: transform 0.3s ease;
         }
+
+        .trust-card:hover .trust-icon {
+            transform: scale(1.05);
+        }
+
         .trust-card h3 {
             color: var(--secondary);
-            font-size: 1.15rem;
-            margin: 0 0 8px;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-weight: 700;
         }
+
         .trust-card p {
             color: var(--muted);
             font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
         }
+
+        @media (max-width: 600px) {
+            .trust-icon {
+                height: 100px;
+                max-width: 150px;
+            }
+        }
+
 
         /* FEATURES */
         .section-title {
