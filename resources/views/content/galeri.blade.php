@@ -15,7 +15,7 @@
             <div class="galeri-grid">
                 <!-- Galeri Item 1 -->
                 <div class="galeri-item">
-                    <img src="{{ asset('img/galeri1.jpg') }}" alt="Pelatihan Bahasa Jepang" loading="lazy">
+                    <img src="{{ asset('img/galeri6.jpg') }}" alt="Pelatihan Bahasa Jepang" loading="lazy">
                     <div class="galeri-overlay">
                         <h4>Pelatihan Bahasa Jepang</h4>
                         <p>Kelas interaktif bersama instruktur berpengalaman.</p>
@@ -33,7 +33,7 @@
 
                 <!-- Galeri Item 3 -->
                 <div class="galeri-item">
-                    <img src="{{ asset('img/galeri3.jpg') }}" alt="Ujian Skill" loading="lazy">
+                    <img src="{{ asset('img/galeri4.jpg') }}" alt="Ujian Skill" loading="lazy">
                     <div class="galeri-overlay">
                         <h4>Simulasi Ujian Skill</h4>
                         <p>Persiapan intensif sebelum seleksi IM Japan.</p>
@@ -42,7 +42,7 @@
 
                 <!-- Galeri Item 4 -->
                 <div class="galeri-item">
-                    <img src="{{ asset('img/galeri4.jpg') }}" alt="Kegiatan Budaya Jepang" loading="lazy">
+                    <img src="{{ asset('img/galeri5.jpg') }}" alt="Kegiatan Budaya Jepang" loading="lazy">
                     <div class="galeri-overlay">
                         <h4>Pengalaman Budaya Jepang</h4>
                         <p>Mengenal etika dan budaya kerja Jepang.</p>
@@ -51,16 +51,16 @@
 
                 <!-- Galeri Item 5 -->
                 <div class="galeri-item">
-                    <img src="{{ asset('img/galeri5.jpg') }}" alt="Pelepasan Peserta" loading="lazy">
+                    <img src="{{ asset('img/galeri1.jpg') }}" alt="Pelepasan Peserta" loading="lazy">
                     <div class="galeri-overlay">
-                        <h4>Upacara Pelepasan</h4>
+                        <h4>Pelepasan Peserta</h4>
                         <p>Momen keberangkatan peserta menuju Jepang.</p>
                     </div>
                 </div>
 
                 <!-- Galeri Item 6 -->
                 <div class="galeri-item">
-                    <img src="{{ asset('img/galeri6.jpg') }}" alt="Peserta di Jepang" loading="lazy">
+                    <img src="{{ asset('img/galeri3.jpg') }}" alt="Peserta di Jepang" loading="lazy">
                     <div class="galeri-overlay">
                         <h4>Peserta di Jepang</h4>
                         <p>Meniti karir dan pengalaman berharga di Negeri Sakura.</p>
