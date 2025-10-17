@@ -33,7 +33,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="tentangKamiDropdown">
             <li><a class="dropdown-item" href="/visiMisi">Visi & Misi</a></li>
-            <li><a class="dropdown-item" href="/tim-kami">Tim Seikou</a></li>
+            <li><a class="dropdown-item" href="/timKami">Tim Seikou</a></li>
             <li><a class="dropdown-item" href="/grup-perusahaan">Grup Perusahaan</a></li>
             <li><a class="dropdown-item" href="/profil-perusahaan">Profil Lembaga</a></li>
           </ul>
