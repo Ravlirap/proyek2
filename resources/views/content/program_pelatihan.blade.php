@@ -1,5 +1,4 @@
 @extends('layouts.main')
-
 @section('content')
 <div class="program-page">
     <!-- Hero Section -->
@@ -35,7 +34,7 @@
                                 <span class="stat"><i class="fas fa-clock"></i> 3-5 tahun</span>
                                 <span class="stat"><i class="fas fa-yen-sign"></i> 150,000¥/bulan</span>
                             </div>
-                            <a href="{{ route('program.detail', 'magang-manufaktur') }}" class="btn-detail">
+                            <a href="{{ route('detail_program.magang-manufaktur') }}" class="btn-detail">
                                 Lihat Detail <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -62,7 +61,7 @@
                                 <span class="stat"><i class="fas fa-clock"></i> 5 tahun</span>
                                 <span class="stat"><i class="fas fa-yen-sign"></i> 180,000¥/bulan</span>
                             </div>
-                            <a href="{{ route('program.detail', 'ssw-kaigo') }}" class="btn-detail">
+                            <a href="{{ route('detail_program.ssw-kaigo') }}" class="btn-detail">
                                 Lihat Detail <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -89,7 +88,7 @@
                                 <span class="stat"><i class="fas fa-clock"></i> 3-5 tahun</span>
                                 <span class="stat"><i class="fas fa-yen-sign"></i> 160,000¥/bulan</span>
                             </div>
-                            <a href="{{ route('program.detail', 'magang-konstruksi') }}" class="btn-detail">
+                            <a href="{{ route('detail_program.magang-konstruksi') }}" class="btn-detail">
                                 Lihat Detail <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -116,7 +115,7 @@
                                 <span class="stat"><i class="fas fa-clock"></i> 5 tahun</span>
                                 <span class="stat"><i class="fas fa-yen-sign"></i> 170,000¥/bulan</span>
                             </div>
-                            <a href="{{ route('program.detail', 'ssw-food-service') }}" class="btn-detail">
+                            <a href="{{ route('detail_program.ssw-food-service') }}" class="btn-detail">
                                 Lihat Detail <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -143,7 +142,7 @@
                                 <span class="stat"><i class="fas fa-clock"></i> 6 bulan</span>
                                 <span class="stat"><i class="fas fa-user-graduate"></i> Level Dasar</span>
                             </div>
-                            <a href="{{ route('program.detail', 'bahasa-n5-n4') }}" class="btn-detail">
+                            <a href="{{ route('detail_program.bahasa-n5-n4') }}" class="btn-detail">
                                 Lihat Detail <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -170,7 +169,7 @@
                                 <span class="stat"><i class="fas fa-clock"></i> 8 bulan</span>
                                 <span class="stat"><i class="fas fa-user-graduate"></i> Level Lanjut</span>
                             </div>
-                            <a href="{{ route('program.detail', 'bahasa-n3-n2') }}" class="btn-detail">
+                            <a href="{{ route('detail_program.bahasa-n3-n2') }}" class="btn-detail">
                                 Lihat Detail <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -197,16 +196,19 @@
     :root {
         --primary: #c9003c;
         --secondary: #2c3e50;
-        --accent: #ff4d6d;
-        --gray: #718096;
-        --light: #f7fafc;
-        --dark: #2d3748;
-        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        --radius: 8px;
-    }
-
-    .program-page {
-        background-color: var(--light);
+        --accent: #ff max-width: var(--container);
+       padding: 0 20px;
+        font-family: 'Poppins', Roboto, system-ui, -apple-system, sans-serif;
+        color: var(--secondary););y);        --dark: #2d3748;
+        --shadow: 0 4px 6 display: flex;
+            gap: 40px;
+            align-items: center;
+            background: var(--light-bg);
+            margin-top: 130px;
+            padding: 40px;
+            border-radius: var(--radius);
+            position: relative;
+            border: 1px solid rgba(201,0,60,0.1);px;,60,0.1);px;,60,0.1);px;,60,0.1);olor: var(--light);
         color: var(--dark);
     }
 
@@ -246,8 +248,7 @@
     }
 
     .page-title {
-        font-size: 2.5rem;
-        color: var(--dark);
+        font-size: 2.5padding: 10px 0;lor: var(--dark);
         margin-bottom: 16px;
         font-weight: 700;
     }
@@ -281,7 +282,7 @@
 
     .program-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 20px 30px -5px rgba(0, 0, 0, 0.1);
     }
 
     .program-image {

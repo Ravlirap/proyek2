@@ -56,8 +56,8 @@
     <!-- Logo & Copyright -->
     <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
       <div class="footer-logo mb-3 mb-md-0 d-flex align-items-center">
-        <img src="img/logo1.png" alt="LPK Seikou Japan" width="60" 
-             class="rounded-circle border border-2 border-light bg-white me-2 shadow">
+        <img src="{{ asset('img/logo1.png') }}" alt="LPK Seikou Japan" width="60" 
+             class="rounded-circle border-2 border-light bg-white me-2 shadow">
         <span class="fw-bold text-white fs-5">SEIKOU <span class="text-primary">JAPAN</span></span>
       </div>
       <div class="text-center text-md-end small">
