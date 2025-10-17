@@ -45,7 +45,7 @@
         </div>
         <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i> <a href="tel:+622122837398" class="footer-link">+62 21-2283-7398</a></p>
         <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i> <a href="mailto:info@seikoujapan.com" class="footer-link">info@seikoujapan.com</a></p>
-        <p><i class="bi bi-geo-alt-fill me-2"></i> Jl. KH Abdullah Syafi’ie Blok A No 24B RT/RW 001/003,  
+        <p><i class="bi bi-geo-alt-fill me-2"></i> Jl. KH Abdullah Syafi’ie Blok A No 24B RT/RW 001/003,
           Kel. Kebon Baru, Tebet, Jakarta Selatan, Indonesia, 12830
         </p>
       </div>
@@ -56,9 +56,9 @@
     <!-- Logo & Copyright -->
     <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
       <div class="footer-logo mb-3 mb-md-0 d-flex align-items-center">
-        <img src="{{ asset('img/logo1.png') }}" alt="LPK Seikou Japan" width="60" 
+        <img src="{{ asset('img/logo1.png') }}" alt="LPK Seikou Japan" width="60"
              class="rounded-circle border-2 border-light bg-white me-2 shadow">
-        <span class="fw-bold text-white fs-5">SEIKOU <span class="text-primary">JAPAN</span></span>
+        <span class="fw-bold text-white fs-5">SEIKOU <span class="text-danger">JAPAN</span></span>
       </div>
       <div class="text-center text-md-end small">
         © 2025 <strong>LPK Seikou Japan</strong>. All Rights Reserved.
