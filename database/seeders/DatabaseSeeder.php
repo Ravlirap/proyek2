@@ -10,13 +10,14 @@ class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
-     * 
+     *
      * @return void
      */
     public function run()
     {
         // User::factory(10)->create();
         //$this->call(mhsTableSeeder::class);
-        $this->call(prodiTableSeeder::class);
+        //$this->call(prodiTableSeeder::class);
+        $this->call(galleryTableSeeder::class);
     }
 }
