@@ -5,7 +5,7 @@
     <section class="hero-section">
         <div class="container">
             <h1 class="page-title">Program Pelatihan LPK Seikou</h1>
-            <p class="lead">Pilih jalur karir impian Anda di Jepang melalui program pelatihan berkualitas dari LPK Seikou. 
+            <p class="lead">Pilih jalur karir impian Anda di Jepang melalui program pelatihan berkualitas dari LPK Seikou.
                 Kami menyediakan berbagai program yang disesuaikan dengan kebutuhan dan tujuan karir Anda.</p>
         </div>
     </section>

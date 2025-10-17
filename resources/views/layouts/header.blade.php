@@ -44,6 +44,11 @@
           <a class="nav-link {{ ($slug === 'program_pelatihan') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/program_pelatihan">Program</a>
         </li>
 
+        <!-- GALERI -->
+        <li class="nav-item mx-2">
+          <a class="nav-link {{ ($slug === 'galeri') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/galeri">Galeri</a>
+        </li>
+
         <!-- INFORMASI -->
         <li class="nav-item dropdown mx-2">
           @php
