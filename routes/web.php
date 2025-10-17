@@ -62,7 +62,7 @@ Route::get('/detail_program/bahasa-n3-n2',[program_pelatihanController::class, '
 //galeri
 Route::get('/galeri', [galeriController::class, 'index'])->name('galeri');
 Route::get('/visiMisi', [visiMisiController::class, 'index'])->name('visiMisi');
-Route::get('/visiMisi', [timKamiController::class, 'index'])->name('timKami');
+Route::get('/timKami', [timKamiController::class, 'index'])->name('timKami');
 
 Route::get('/', function () {
     $title = "WebSaya.Com";
