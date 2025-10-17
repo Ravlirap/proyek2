@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\galeriController;
 use App\Http\Controllers\visiMisiController;
 use App\Http\Controllers\timKamiController;
+use App\Http\Controllers\grupPerusahaanController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -63,6 +64,7 @@ Route::get('/detail_program/bahasa-n3-n2',[program_pelatihanController::class, '
 Route::get('/galeri', [galeriController::class, 'index'])->name('galeri');
 Route::get('/visiMisi', [visiMisiController::class, 'index'])->name('visiMisi');
 Route::get('/timKami', [timKamiController::class, 'index'])->name('timKami');
+Route::get('/grup_perusahaan', [grupPerusahaanController::class, 'index'])->name('grup_perusahaan');
 
 Route::get('/', function () {
     $title = "WebSaya.Com";
