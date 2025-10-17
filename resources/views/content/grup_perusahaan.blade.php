@@ -19,7 +19,7 @@
             <div class="grup-grid">
                 <!-- Perusahaan 1 -->
                 <div class="grup-card">
-                    <img src="{{ asset('img/logo.jpg') }}" alt="Seikou Japan Co., Ltd" loading="lazy">
+                    <img src="{{ asset('img/logo.png') }}" alt="Seikou Japan Co., Ltd" loading="lazy">
                     <div class="grup-info">
                         <h4>Seikou Japan Co., Ltd</h4>
                         <p>Perusahaan mitra utama di Jepang yang berfokus pada pelatihan dan penyaluran tenaga kerja terampil.</p>
@@ -28,7 +28,7 @@
 
                 <!-- Perusahaan 2 -->
                 <div class="grup-card">
-                    <img src="{{ asset('img/logo.jpg') }}" alt="PT Seikou Indonesia" loading="lazy">
+                    <img src="{{ asset('img/logo.png') }}" alt="PT Seikou Indonesia" loading="lazy">
                     <div class="grup-info">
                         <h4>PT Seikou Indonesia</h4>
                         <p>Menangani pelatihan dan administrasi peserta di Indonesia sebelum keberangkatan ke Jepang.</p>
@@ -37,7 +37,7 @@
 
                 <!-- Perusahaan 3 -->
                 <div class="grup-card">
-                    <img src="{{ asset('img/logo.jpg') }}" alt="IM Japan Partner" loading="lazy">
+                    <img src="{{ asset('img/logo.png') }}" alt="IM Japan Partner" loading="lazy">
                     <div class="grup-info">
                         <h4>IM Japan Partner</h4>
                         <p>Bekerja sama dalam program magang dan pelatihan keterampilan untuk peserta Indonesia di Jepang.</p>
@@ -46,7 +46,7 @@
 
                 <!-- Perusahaan 4 -->
                 <div class="grup-card">
-                    <img src="{{ asset('img/logo.jpg') }}" alt="Seikou Training Center" loading="lazy">
+                    <img src="{{ asset('img/logo.png') }}" alt="Seikou Training Center" loading="lazy">
                     <div class="grup-info">
                         <h4>Seikou Training Center</h4>
                         <p>Pusat pelatihan resmi untuk meningkatkan kemampuan bahasa, disiplin, dan keterampilan peserta.</p>
@@ -55,7 +55,7 @@
 
                 <!-- Perusahaan 5 -->
                 <div class="grup-card">
-                    <img src="{{ asset('img/logo.jpg') }}" alt="Seikou Consulting" loading="lazy">
+                    <img src="{{ asset('img/logo.png') }}" alt="Seikou Consulting" loading="lazy">
                     <div class="grup-info">
                         <h4>Seikou Consulting</h4>
                         <p>Menyediakan layanan konsultasi dan pendampingan bagi perusahaan Jepang dalam perekrutan tenaga kerja asing.</p>
