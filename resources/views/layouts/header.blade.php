@@ -57,8 +57,6 @@
             <li><a class="dropdown-item" href="/sarana-prasarana">Fasilitas</a></li>
             <li><a class="dropdown-item" href="/dokumentasi-kegiatan">Dokumentasi Kegiatan</a></li>
             <li class="nav-item mx-2">
-            <a class="nav-link {{ ($slug === 'index') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/gallery/index">Program</a>
-            </li>
             <li><a class="dropdown-item" href="/artikel">Artikel</a></li>
             <li><a class="dropdown-item" href="/kontak">Kontak</a></li>
           </ul>

@@ -4,7 +4,6 @@ use App\Http\Controllers\homeController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\program_pelatihanController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\GalleryController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -57,9 +56,6 @@ Route::get('/detail_program/ssw-food-service',[program_pelatihanController::clas
 Route::get('/detail_program/bahasa-n5-n4',[program_pelatihanController::class, 'bahasaN5N4'])->name('detail_program.bahasa-n5-n4');
 Route::get('/detail_program/bahasa-n3-n2',[program_pelatihanController::class, 'bahasaN3N2'])->name('detail_program.bahasa-n3-n2');
 //galeri
-Route::get('/gallery/index', [GalleryController::class, 'index'])->name('gallery.index');
-Route::get('/gallery/{id}', [GalleryController::class, 'show'])->name('gallery.show');
-
 Route::get('/', function () {
     $title = "WebSaya.Com";
     $slug = "home";
