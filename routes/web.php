@@ -66,7 +66,7 @@ Route::get('/galeri', [galeriController::class, 'index'])->name('galeri');
 Route::get('/visiMisi', [visiMisiController::class, 'index'])->name('visiMisi');
 Route::get('/timKami', [timKamiController::class, 'index'])->name('timKami');
 Route::get('/grup_perusahaan', [grupPerusahaanController::class, 'index'])->name('grup_perusahaan');
-Route::get('/profil_lembaga', [profilLembagaController@index, 'index'])->name('profil_lembaga');
+Route::get('/profil_lembaga', [profilLembagaController::class, 'index'])->name('profil_lembaga');
 
 Route::get('/', function () {
     $title = "WebSaya.Com";
