@@ -25,14 +25,14 @@
         <!-- TENTANG KAMI -->
         <li class="nav-item dropdown mx-2">
           @php
-            $tentangKamiSlugs = ['visi-misi', 'tim-kami', 'grup-perusahaan', 'profil-perusahaan'];
+            $tentangKamiSlugs = ['visiMisi', 'tim-kami', 'grup-perusahaan', 'profil-perusahaan'];
           @endphp
           <a class="nav-link dropdown-toggle {{ in_array($slug, $tentangKamiSlugs) ? 'active text-primary fw-semibold' : 'text-light' }}"
              href="#" id="tentangKamiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Tentang Kami
           </a>
           <ul class="dropdown-menu" aria-labelledby="tentangKamiDropdown">
-            <li><a class="dropdown-item" href="/visi-misi">Visi & Misi</a></li>
+            <li><a class="dropdown-item" href="/visiMisi">Visi & Misi</a></li>
             <li><a class="dropdown-item" href="/tim-kami">Tim Seikou</a></li>
             <li><a class="dropdown-item" href="/grup-perusahaan">Grup Perusahaan</a></li>
             <li><a class="dropdown-item" href="/profil-perusahaan">Profil Lembaga</a></li>
