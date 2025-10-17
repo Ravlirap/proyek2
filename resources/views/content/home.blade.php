@@ -134,7 +134,7 @@
 
     <style>
         :root {
-            --primary: #c61c1c;
+            --primary: #0800ff;
             --accent: #914dff;
             --secondary: #123456;
             --muted: #6b7280;

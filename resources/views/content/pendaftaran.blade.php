@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-8">
-                    <h1 class="display-5 fw-bold mb-3">Pendaftaran LPK XYZ</h1>
+                    <h1 class="display-5 fw-bold mb-3">Pendaftaran LPK Seikou Japan</h1>
                     <p class="lead mb-4">Bergabunglah dengan kami untuk mengembangkan keterampilan dan karir Anda. Daftarkan diri Anda sekarang!</p>
                     <div class="d-flex flex-wrap gap-2">
                         <span class="badge bg-light text-primary p-2"><i class="fas fa-check-circle me-1"></i> Program Terakreditasi</span>

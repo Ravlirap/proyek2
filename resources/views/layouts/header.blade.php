@@ -14,41 +14,50 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Menu -->
-    <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-lg-center">
         <li class="nav-item mx-2">
           <a class="nav-link {{ ($slug === 'home') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/home">Beranda</a>
         </li>
+        
         <li class="nav-item dropdown mx-2">
-          <a class="nav-link dropdown-toggle {{ in_array($slug, ['visi-misi', 'program_pelatihan', 'tim-kami', 'grup-perusahaan', 'sarana-prasarana', 'dokumentasi-kegiatan']) ? 'active text-primary fw-semibold' : 'text-light' }}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          @php
+            $tentangKamiSlugs = ['visi-misi', 'tim-kami', 'grup-perusahaan'];
+          @endphp
+          <a class="nav-link dropdown-toggle {{ in_array($slug, $tentangKamiSlugs) ? 'active text-primary fw-semibold' : 'text-light' }}" href="#" id="tentangKamiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Tentang Kami
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu" aria-labelledby="tentangKamiDropdown">
             <li><a class="dropdown-item" href="/visi-misi">Visi & Misi</a></li>
-            <li><a class="dropdown-item" href="/program_pelatihan">Program</a></li>
             <li><a class="dropdown-item" href="/tim-kami">Tim Seikou</a></li>
             <li><a class="dropdown-item" href="/grup-perusahaan">Grup Perusahaan</a></li>
-            <li><a class="dropdown-item" href="/sarana-prasarana">Fasilitas</a></li>
-            <li><a class="dropdown-item" href="/dokumentasi-kegiatan">Dokumentasi Kegiatan</a></li>
+            <li><a class="dropdown-item" href="/profil-perusahaan">Profile Lembaga</a></li>
+            <li class="nav-item mx-2">
+            <a class="nav-link {{ ($slug === 'program_pelatihan') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/program_pelatihan">Program</a>
+            </li>
           </ul>
         </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link {{ ($slug === 'profil') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/profil">Profil</a>
+        
+        <li class="nav-item dropdown mx-2">
+          @php
+            $informasiSlugs = ['sarana-prasarana', 'dokumentasi-kegiatan', 'galeri'];
+          @endphp
+          <a class="nav-link dropdown-toggle {{ in_array($slug, $informasiSlugs) ? 'active text-primary fw-semibold' : 'text-light' }}" href="#" id="informasiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Informasi
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="informasiDropdown">
+            <li><a class="dropdown-item" href="/sarana-prasarana">Fasilitas</a></li>
+            <li><a class="dropdown-item" href="/dokumentasi-kegiatan">Dokumentasi Kegiatan</a></li>
+            <li><a class="dropdown-item" href="/galeri">Galeri</a></li>
+            <li><a class="dropdown-item" href="/artikel">Artikel</a></li>
+            <li><a class="dropdown-item" href="/kontak">Kontak</a></li>
+          </ul>
         </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link {{ ($slug === 'program_pelatihan') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/program_pelatihan">Program</a>
-        </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link {{ ($slug === 'galeri') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/galeri">Galeri</a>
-        </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link {{ ($slug === 'kontak') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/kontak">Kontak</a>
-        </li>
-        <li class="nav-item mx-2 mt-2 mt-lg-0">
-          <a href="/daftar" class="btn btn-primary rounded-pill px-4 fw-semibold shadow-sm">Login</a>
-        </li>
-      </ul>
+
+
+      <li class="nav-item mx-2 mt-2 mt-lg-0">
+        <a href="/login" class="btn btn-primary rounded-pill px-4 fw-semibold shadow-sm">Login</a>
+      </li>
     </div>
   </div>
 </nav>
