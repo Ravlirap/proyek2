@@ -8,6 +8,7 @@ use App\Http\Controllers\galeriController;
 use App\Http\Controllers\visiMisiController;
 use App\Http\Controllers\timKamiController;
 use App\Http\Controllers\grupPerusahaanController;
+use App\Http\Controllers\profilLembagaController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -65,6 +66,7 @@ Route::get('/galeri', [galeriController::class, 'index'])->name('galeri');
 Route::get('/visiMisi', [visiMisiController::class, 'index'])->name('visiMisi');
 Route::get('/timKami', [timKamiController::class, 'index'])->name('timKami');
 Route::get('/grup_perusahaan', [grupPerusahaanController::class, 'index'])->name('grup_perusahaan');
+Route::get('/profil_lembaga', [profilLembagaController@index, 'index'])->name('profil_lembaga');
 
 Route::get('/', function () {
     $title = "WebSaya.Com";

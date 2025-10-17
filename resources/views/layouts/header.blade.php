@@ -35,7 +35,7 @@
             <li><a class="dropdown-item" href="/visiMisi">Visi & Misi</a></li>
             <li><a class="dropdown-item" href="/timKami">Tim Seikou</a></li>
             <li><a class="dropdown-item" href="/grup_perusahaan">Grup Perusahaan</a></li>
-            <li><a class="dropdown-item" href="/profil-perusahaan">Profil Lembaga</a></li>
+            <li><a class="dropdown-item" href="/profil_lembaga">Profil Lembaga</a></li>
           </ul>
         </li>
 
