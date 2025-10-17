@@ -70,17 +70,6 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Bergabunglah dengan Kami di LPK Seikou</h2>
-                <p>Jadilah bagian dari ribuan alumni sukses yang berkarir di Jepang. Daftar sekarang untuk memulai perjalanan Anda!</p>
-                <a href="{{ route('pendaftaran') }}" class="btn btn-primary">Daftar Sekarang</a>
-            </div>
-        </div>
-    </section>
-</div>
 
 <style>
     :root {
