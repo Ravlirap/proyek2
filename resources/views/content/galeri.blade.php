@@ -83,6 +83,7 @@
     /* Hero Section */
     .hero-section {
         background: linear-gradient(to right, #fff, #fef2f4);
+        padding-top: 140px;
         padding: 60px 0 40px;
         margin-bottom: 40px;
         text-align: center;
@@ -223,6 +224,18 @@
 
     @media (max-width: 500px) {
         .galeri-grid { grid-template-columns: 1fr; }
+    }
+
+    header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    }
+
+    body {
+    padding-top: 120px; /* sesuaikan tinggi header */
     }
 </style>
 @endsection
