@@ -189,6 +189,76 @@
             </div>
         </div>
     </section>
+
+    <section class="chart-section">
+    <h2 class="chart-title"><span class="highlight">Persentase</span> Jenis Kerja</h2>
+
+    <div class="chart-container">
+      <div class="chart-left">
+        <canvas id="jobChart" width="300" height="300"></canvas>
+        <p class="chart-note">Data per Juni 2025</p>
+      </div>
+
+      <div class="chart-right">
+        <ul class="chart-legend">
+          <li><span class="color-box" style="background:#c21807"></span> 27% Proses Mesin</li>
+          <li><span class="color-box" style="background:#e65100"></span> 21% Industri Makanan</li>
+          <li><span class="color-box" style="background:#f57c00"></span> 13% Konstruksi</li>
+          <li><span class="color-box" style="background:#fbc02d"></span> 10% Pertanian</li>
+          <li><span class="color-box" style="background:#fdd835"></span> 8% Produk Plastik</li>
+          <li><span class="color-box" style="background:#ffee58"></span> 6% Painting</li>
+          <li><span class="color-box" style="background:#7cb342"></span> 5% Building Maintenance</li>
+          <li><span class="color-box" style="background:#9e9d24"></span> 3% Pengelasan</li>
+          <li><span class="color-box" style="background:#bdbdbd"></span> 3% Packing</li>
+          <li><span class="color-box" style="background:#cfd8dc"></span> 3% Lain-lain</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+{{-- Chart.js --}}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('jobChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: [
+        'Proses Mesin', 'Industri Makanan', 'Konstruksi', 'Pertanian',
+        'Produk Plastik', 'Painting', 'Building Maintenance',
+        'Pengelasan', 'Packing', 'Lain-lain'
+      ],
+      datasets: [{
+        data: [27, 21, 13, 10, 8, 6, 5, 3, 3, 3],
+        backgroundColor: [
+          '#c21807','#e65100','#f57c00','#fbc02d','#fdd835',
+          '#ffee58','#7cb342','#9e9d24','#bdbdbd','#cfd8dc'
+        ],
+        borderWidth: 2,
+        borderColor: '#fff',
+        hoverOffset: 10
+      }]
+    },
+    options: {
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#333',
+          titleFont: { size: 14, weight: 'bold' },
+          bodyFont: { size: 13 },
+          callbacks: {
+            label: function(context) {
+              return `${context.label}: ${context.formattedValue}%`;
+            }
+          }
+        }
+      },
+      cutout: '70%'
+    }
+  });
+</script>
 </div>
 
 <style>
@@ -465,5 +535,87 @@
             font-size: 1.75rem;
         }
     }
+
+    .chart-section {
+  background: #f3f5f6;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  margin-top: 100px;
+}
+
+.chart-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.chart-title .highlight {
+  color: #d32f2f;
+}
+
+.chart-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.chart-left {
+  text-align: center;
+}
+
+.chart-note {
+  color: #555;
+  font-size: 0.9rem;
+  margin-top: 12px;
+}
+
+.chart-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.chart-legend {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 12px 30px;
+}
+
+.chart-legend li {
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.color-box {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+@media (max-width: 900px) {
+  .chart-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .chart-legend {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 @endsection
