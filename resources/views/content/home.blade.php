@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <div class="dashboard container">
-        
+
         <section class="hero-section" aria-label="Hero">
             <div class="hero-left">
                 <p class="tagline">Lembaga Pelatihan Kerja Resmi & Terpercaya</p>
@@ -77,7 +77,7 @@
                         <li>Sesi tatap muka opsional (Hybrid)</li>
                     </ul>
                 </article>
-                
+
                 <article class="feature-card card-contact">
                     <img src="{{ asset('images/contact.svg') }}" alt="" class="icon">
                     <h3>Kontak & Lokasi</h3>
@@ -129,6 +129,34 @@
                 </details>
             </div>
         </section>
+
+        <section class="lokasi-section">
+  <div class="lokasi-container">
+    <div class="lokasi-text">
+      <h2>Lokasi Para Peserta Magang <span class="highlight">LPK Seikou</span> Tersebar di Seluruh Jepang</h2>
+      <p>Berbagai prefektur di Jepang menjadi tempat magang peserta kami. Berikut adalah beberapa di antaranya:</p>
+      <ul class="prefektur-list">
+        <li>Hokkaido</li>
+        <li>Aomori</li>
+        <li>Akita</li>
+        <li>Tokyo</li>
+        <li>Kanagawa</li>
+        <li>Osaka</li>
+        <li>Kyoto</li>
+        <li>Fukuoka</li>
+        <li>Hiroshima</li>
+        <li>Kumamoto</li>
+        <li>Nagasaki</li>
+        <li>Kagoshima</li>
+      </ul>
+    </div>
+
+    <div class="lokasi-map">
+      <img src="{{ asset('img/japan-map.png') }}" alt="Peta Jepang Lokasi Magang" loading="lazy">
+    </div>
+  </div>
+</section>
+
 
     </div>
 
@@ -251,7 +279,7 @@
         }
 
        /* TRUST SECTION */
-        .trust-section { 
+        .trust-section {
             margin: 60px 0;
             text-align: center;
         }
@@ -495,6 +523,81 @@
             .trust-grid { grid-template-columns: 1fr; }
             .slider-controls { right: 20px; }
         }
+
+        .lokasi-section {
+  margin: 60px 0;
+  background: var(--light-bg);
+  padding: 40px 20px;
+  border-radius: var(--radius);
+}
+
+.lokasi-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.lokasi-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.lokasi-text h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 12px;
+}
+
+.lokasi-text .highlight {
+  color: var(--primary);
+}
+
+.lokasi-text p {
+  color: var(--muted);
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.prefektur-list {
+  columns: 3 200px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.prefektur-list li {
+  padding-left: 22px;
+  position: relative;
+  margin-bottom: 8px;
+  color: var(--secondary);
+}
+
+.prefektur-list li::before {
+  content: "●";
+  color: red;
+  position: absolute;
+  left: 0;
+  font-size: 0.8rem;
+  top: 0;
+}
+
+.lokasi-map {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lokasi-map img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
     </style>
 
     <script>
