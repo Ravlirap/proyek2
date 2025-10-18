@@ -1,6 +1,11 @@
 @extends('layouts.main')
 
 @section('content')
+<style>
+body {
+    padding-top: 140px;
+}
+</style>
 <div class="container py-5">
     <a href="{{ route('galeri.index') }}" class="btn btn-outline-secondary mb-3">← Kembali</a>
 

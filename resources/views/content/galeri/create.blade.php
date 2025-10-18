@@ -1,6 +1,11 @@
 @extends('layouts.main')
 
 @section('content')
+<style>
+body {
+    padding-top: 140px;
+}
+</style>
 <div class="container py-5">
     <h2 class="mb-4">Tambah Foto Galeri</h2>
 
