@@ -373,20 +373,6 @@
                     </div>
                 </div>
                 
-                <div class="card shadow-sm border-0 mb-4">
-                    <div class="card-header bg-light">
-                        <h5 class="mb-0"><i class="fas fa-question-circle me-2"></i>Butuh Bantuan?</h5>
-                    </div>
-                    <div class="card-body">
-                        <p class="small">Jika mengalami kesulitan dalam pengisian formulir, silakan hubungi kami melalui:</p>
-                        <div class="d-grid gap-2">
-                            <button class="btn btn-outline-primary btn-sm"><i class="fas fa-comment-dots me-2"></i>Live Chat</button>
-                            <button class="btn btn-outline-primary btn-sm"><i class="fas fa-envelope me-2"></i>Email</button>
-                            <button class="btn btn-outline-primary btn-sm"><i class="fas fa-phone me-2"></i>Telepon</button>
-                        </div>
-                    </div>
-                </div>
-                
                 <div class="card shadow-sm border-0">
                     <div class="card-body text-center py-4">
                         <i class="fas fa-users fa-2x text-primary mb-3"></i>
