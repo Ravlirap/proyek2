@@ -5,6 +5,7 @@ use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\program_pelatihanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\galeriController;
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\visiMisiController;
 use App\Http\Controllers\timKamiController;
 use App\Http\Controllers\grupPerusahaanController;
@@ -67,6 +68,7 @@ Route::get('/visiMisi', [visiMisiController::class, 'index'])->name('visiMisi');
 Route::get('/timKami', [timKamiController::class, 'index'])->name('timKami');
 Route::get('/grup_perusahaan', [grupPerusahaanController::class, 'index'])->name('grup_perusahaan');
 Route::get('/profil_lembaga', [profilLembagaController::class, 'index'])->name('profil_lembaga');
+Route::get('/Artikel', [ArtikelController::class, 'index'])->name('Artikel');
 
 Route::get('/', function () {
     $title = "WebSaya.Com";
