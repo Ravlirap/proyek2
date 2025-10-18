@@ -195,7 +195,10 @@
 
     <div class="chart-container">
       <div class="chart-left">
-        <canvas id="jobChart" width="300" height="300"></canvas>
+        <div style="width: 300px; height: 300px; margin: auto;">
+  <canvas id="jobChart"></canvas>
+</div>
+
         <p class="chart-note">Data per Juni 2025</p>
       </div>
 
