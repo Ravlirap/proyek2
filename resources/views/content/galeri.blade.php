@@ -248,30 +248,32 @@ body {
 
 
 .modal-content {
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  max-width: 800px;
+  max-width: 600px;   /* 🔸 batasi lebar modal */
   width: 90%;
   max-height: 85vh;
   overflow-y: auto;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
   text-align: center;
-  animation: fadeIn 0.3s ease;
 }
+
 
 
 .modal-content img {
   width: 100%;
-  height: auto;
+  max-height: 400px;     /* 🔸 batasi tinggi maksimal gambar */
+  object-fit: cover;     /* 🔸 biar proporsional tanpa distorsi */
   border-radius: 10px;
   margin-bottom: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
+
 
 .close-btn {
   position: absolute;
   top: 15px;
-  right: 20px;   
+  right: 20px;
   color: #333;
   font-size: 1.8rem;
   cursor: pointer;
