@@ -52,7 +52,7 @@
       <h2 class="gallery-title">Dokumentasi <span class="highlight">Kegiatan</span></h2>
 
       <div class="gallery-grid">
-        @for ($i = 1; $i <= 12; $i++)
+        @for ($i = 1; $i <= 6; $i++)
           <div class="gallery-item"
                data-title="Kegiatan Pelatihan {{ $i }}"
                data-date="19 Oktober 2025"
