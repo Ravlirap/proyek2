@@ -53,10 +53,15 @@
 
       <div class="gallery-grid">
         @for ($i = 1; $i <= 12; $i++)
-          <div class="gallery-item">
+          <div class="gallery-item"
+               data-title="Kegiatan Pelatihan {{ $i }}"
+               data-date="19 Oktober 2025"
+               data-description="Deskripsi singkat mengenai kegiatan pelatihan ke-{{ $i }} yang dilakukan di LPK Seikou. Peserta mengikuti sesi pelatihan bahasa dan budaya Jepang.">
+
             <img src="{{ asset('img/galeri' . $i . '.jpg') }}" alt="Galeri LPK Seikou {{ $i }}" loading="lazy">
             <div class="gallery-overlay">
               <span class="gallery-caption">Kegiatan {{ $i }}</span>
+              <button class="detail-btn">Detail Foto</button>
             </div>
           </div>
         @endfor
@@ -64,20 +69,18 @@
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-content">
-        <h2>Bergabunglah Bersama Kami!</h2>
-        <p>Jadilah bagian dari perjalanan menuju karir impian di Jepang melalui pelatihan terbaik dari LPK Seikou.</p>
-        <a href="{{ route('pendaftaran') }}" class="btn btn-primary">Daftar Sekarang</a>
-      </div>
+  <!-- Modal Detail Foto -->
+  <div id="photoModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <img id="modalImage" src="" alt="">
+      <h3 id="modalTitle"></h3>
+      <p class="modal-date" id="modalDate"></p>
+      <p id="modalDescription"></p>
     </div>
-  </section>
-</div>
+  </div>
 
 <style>
-/* Gunakan variabel, layout, dan style sama dengan program_pelatihan */
 :root {
   --primary: #c9003c;
   --secondary: #2c3e50;
@@ -194,13 +197,15 @@ body {
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
   opacity: 0;
   transition: opacity 0.3s ease;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
   padding: 15px;
+  gap: 10px;
 }
 
 .gallery-item:hover .gallery-overlay {
@@ -214,51 +219,102 @@ body {
   text-align: center;
 }
 
-/* CTA Section */
-.cta-section {
-  background: linear-gradient(to right, var(--primary), #ff4d6d);
-  color: white;
-  padding: 60px 20px;
-  margin-top: 80px;
-  text-align: center;
-  width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+.detail-btn {
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.2s;
 }
 
-.cta-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+.detail-btn:hover {
+  background: #a10032;
 }
 
-.cta-content p {
-  opacity: 0.9;
-  margin-bottom: 24px;
-  font-size: 1.1rem;
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-.btn-primary {
-  display: inline-block;
-  padding: 12px 30px;
+.modal-content {
   background: white;
-  color: var(--primary);
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.2s ease;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  text-align: center;
+  animation: fadeIn 0.3s ease;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.modal-date {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .hero-title { font-size: 2rem; }
   .gallery-grid { grid-template-columns: 1fr; }
-  .cta-content h2 { font-size: 1.75rem; }
 }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('photoModal');
+  const modalImage = document.getElementById('modalImage');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDate = document.getElementById('modalDate');
+  const modalDescription = document.getElementById('modalDescription');
+  const closeBtn = document.querySelector('.close-btn');
+
+  document.querySelectorAll('.detail-btn').forEach(button => {
+    button.addEventListener('click', e => {
+      const item = e.target.closest('.gallery-item');
+      modalImage.src = item.querySelector('img').src;
+      modalTitle.textContent = item.dataset.title;
+      modalDate.textContent = "📅 " + item.dataset.date;
+      modalDescription.textContent = item.dataset.description;
+      modal.style.display = 'flex';
+    });
+  });
+
+  closeBtn.onclick = () => modal.style.display = 'none';
+  modal.onclick = e => { if (e.target === modal) modal.style.display = 'none'; };
+});
+</script>
+
 @endsection
