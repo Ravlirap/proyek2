@@ -1,172 +1,228 @@
 @extends('layouts.main')
 @section('content')
-
 <div class="grup-page">
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <h1 class="page-title">Grup Perusahaan</h1>
-            <p class="lead">
-                LPK Seikou bekerja sama dengan berbagai perusahaan terpercaya di Jepang dan Indonesia
-                untuk memberikan peluang terbaik bagi peserta program kami.
-            </p>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Grup & Mitra <span class="highlight">LPK Seikou</span>
+        </h1>
+        <p class="hero-description">
+          LPK Seikou bekerja sama dengan berbagai perusahaan dan lembaga di Jepang maupun Indonesia untuk mendukung penempatan kerja dan pelatihan berkualitas.
+        </p>
+      </div>
+
+      <div class="hero-decoration">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grup Perusahaan Section -->
+  <section class="grup-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-handshake"></i> Grup Perusahaan Kami</h2>
+
+      <div class="grup-grid">
+        <div class="grup-card">
+          <img src="{{ asset('img/grup1.jpg') }}" alt="Seikou Japan Co., Ltd" class="grup-img">
+          <div class="grup-info">
+            <h3>Seikou Japan Co., Ltd</h3>
+            <p>Perusahaan mitra utama kami di Jepang yang berfokus pada rekrutmen dan pengembangan tenaga kerja Indonesia di berbagai sektor industri.</p>
+          </div>
         </div>
-    </section>
 
-    <!-- Grup Perusahaan Section -->
-    <section class="grup-section">
-        <div class="container">
-            <div class="grup-grid">
-                <!-- Perusahaan 1 -->
-                <div class="grup-card">
-                    <img src="{{ asset('img/logo1.png') }}" alt="Seikou Japan Co., Ltd" loading="lazy">
-                    <div class="grup-info">
-                        <h4>Seikou Japan Co., Ltd</h4>
-                        <p>Perusahaan mitra utama di Jepang yang berfokus pada pelatihan dan penyaluran tenaga kerja terampil.</p>
-                    </div>
-                </div>
-
-                <!-- Perusahaan 2 -->
-                <div class="grup-card">
-                    <img src="{{ asset('img/logo1.png') }}" alt="PT Seikou Indonesia" loading="lazy">
-                    <div class="grup-info">
-                        <h4>PT Seikou Indonesia</h4>
-                        <p>Menangani pelatihan dan administrasi peserta di Indonesia sebelum keberangkatan ke Jepang.</p>
-                    </div>
-                </div>
-
-                <!-- Perusahaan 3 -->
-                <div class="grup-card">
-                    <img src="{{ asset('img/logo1.png') }}" alt="IM Japan Partner" loading="lazy">
-                    <div class="grup-info">
-                        <h4>IM Japan Partner</h4>
-                        <p>Bekerja sama dalam program magang dan pelatihan keterampilan untuk peserta Indonesia di Jepang.</p>
-                    </div>
-                </div>
-
-                <!-- Perusahaan 4 -->
-                <div class="grup-card">
-                    <img src="{{ asset('img/logo1.png') }}" alt="Seikou Training Center" loading="lazy">
-                    <div class="grup-info">
-                        <h4>Seikou Training Center</h4>
-                        <p>Pusat pelatihan resmi untuk meningkatkan kemampuan bahasa, disiplin, dan keterampilan peserta.</p>
-                    </div>
-                </div>
-
-                <!-- Perusahaan 5 -->
-                <div class="grup-card">
-                    <img src="{{ asset('img/logo1.png') }}" alt="Seikou Consulting" loading="lazy">
-                    <div class="grup-info">
-                        <h4>Seikou Consulting</h4>
-                        <p>Menyediakan layanan konsultasi dan pendampingan bagi perusahaan Jepang dalam perekrutan tenaga kerja asing.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="grup-card">
+          <img src="{{ asset('img/grup2.jpg') }}" alt="Seikou Indonesia" class="grup-img">
+          <div class="grup-info">
+            <h3>Seikou Indonesia</h3>
+            <p>Lembaga pelatihan dan pengiriman tenaga kerja di Indonesia yang terintegrasi dengan sistem pelatihan LPK Seikou.</p>
+          </div>
         </div>
-    </section>
+
+        <div class="grup-card">
+          <img src="{{ asset('img/grup3.jpg') }}" alt="Nihon Kyoiku Center" class="grup-img">
+          <div class="grup-info">
+            <h3>Nihon Kyoiku Center</h3>
+            <p>Lembaga pendidikan Jepang yang menjadi mitra pengajaran bahasa dan budaya Jepang bagi peserta pelatihan.</p>
+          </div>
+        </div>
+
+        <div class="grup-card">
+          <img src="{{ asset('img/grup4.jpg') }}" alt="Seikou Global Training" class="grup-img">
+          <div class="grup-info">
+            <h3>Seikou Global Training</h3>
+            <p>Mengelola program pelatihan profesional dan sertifikasi keterampilan internasional untuk peserta sebelum diberangkatkan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kerja Sama Section -->
+  <section class="kerjasama-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-globe-asia"></i> Jaringan Kerja Sama</h2>
+      <p class="kerjasama-text">
+        LPK Seikou menjalin hubungan dengan berbagai lembaga pemerintah, perusahaan swasta, dan instansi pendidikan untuk memastikan kualitas pelatihan dan penempatan kerja yang optimal di Jepang.
+      </p>
+      <div class="logo-grid">
+        <img src="{{ asset('img/logo1.png') }}" alt="Mitra 1">
+        <img src="{{ asset('img/logo2.png') }}" alt="Mitra 2">
+        <img src="{{ asset('img/logo3.png') }}" alt="Mitra 3">
+        <img src="{{ asset('img/logo4.png') }}" alt="Mitra 4">
+      </div>
+    </div>
+  </section>
+
 </div>
 
 <style>
-    :root {
-        --primary: #c9003c;
-        --secondary: #2c3e50;
-        --gray: #6b7280;
-        --radius: 12px;
-        --shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
+:root {
+  --primary: #c9003c;
+  --dark: #1a1a1a;
+  --gray: #666;
+  --light-bg: #f8f9fa;
+  --radius: 10px;
+  --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
 
-    /* Hero Section */
-    .hero-section {
-        background: linear-gradient(to right, #fff, #fef2f4);
-        padding-top: 140px;
-        padding: 60px 0 40px;
-        margin-bottom: 40px;
-        text-align: center;
-    }
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, #6671ea 0%, #273d9c 100%);
+  padding: 100px 20px;
+  margin-top: 84px;
+  overflow: hidden;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  right: 50%;
+  margin-right: -50vw;
+  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+}
 
-    .page-title {
-        font-size: 2.5rem;
-        color: var(--secondary);
-        font-weight: 700;
-        margin-bottom: 16px;
-    }
+.hero-title {
+  font-size: 3rem;
+  color: white;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+}
 
-    .lead {
-        font-size: 1.1rem;
-        color: var(--gray);
-        max-width: 800px;
-        margin: 0 auto;
-        line-height: 1.6;
-    }
+.hero-description {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+  margin-top: 20px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    /* Grup Section */
-    .grup-section {
-        padding: 40px 0 60px;
-    }
+/* Section Title */
+.section-title {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 30px;
+  text-align: center;
+}
 
-    .grup-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 24px;
-    }
+.section-title i {
+  margin-right: 10px;
+}
 
-    .grup-card {
-        background: white;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+/* Grup Section */
+.grup-section {
+  padding: 80px 20px;
+}
 
-    .grup-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-    }
+.grup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
 
-    .grup-card img {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-    }
+.grup-card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .grup-info {
-        padding: 20px;
-    }
+.grup-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
 
-    .grup-info h4 {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: var(--secondary);
-        margin-bottom: 8px;
-    }
+.grup-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
 
-    .grup-info p {
-        color: var(--gray);
-        font-size: 0.95rem;
-        line-height: 1.5;
-        margin: 0;
-    }
+.grup-info {
+  padding: 20px;
+  text-align: center;
+}
 
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-    }
+.grup-info h3 {
+  color: var(--dark);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
 
-    body {
-        padding-top: 120px; /* sesuaikan tinggi header */
-    }
+.grup-info p {
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
 
-    @media (max-width: 768px) {
-        .page-title { font-size: 2rem; }
-        .grup-info h4 { font-size: 1.1rem; }
-    }
+/* Kerja Sama Section */
+.kerjasama-section {
+  background: var(--light-bg);
+  padding: 80px 20px;
+}
 
-    @media (max-width: 500px) {
-        .grup-card img { height: 200px; }
-    }
+.kerjasama-text {
+  text-align: center;
+  color: var(--gray);
+  font-size: 1.05rem;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.logo-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.logo-grid img {
+  width: 120px;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.logo-grid img:hover {
+  filter: none;
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.2rem; }
+  .grup-img { height: 180px; }
+  .logo-grid img { width: 90px; }
+}
 </style>
-
 @endsection

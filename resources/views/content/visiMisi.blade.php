@@ -77,18 +77,6 @@
       </div>
     </div>
   </section>
-
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-content">
-        <h2>Siap Mewujudkan Mimpi Anda di Jepang?</h2>
-        <p>Bergabunglah bersama LPK Seikou dan mulailah perjalanan Anda menuju masa depan yang gemilang.</p>
-        <a href="{{ route('pendaftaran') }}" class="btn btn-primary">Daftar Sekarang</a>
-      </div>
-    </div>
-  </section>
-
 </div>
 
 <style>
