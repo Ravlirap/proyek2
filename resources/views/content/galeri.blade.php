@@ -240,22 +240,26 @@ body {
   position: fixed;
   z-index: 999;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.6);
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
 }
+
 
 .modal-content {
   background: white;
   border-radius: 10px;
   padding: 20px;
-  max-width: 600px;
-  width: 100%;
+  max-width: 800px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   text-align: center;
   animation: fadeIn 0.3s ease;
 }
+
 
 .modal-content img {
   width: 100%;
@@ -266,12 +270,14 @@ body {
 
 .close-btn {
   position: absolute;
-  top: 25px;
-  right: 30px;
-  color: white;
-  font-size: 2rem;
+  top: 15px;
+  right: 20px;   
+  color: #333;
+  font-size: 1.8rem;
   cursor: pointer;
+  z-index: 1001;
 }
+
 
 .modal-date {
   color: var(--gray);
