@@ -27,4 +27,13 @@ class program_pelatihanController extends Controller
         $slug = "magang-manufaktur";
         return view('detail_program.magang-manufaktur', compact('title', 'slug'));
     }
+    
+    public function magangKonstruksi()
+    {
+        $title = "Program Magang Konstruksi";
+        $slug = "magang-konstruksi";
+        return view('detail_program.magang-konstruksi', compact('title', 'slug'));
+    }
+    
+    
 }

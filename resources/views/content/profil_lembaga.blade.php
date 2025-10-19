@@ -27,7 +27,7 @@
     <div class="container">
       <h2 class="section-title"><i class="fas fa-university"></i> Tentang Kami</h2>
       <div class="tentang-content">
-        <img src="{{ asset('img/lpk_building.jpg') }}" alt="Gedung LPK Seikou" class="tentang-img">
+        <img src="{{ asset('img/lpk1.jpg') }}" alt="Gedung LPK Seikou" class="tentang-img">
         <div class="tentang-text">
           <p>
             LPK Seikou merupakan lembaga resmi yang bergerak di bidang pelatihan kerja dan pembinaan tenaga kerja Indonesia yang ingin berkarier di Jepang. Kami berfokus pada pengajaran bahasa Jepang, budaya kerja, serta etika profesional sesuai standar perusahaan Jepang.
