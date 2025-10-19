@@ -46,7 +46,7 @@
 
         <!-- GALERI -->
         <li class="nav-item mx-2">
-          <a class="nav-link {{ ($slug === 'galeri') ? 'active text-primary fw-semibold' : 'text-light' }}" href="{{ route('galeri.index') }}">Galeri</a>
+          <a class="nav-link {{ ($slug === 'galeri') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/galeri">Galeri</a>
         </li>
 
         <!-- INFORMASI -->
