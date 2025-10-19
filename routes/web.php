@@ -53,6 +53,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');
 Route::post('/pendaftaran', [PendaftaranController::class, 'submit'])->name('pendaftaran.submit');
 Route::get('/pendaftaran/{slug}', [PendaftaranController::class, 'show'])->name('pendaftaran.detail');
+
 //Program
 Route::get('/program_pelatihan', [program_pelatihanController::class, 'index'])->name('program_pelatihan');
 Route::get('/detail_program/magang-manufaktur',[program_pelatihanController::class, 'magangManufaktur'])->name('detail_program.magang-manufaktur');

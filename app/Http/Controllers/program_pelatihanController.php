@@ -20,4 +20,11 @@ class program_pelatihanController extends Controller
         $slug = "ssw-kaigo";
         return view('detail_program.ssw-kaigo', compact('title', 'slug'));
     }
+
+    public function magangManufaktur()
+    {
+        $title = "Program Magang Manufaktur";
+        $slug = "magang-manufaktur";
+        return view('detail_program.magang-manufaktur', compact('title', 'slug'));
+    }
 }

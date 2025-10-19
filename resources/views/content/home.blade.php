@@ -49,7 +49,7 @@
             <h2 class="section-title">Program Unggulan Kami</h2>
             <div class="features-grid">
                 <article class="feature-card">
-                    <img src="{{ asset('images/training.svg') }}" alt="" class="icon">
+                    <img src="{{ asset('img/lpk.jpg') }}" alt="" class="icon">
                     <h3>Program Magang (Ginou Jisshuu)</h3>
                     <ul>
                         <li>Pelatihan 3-5 tahun</li>
@@ -59,7 +59,7 @@
                 </article>
 
                 <article class="feature-card">
-                    <img src="{{ asset('images/registration.svg') }}" alt="" class="icon">
+                    <img src="{{ asset('img/lpk9.jpg') }}" alt="" class="icon">
                     <h3>Specified Skilled Worker (SSW/Tokutei Ginou)</h3>
                     <ul>
                         <li>Jalur kerja resmi untuk 5 tahun</li>
@@ -163,7 +163,7 @@
     <style>
         :root {
             --primary: #0800ff;
-            --accent: #914dff;
+            --accent: #4d59ff;
             --secondary: #123456;
             --muted: #6b7280;
             --bg: #fdfefe;
@@ -175,7 +175,7 @@
 
         .container {
             max-width: var(--container);
-            padding:0 25px ;
+            padding: 0 20px;
             font-family: 'Poppins', Roboto, system-ui, -apple-system, sans-serif;
             color: var(--secondary);
         }
@@ -379,9 +379,13 @@
             box-shadow: 0 18px 50px rgba(0,0,0,0.1);
         }
         .feature-card .icon {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
+            width: 100%;
+            max-width: 190px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid rgba(201,0,60,0.2);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
         }
         .feature-card h3 {
             margin: 6px 0;
