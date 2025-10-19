@@ -238,16 +238,18 @@ body {
 .modal {
   display: none;
   position: fixed;
-  z-index: 999;
+  z-index: 9999; /* 🔸 tambahkan / ubah jadi lebih besar dari header */
   inset: 0;
   background: rgba(0,0,0,0.6);
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
 }
 
 
+
 .modal-content {
+  margin-top: 60px;
   max-width: 600px;   /* 🔸 batasi lebar modal */
   width: 90%;
   max-height: 85vh;
