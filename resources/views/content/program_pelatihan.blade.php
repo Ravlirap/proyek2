@@ -2,13 +2,51 @@
 @section('content')
 <div class="program-page">
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <h1 class="page-title">Program Pelatihan LPK Seikou</h1>
-            <p class="lead">Pilih jalur karir impian Anda di Jepang melalui program pelatihan berkualitas dari LPK Seikou.
-                Kami menyediakan berbagai program yang disesuaikan dengan kebutuhan dan tujuan karir Anda.</p>
+  <section class="hero-section">
+    <div class="container">
+        <div class="hero-content">  
+            <h1 class="hero-title">
+                Program Pelatihan
+                <span class="highlight">LPK Seikou</span>
+            </h1>
+            
+            <p class="hero-description">
+                Pilih jalur karir impian Anda di Jepang melalui program pelatihan berkualitas dari LPK Seikou. 
+                Kami menyediakan berbagai program yang disesuaikan dengan kebutuhan dan tujuan karir Anda.
+            </p>
+            
+            <div class="hero-features">
+                <div class="feature-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    <span>Instruktur Berpengalaman</span>
+                </div>
+                <div class="feature-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    <span>Sertifikat Resmi</span>
+                </div>
+                <div class="feature-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    <span>Dukungan Penempatan Kerja</span>
+                </div>
+            </div>
         </div>
-    </section>
+        
+        <div class="hero-decoration">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+        </div>
+    </div>
+</section>
 
     <!-- Programs Grid Section -->
     <section class="programs-section">
@@ -32,7 +70,7 @@
                         <div class="program-footer">
                             <div class="program-stats">
                                 <span class="stat"><i class="fas fa-clock"></i> 3-5 tahun</span>
-                                <span class="stat"><i class="fas fa-yen-sign"></i> 150,000¥/bulan</span>
+                                <span class="stat"><i class="fas fa-rupiah-sign"></i> Rp. 3.000.000-10.000.000/bulan</span>
                             </div>
                             <a href="{{ route('detail_program.magang-manufaktur') }}" class="btn-detail">
                                 Lihat Detail <i class="fas fa-arrow-right"></i>
@@ -59,7 +97,7 @@
                         <div class="program-footer">
                             <div class="program-stats">
                                 <span class="stat"><i class="fas fa-clock"></i> 5 tahun</span>
-                                <span class="stat"><i class="fas fa-yen-sign"></i> 180,000¥/bulan</span>
+                                <span class="stat"><i class="fas fa-rupiah-sign"></i> Rp. 4.000.000-15.000.000/bulan</span>
                             </div>
                             <a href="{{ route('detail_program.ssw-kaigo') }}" class="btn-detail">
                                 Lihat Detail <i class="fas fa-arrow-right"></i>
@@ -86,7 +124,7 @@
                         <div class="program-footer">
                             <div class="program-stats">
                                 <span class="stat"><i class="fas fa-clock"></i> 3-5 tahun</span>
-                                <span class="stat"><i class="fas fa-yen-sign"></i> 160,000¥/bulan</span>
+                                <span class="stat"><i class="fas fa-rupiah-sign"></i> Rp. 3.000.000-15.000.000/bulan</span>
                             </div>
                             <a href="{{ route('detail_program.magang-konstruksi') }}" class="btn-detail">
                                 Lihat Detail <i class="fas fa-arrow-right"></i>
@@ -113,7 +151,7 @@
                         <div class="program-footer">
                             <div class="program-stats">
                                 <span class="stat"><i class="fas fa-clock"></i> 5 tahun</span>
-                                <span class="stat"><i class="fas fa-yen-sign"></i> 170,000¥/bulan</span>
+                                <span class="stat"><i class="fas fa-rupiah-sign"></i> Rp. 3.000.000-10.000.000/bulan</span>
                             </div>
                             <a href="{{ route('detail_program.ssw-food-service') }}" class="btn-detail">
                                 Lihat Detail <i class="fas fa-arrow-right"></i>
@@ -140,7 +178,7 @@
                         <div class="program-footer">
                             <div class="program-stats">
                                 <span class="stat"><i class="fas fa-clock"></i> 6 bulan</span>
-                                <span class="stat"><i class="fas fa-user-graduate"></i> Level Dasar</span>
+                                <span class="stat"><i class="fas fa-rupiah-sign"></i> Rp. 3.000.000-15.000.000/bulan</span>
                             </div>
                             <a href="{{ route('detail_program.bahasa-n5-n4') }}" class="btn-detail">
                                 Lihat Detail <i class="fas fa-arrow-right"></i>
@@ -167,7 +205,7 @@
                         <div class="program-footer">
                             <div class="program-stats">
                                 <span class="stat"><i class="fas fa-clock"></i> 8 bulan</span>
-                                <span class="stat"><i class="fas fa-user-graduate"></i> Level Lanjut</span>
+                                <span class="stat"><i class="fas fa-rupiah-sign"></i> Rp. 4.000.000-16.000.000/bulan</span>
                             </div>
                             <a href="{{ route('detail_program.bahasa-n3-n2') }}" class="btn-detail">
                                 Lihat Detail <i class="fas fa-arrow-right"></i>
@@ -193,71 +231,177 @@
 
 <style>
     /* Base Styles */
+    /* Base Styles */
     :root {
         --primary: #c9003c;
         --secondary: #2c3e50;
-        --accent: #ff max-width: var(--container);
-       padding: 0 20px;
+        --dark: #1a1a1a;
+        --gray: #666;
+        --light-bg: #f8f9fa;
+        --radius: 10px;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
         font-family: 'Poppins', Roboto, system-ui, -apple-system, sans-serif;
-        color: var(--secondary););y);        --dark: #2d3748;
-        --shadow: 0 4px 6 display: flex;
-            gap: 40px;
-            align-items: center;
-            background: var(--light-bg);
-            margin-top: 130px;
-            padding: 40px;
-            border-radius: var(--radius);
-            position: relative;
-            border: 1px solid rgba(201,0,60,0.1);px;,60,0.1);px;,60,0.1);px;,60,0.1);olor: var(--light);
         color: var(--dark);
+        overflow-x: hidden;
+    }
+
+    .program-page {
+        width: 100%;
     }
 
     /* Hero Section */
     .hero-section {
-        background: linear-gradient(to right, #fff, #fef2f4);
-        padding: 60px 0 40px;
-        margin-bottom: 40px;
-        margin-top: 40px;
-    }
-
-    .program-breadcrumb {
+        position: relative;
+        background: linear-gradient(135deg, #6671ea 0%, #273d9c 100%);
+        padding: 80px 20px;
         margin-bottom: 20px;
+        margin-top: 84px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
     }
 
-    .breadcrumb {
-        display: flex;
-        gap: 8px;
-        padding: 0;
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        max-width: 700px;
         margin: 0;
-        list-style: none;
+        animation: fadeInUp 1s ease-out;
+        z-index: 2;
     }
 
-    .breadcrumb-item a {
-        color: var(--primary);
-        text-decoration: none;
+    .hero-title {
+        font-size: 3rem;
+        color: white;
+        margin-bottom: 24px;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.5px;
     }
 
-    .breadcrumb-item.active {
-        color: var(--gray);
+    .highlight {
+        display: block;
+        background: linear-gradient(90deg, #fff 0%, #f8bbd0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
 
-    .breadcrumb-item + .breadcrumb-item::before {
-        content: "›";
-        color: var(--gray);
-        margin-right: 8px;
+    .hero-description {
+        font-size: 1.125rem;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.8;
+        margin-bottom: 32px;
     }
 
-    .page-title {
-        font-size: 2.5padding: 10px 0;lor: var(--dark);
-        margin-bottom: 16px;
-        font-weight: 700;
+    .hero-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
     }
 
-    .lead {
-        font-size: 1.1rem;
-        color: var(--gray);
-        max-width: 800px;
-        line-height: 1.6;
+    .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    .feature-item svg {
+        flex-shrink: 0;
+        opacity: 0.9;
+    }
+
+    .hero-decoration {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    .circle {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+    }
+
+    .circle-1 {
+        width: 300px;
+        height: 300px;
+        top: -50px;
+        right: -50px;
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .circle-2 {
+        width: 200px;
+        height: 200px;
+        top: 50%;
+        right: 10%;
+        animation: float 8s ease-in-out infinite;
+        animation-delay: 1s;
+    }
+
+    .circle-3 {
+        width: 150px;
+        height: 150px;
+        bottom: -30px;
+        right: 30%;
+        animation: float 7s ease-in-out infinite;
+        animation-delay: 2s;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-20px) rotate(5deg);
+        }
     }
 
     /* Programs Grid */
@@ -274,9 +418,9 @@
 
     .program-card {
         background: white;
-        border-radius: var(--radius);
+        border-radius: 10px;
         overflow: hidden;
-        box-shadow: var(--shadow);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
@@ -357,18 +501,22 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
         padding-top: 15px;
         border-top: 1px solid #edf2f7;
     }
 
     .program-stats {
         display: flex;
+        flex-wrap: wrap;
         gap: 15px;
     }
 
     .stat {
         color: var(--gray);
         font-size: 0.9rem;
+        white-space: nowrap;
     }
 
     .stat i {
@@ -388,6 +536,7 @@
         font-weight: 500;
         text-decoration: none;
         transition: all 0.2s ease;
+        white-space: nowrap;
     }
 
     .btn-detail:hover {
@@ -399,7 +548,7 @@
     .cta-section {
         background: linear-gradient(to right, var(--primary), #ff4d6d);
         color: white;
-        padding: 60px 0;
+        padding: 60px 20px;
         margin-top: 60px;
         text-align: center;
         width: 100vw;
@@ -420,11 +569,13 @@
     .cta-content h2 {
         font-size: 2.5rem;
         margin-bottom: 20px;
+        line-height: 1.3;
     }
 
     .cta-content p {
         opacity: 0.9;
         margin-bottom: 24px;
+        font-size: 1.1rem;
     }
 
     .btn-primary {
@@ -442,14 +593,65 @@
         transform: translateY(-2px);
     }
 
-    /* Responsive */
+    /* Responsive Tablet */
+    @media (max-width: 1024px) {
+        .hero-title {
+            font-size: 2.5rem;
+        }
+        
+        .programs-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        
+        .circle-3 {
+            display: none;
+        }
+    }
+
+    /* Responsive Mobile */
     @media (max-width: 768px) {
         .hero-section {
-            padding: 40px 0 30px;
+            padding: 60px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
         }
 
-        .page-title {
+        .hero-title {
             font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            margin-bottom: 24px;
+        }
+
+        .hero-features {
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .hero-decoration {
+            opacity: 0.3;
+        }
+
+        .circle-1 {
+            width: 200px;
+            height: 200px;
+        }
+
+        .circle-2 {
+            width: 150px;
+            height: 150px;
+        }
+
+        .circle-3 {
+            display: none;
+        }
+
+        .programs-section {
+            padding: 30px 0;
         }
 
         .programs-grid {
@@ -457,12 +659,96 @@
             gap: 20px;
         }
 
+        .program-image {
+            height: 180px;
+        }
+
+        .program-content {
+            padding: 15px;
+        }
+
+        .program-content h3 {
+            font-size: 1.1rem;
+        }
+
+        .program-features li {
+            font-size: 0.9rem;
+        }
+
+        .program-footer {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .program-stats {
+            width: 100%;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .btn-detail {
+            width: 100%;
+            justify-content: center;
+        }
+
         .cta-section {
             padding: 40px 20px;
+            margin-top: 40px;
         }
 
         .cta-content h2 {
             font-size: 1.75rem;
+            margin-bottom: 16px;
+        }
+
+        .cta-content p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+
+    /* Responsive Small Mobile */
+    @media (max-width: 480px) {
+        .hero-section {
+            padding: 40px 15px;
+        }
+
+        .hero-title {
+            font-size: 1.75rem;
+        }
+
+        .hero-description {
+            font-size: 0.95rem;
+        }
+
+        .feature-item {
+            font-size: 0.85rem;
+        }
+
+        .container {
+            padding: 0 15px;
+        }
+
+        .programs-grid {
+            gap: 15px;
+        }
+
+        .program-image {
+            height: 160px;
+        }
+
+        .cta-content h2 {
+            font-size: 1.5rem;
+        }
+
+        .cta-content p {
+            font-size: 0.95rem;
         }
     }
 </style>
