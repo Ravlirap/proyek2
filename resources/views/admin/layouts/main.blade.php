@@ -14,7 +14,7 @@
             margin: 0;
         }
         .main-content {
-            margin-left: 250px; /* sesuaikan dengan lebar sidebar */
+            margin-left: 400px; /* sesuaikan dengan lebar sidebar */
             padding: 30px;
         }
         .card {
@@ -32,9 +32,11 @@
         @include('admin.layouts.sidebar')
 
         {{-- Konten utama --}}
-        <div class="flex-grow-1 p-4">
+        <main style="margin-left: 250px;"> 
+        <div class="container-fluid py-4">
             @yield('content')
         </div>
+    </main>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

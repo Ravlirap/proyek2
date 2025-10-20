@@ -23,32 +23,9 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 // Rute yang Memerlukan Otentikasi
-
-Route::middleware('auth')->group(function () {
-
-    // Rute dashboard dinamis: /{role}/dashboard (misal: /admin/dashboard)
-    // Rute ini menangani semua role (admin, guru, siswa)
-    Route::get('/{role}/dashboard', function ($role) {
-
-        $userRole = Auth::user()->role;
-
-        // 1. Pengecekan Otorisasi: Pastikan role di URL sama dengan role user yang login
-        if ($userRole !== $role) {
-             // Jika tidak cocok, redirect paksa ke dashboard user yang sebenarnya
-            return redirect("/{$userRole}/dashboard");
-        }
-
-        // 2. Tampilkan View
-        if (view()->exists("{$role}.dashboard")) {
-            return view("{$role}.dashboard");
-        }
-
-        // Fallback jika view dashboard tidak ditemukan
-        return redirect('/')->with('error', 'Dashboard tidak ditemukan.');
-
-    })->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 });
-
 
 // Rute Publik
 Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');

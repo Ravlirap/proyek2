@@ -10,8 +10,8 @@ class AdminController extends Controller
     // Halaman dashboard admin
     public function dashboard()
     {
-        $jumlah = Pendaftaran::count(); // total data pendaftar
-        return view('admin.pendaftaran.dashboard', compact('jumlah'));
+        $jumlah = Pendaftaran::count();
+        return view('admin.dashboard', compact('jumlah'));
     }
 
     // Halaman daftar pendaftar
