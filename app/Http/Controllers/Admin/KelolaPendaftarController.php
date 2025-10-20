@@ -16,10 +16,13 @@ class KelolaPendaftarController extends Controller
     }
 
     /** Menampilkan semua pendaftar */
-    public function index()
+   public function index()
     {
-        $data = Pendaftaran::all();
-        return view('admin.pendaftar.index', compact('data'));
+        // Variabel yang diambil dari database
+        $data = Pendaftaran::all(); 
+        
+        // Pastikan variabel yang di compact adalah 'data'
+        return view('admin.pendaftar.index', compact('data')); 
     }
 
     /** Form edit data */

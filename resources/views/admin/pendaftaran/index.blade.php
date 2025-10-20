@@ -1,36 +1,66 @@
 @extends('admin.layouts.main')
-@section('title', 'Kelola Pendaftar')
+
+@section('title', 'Kelola Data Pendaftar')
 
 @section('content')
-<h2 class="fw-bold mb-3"><i class="bi bi-people me-2"></i>Data Pendaftar</h2>
+<div class="container-fluid py-4">
 
-@if (session('success'))
-    <div class="alert alert-success">{{ session('success') }}</div>
-@endif
+    <h2 class="fw-bold mb-4"><i class="bi bi-people me-2"></i>Kelola Data Pendaftar</h2>
 
-<table class="table table-bordered table-striped">
-    <thead class="table-primary">
-        <tr>
-            <th>No</th>
-            <th>Nama Lengkap</th>
-            <th>Email</th>
-            <th>Program</th>
-            <th>Aksi</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($data as $item)
-        <tr>
-            <td>{{ $loop->iteration }}</td>
-            <td>{{ $item->nama_lengkap }}</td>
-            <td>{{ $item->email }}</td>
-            <td>{{ $item->program }}</td>
-            <td>
-                <a href="{{ route('admin.pendaftar.edit', $item->id) }}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></a>
-                <a href="{{ route('admin.pendaftar.delete', $item->id) }}" class="btn btn-sm btn-danger" onclick="return confirm('Hapus data ini?')"><i class="bi bi-trash"></i></a>
-            </td>
-        </tr>
-        @endforeach
-    </tbody>
-</table>
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    <div class="card shadow">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead class="table-primary">
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama Lengkap</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Program</th>
+                            <th scope="col" style="width: 150px;">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{-- DIGANTI DENGAN @forelse UNTUK PENANGANAN DATA KOSONG --}}
+                        @forelse ($data as $item)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $item->nama_lengkap }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td>{{ $item->program ?? '-' }}</td> {{-- Program mungkin null --}}
+                                <td class="text-nowrap">
+                                    <a href="{{ route('admin.pendaftar.edit', $item->id) }}" class="btn btn-sm btn-warning me-1" title="Edit Data">
+                                        <i class="bi bi-pencil"></i> Edit
+                                    </a>
+                                    
+                                    {{-- PERBAIKAN: Menggunakan FORM untuk DELETE method --}}
+                                    <form action="{{ route('admin.pendaftar.destroy', $item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data {{ $item->nama_lengkap }}? Tindakan ini tidak bisa dibatalkan.');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger" title="Hapus Data">
+                                            <i class="bi bi-trash"></i> Hapus
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="5" class="text-center py-5">
+                                    <i class="bi bi-info-circle me-2"></i> Belum ada data pendaftar yang masuk.
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
