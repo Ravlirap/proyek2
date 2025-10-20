@@ -61,10 +61,10 @@
                         <p>Menyediakan layanan konsultasi dan pendampingan bagi perusahaan Jepang dalam perekrutan tenaga kerja asing.</p>
                     </div>
                 </div>
-            </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
-</div>
 
 <style>
     :root {
