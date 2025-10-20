@@ -62,7 +62,7 @@
             <li><a class="dropdown-item" href="/sarana-prasarana">Fasilitas</a></li>
             <li><a class="dropdown-item" href="/dokumentasi-kegiatan">Dokumentasi Kegiatan</a></li>
             <li class="nav-item mx-2">
-            <li><a class="dropdown-item" href="{{ route('artikel.index') }}">Artikel</a></li>
+            <li><a class="dropdown-item" href="/artikel">Artikkel</a></li>
             <li><a class="dropdown-item" href="/kontak">Kontak</a></li>
           </ul>
         </li>
