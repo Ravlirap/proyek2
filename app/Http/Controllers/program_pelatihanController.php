@@ -13,7 +13,6 @@ class program_pelatihanController extends Controller
         return view('content.program_pelatihan', compact('title', 'slug'));
     }
 
-    
     public function sswKaigo()
     {
         $title = "Program SSW Kaigo";
@@ -34,6 +33,4 @@ class program_pelatihanController extends Controller
         $slug = "magang-konstruksi";
         return view('detail_program.magang-konstruksi', compact('title', 'slug'));
     }
-    
-    
 }

@@ -12,11 +12,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        // Pengecekan sederhana sebagai pengganti middleware 'guest'
-        if (Auth::check()) {
-            return $this->redirectToDashboard();
-        }
-        return view('auth.login'); 
+        return view('auth.login');
     }
 
     public function login(Request $request)
@@ -37,29 +33,28 @@ class LoginController extends Controller
             'email' => 'Kredensial tidak valid.',
         ]);
     }
-
-    /** Logika Redirect yang Menggunakan Role sebagai Slug */
-    protected function redirectToDashboard()
-    {
-        $role = Auth::user()->role;
-        $slug = $role; // Disini $slug sama dengan $role
-
-        // Redirect menggunakan $slug di URL
-        return match ($role) {
-            'admin' => redirect("/{$slug}/dashboard"),
-            'guru' => redirect("/{$slug}/dashboard"),
-            default => redirect("/{$slug}/dashboard"), // '/siswa/dashboard'
-        };
-        // ATAU versi lebih singkat: 
-        // return redirect("/{$slug}/dashboard");
-    }
-    
     public function logout(Request $request)
     {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-
-        return redirect('/');
+        return redirect('/login');
     }
+    protected function redirectToDashboard()
+    {
+        $role = Auth::user()->role;
+
+        switch ($role) {
+            case 'admin':
+                return redirect()->route('admin.dashboard');
+            case 'guru':
+                return redirect()->route('guru.dashboard');
+            case 'siswa':
+                return redirect()->route('siswa.dashboard');
+            default:
+                Auth::logout();
+                return redirect('/login')->withErrors(['email' => 'Role tidak dikenali.']);
+        }
+    }
+
 }
