@@ -101,7 +101,8 @@
   <div class="card login-card">
     <div class="card-body">
       <h1 class="card-title text-center mb-4 fs-3">
-        <i class="bi bi-person-circle me-2"></i> LOGIN LPK SEIKOU
+        <img src="{{ asset('img/logo1.png') }}" alt="logo" width="42" height="42"
+           class="me-2 rounded-circle border-2 border-light">LOGIN LPK SEIKOU
       </h1>
 
       <form method="POST" action="{{ url('/login') }}">

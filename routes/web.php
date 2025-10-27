@@ -11,6 +11,7 @@ use App\Http\Controllers\grupPerusahaanController;
 use App\Http\Controllers\profilLembagaController;
 use App\Http\Controllers\Admin\KelolaPendaftarController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\artikelController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,6 +41,9 @@ Route::get('/detail_program/magang-konstruksi',[program_pelatihanController::cla
 Route::get('/detail_program/ssw-food-service',[program_pelatihanController::class, 'sswFoodService'])->name('detail_program.ssw-food-service');
 Route::get('/detail_program/bahasa-n5-n4',[program_pelatihanController::class, 'bahasaN5N4'])->name('detail_program.bahasa-n5-n4');
 Route::get('/detail_program/bahasa-n3-n2',[program_pelatihanController::class, 'bahasaN3N2'])->name('detail_program.bahasa-n3-n2');
+
+//artikel
+Route::get('/artikel', [artikelController::class, 'index'])->name('artikel.index');
 
 //galeri
 Route::get('/galeri', [galeriController::class, 'index'])->name('galeri');
