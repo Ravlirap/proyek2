@@ -39,8 +39,6 @@
       </div>
 
       <div class="hero-decoration">
-        <div class="circle circle-1"></div>
-        <div class="circle circle-2"></div>
         <div class="circle circle-3"></div>
       </div>
     </div>

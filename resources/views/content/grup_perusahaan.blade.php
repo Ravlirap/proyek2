@@ -36,7 +36,6 @@
           </div>
         </div>
 
-<<<<<<< HEAD
         <div class="grup-card">
           <img src="{{ asset('img/grup2.jpg') }}" alt="Seikou Indonesia" class="grup-img">
           <div class="grup-info">
@@ -81,60 +80,6 @@
   </section>
 
 </div>
-=======
-    <!-- Grup Perusahaan Section -->
-    <section class="grup-section">
-        <div class="container">
-            <div class="grup-grid">
-                <!-- Perusahaan 1 -->
-                <div class="grup-card">
-                    <img src="{{ asset('img/logo1.png') }}" alt="Seikou Japan Co., Ltd" loading="lazy">
-                    <div class="grup-info">
-                        <h4>Seikou Japan Co., Ltd</h4>
-                        <p>Perusahaan mitra utama di Jepang yang berfokus pada pelatihan dan penyaluran tenaga kerja terampil.</p>
-                    </div>
-                </div>
-
-                <!-- Perusahaan 2 -->
-                <div class="grup-card">
-                    <img src="{{ asset('img/logo1.png') }}" alt="PT Seikou Indonesia" loading="lazy">
-                    <div class="grup-info">
-                        <h4>PT Seikou Indonesia</h4>
-                        <p>Menangani pelatihan dan administrasi peserta di Indonesia sebelum keberangkatan ke Jepang.</p>
-                    </div>
-                </div>
-
-                <!-- Perusahaan 3 -->
-                <div class="grup-card">
-                    <img src="{{ asset('img/logo1.png') }}" alt="IM Japan Partner" loading="lazy">
-                    <div class="grup-info">
-                        <h4>IM Japan Partner</h4>
-                        <p>Bekerja sama dalam program magang dan pelatihan keterampilan untuk peserta Indonesia di Jepang.</p>
-                    </div>
-                </div>
-
-                <!-- Perusahaan 4 -->
-                <div class="grup-card">
-                    <img src="{{ asset('img/logo1.png') }}" alt="Seikou Training Center" loading="lazy">
-                    <div class="grup-info">
-                        <h4>Seikou Training Center</h4>
-                        <p>Pusat pelatihan resmi untuk meningkatkan kemampuan bahasa, disiplin, dan keterampilan peserta.</p>
-                    </div>
-                </div>
-
-                <!-- Perusahaan 5 -->
-                <div class="grup-card">
-                    <img src="{{ asset('img/logo1.png') }}" alt="Seikou Consulting" loading="lazy">
-                    <div class="grup-info">
-                        <h4>Seikou Consulting</h4>
-                        <p>Menyediakan layanan konsultasi dan pendampingan bagi perusahaan Jepang dalam perekrutan tenaga kerja asing.</p>
-                    </div>
-                </div>
-                    </div>
-                </div>
-            </section>
-        </div>
->>>>>>> 0cce938d8abb4becdda50567818dfd2b48eed154
 
 <style>
 :root {

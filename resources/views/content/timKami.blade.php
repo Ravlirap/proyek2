@@ -40,7 +40,7 @@
         </div>
 
         <div class="tim-card">
-          <img src="{{ asset('img/tim1.jpg') }}" alt="Instruktur Bahasa Jepang" loading="lazy">
+          <img src="{{ asset('img/tim2.jpg') }}" alt="Instruktur Bahasa Jepang" loading="lazy">
           <div class="tim-info">
             <h3>Siti Rahmawati</h3>
             <p>Instruktur Bahasa Jepang</p>
@@ -48,7 +48,7 @@
         </div>
 
         <div class="tim-card">
-          <img src="{{ asset('img/tim1.jpg') }}" alt="Koordinator Pelatihan" loading="lazy">
+          <img src="{{ asset('img/tim3.jpg') }}" alt="Koordinator Pelatihan" loading="lazy">
           <div class="tim-info">
             <h3>Budi Santoso</h3>
             <p>Koordinator Pelatihan</p>
@@ -56,7 +56,7 @@
         </div>
 
         <div class="tim-card">
-          <img src="{{ asset('img/tim1.jpg') }}" alt="Staf Administrasi" loading="lazy">
+          <img src="{{ asset('img/tim4.jpg') }}" alt="Staf Administrasi" loading="lazy">
           <div class="tim-info">
             <h3>Keiko Nakamura</h3>
             <p>Staf Administrasi</p>
@@ -64,7 +64,7 @@
         </div>
 
         <div class="tim-card">
-          <img src="{{ asset('img/tim1.jpg') }}" alt="Pembimbing Peserta" loading="lazy">
+          <img src="{{ asset('img/tim5.jpg') }}" alt="Pembimbing Peserta" loading="lazy">
           <div class="tim-info">
             <h3>Andi Pratama</h3>
             <p>Pembimbing Peserta</p>
