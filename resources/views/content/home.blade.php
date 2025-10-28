@@ -49,7 +49,7 @@
             <h2 class="section-title">Program Unggulan Kami</h2>
             <div class="features-grid">
                 <article class="feature-card">
-                    <img src="{{ asset('img/lpk.jpg') }}" alt="" class="icon">
+                    <img src="{{ asset('img/ginou-jishu.jpg') }}" alt="" class="icon">
                     <h3>Program Magang (Ginou Jisshuu)</h3>
                     <ul>
                         <li>Pelatihan 3-5 tahun</li>
@@ -69,21 +69,23 @@
                 </article>
 
                 <article class="feature-card">
-                    <img src="{{ asset('images/news.svg') }}" alt="" class="icon">
+                    <img src="{{ asset('img/lpk10.jpg') }}" alt="" class="icon">
+                    <h3>Pelatihan Fisik setiap Minggu (Shintai kunren)</h3>
+                    <ul>
+                        <li>Pelatihan fisik guna mempersiapkan untuk pekerjaan</li>
+                        <li>Lari jogging,Push up,angkat beban, dll.</li>
+                        <li>Asah kemampuan fisik siswa</li>
+                    </ul>
+                </article>
+
+                <article class="feature-card">
+                    <img src="{{ asset('img/lpk2.jpg') }}" alt="" class="icon">
                     <h3>Kelas Online & Hybrid</h3>
                     <ul>
                         <li>Fleksibilitas belajar dari manapun</li>
                         <li>Akses penuh ke LMS & materi digital</li>
                         <li>Sesi tatap muka opsional (Hybrid)</li>
                     </ul>
-                </article>
-
-                <article class="feature-card card-contact">
-                    <img src="{{ asset('images/contact.svg') }}" alt="" class="icon">
-                    <h3>Kontak & Lokasi</h3>
-                    <p>Jl. Contoh No. 123, Kota Anda</p>
-                    <p>info@lpkseikou.com • 0812-3456-7890</p>
-                    <a href="https://wa.me/6281234567890" class="feature-cta" target="_blank">Chat WhatsApp Langsung →</a>
                 </article>
             </div>
         </section>
