@@ -7,6 +7,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\galeriController;
 use App\Http\Controllers\visiMisiController;
 use App\Http\Controllers\timKamiController;
+use App\Http\Controllers\kontakController;
+use App\Http\Controllers\fasilitasController;
 use App\Http\Controllers\grupPerusahaanController;
 use App\Http\Controllers\profilLembagaController;
 use App\Http\Controllers\Admin\KelolaPendaftarController;
@@ -51,6 +53,8 @@ Route::get('/visiMisi', [visiMisiController::class, 'index'])->name('visiMisi');
 Route::get('/timKami', [timKamiController::class, 'index'])->name('timKami');
 Route::get('/grup_perusahaan', [grupPerusahaanController::class, 'index'])->name('grup_perusahaan');
 Route::get('/profil_lembaga', [profilLembagaController::class, 'index'])->name('profil_lembaga');
+Route::get('/kontak', [kontakController::class, 'index'])->name('kontak');
+Route::get('/fasilitas', [fasilitasController::class, 'index'])->name('fasilitas');
 
 //admin routes
 Route::middleware(['auth'])->prefix('admin')->group(function () {

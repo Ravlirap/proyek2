@@ -52,17 +52,17 @@
         <!-- INFORMASI -->
         <li class="nav-item dropdown mx-2">
           @php
-            $informasiSlugs = ['sarana-prasarana', 'dokumentasi-kegiatan', 'galeri', 'artikel', 'kontak'];
+            $informasiSlugs = ['fasilitas', 'dokumentasi-kegiatan', 'galeri', 'artikel', 'kontak'];
           @endphp
           <a class="nav-link dropdown-toggle {{ in_array($slug, $informasiSlugs) ? 'active text-primary fw-semibold' : 'text-light' }}"
              href="#" id="informasiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Informasi
           </a>
           <ul class="dropdown-menu" aria-labelledby="informasiDropdown">
-            <li><a class="dropdown-item" href="/sarana-prasarana">Fasilitas</a></li>
-            <li class="nav-item mx-2">
-            <li><a class="nav-link text-dark" {{ ($slug === 'artikel') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/artikel">Artikel</a>
+            <li><a class="dropdown-item" href="/fasilitas">Fasilitas</a></li>
             <li><a class="dropdown-item" href="/kontak">Kontak</a></li>
+            <li><a class="nav-link text-dark" {{ ($slug === 'artikel') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/artikel">Artikel</a>
+            <li class="nav-item mx-2">
           </ul>
         </li>
 
