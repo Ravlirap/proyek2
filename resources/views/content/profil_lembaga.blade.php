@@ -56,31 +56,30 @@
     </div>
   </section>
 
-  <!-- Fasilitas Section -->
-  <section class="fasilitas-section">
+  <!-- Penghargaan Section -->
+  <section class="penghargaan-section">
     <div class="container">
-      <h2 class="section-title"><i class="fas fa-building"></i> Fasilitas Kami</h2>
-      <div class="fasilitas-grid">
-        <div class="fasilitas-card">
-          <i class="fas fa-chalkboard-teacher fasilitas-icon"></i>
-          <h3>Kelas Interaktif</h3>
-          <p>Dilengkapi dengan multimedia dan metode pengajaran modern.</p>
+      <h2 class="section-title"><i class="fas fa-trophy"></i> Penghargaan & Prestasi</h2>
+      <div class="penghargaan-grid">
+
+        <div class="penghargaan-card">
+          <img src="{{ asset('img/penghargaan1.jpg') }}" alt="Penghargaan Kualitas Pelatihan Nasional" class="penghargaan-img">
+          <h3>Penghargaan Kualitas Pelatihan Nasional</h3>
+          <p>LPK Seikou meraih penghargaan dari Kementerian Ketenagakerjaan atas standar pelatihan dan sertifikasi tenaga kerja terbaik tingkat nasional pada tahun 2024.</p>
         </div>
-        <div class="fasilitas-card">
-          <i class="fas fa-language fasilitas-icon"></i>
-          <h3>Lab Bahasa Jepang</h3>
-          <p>Ruang praktik khusus untuk meningkatkan kemampuan komunikasi.</p>
+
+        <div class="penghargaan-card">
+          <img src="{{ asset('img/penghargaan2.jpg') }}" alt="Kerjasama Internasional Terbaik" class="penghargaan-img">
+          <h3>Kerjasama Internasional Terbaik</h3>
+          <p>Diberikan oleh Japan International Cooperation Agency (JICA) atas kontribusi dalam mempererat kerja sama Indonesia–Jepang dalam bidang pendidikan vokasi.</p>
         </div>
-        <div class="fasilitas-card">
-          <i class="fas fa-dumbbell fasilitas-icon"></i>
-          <h3>Ruang Pelatihan Fisik</h3>
-          <p>Mendukung kebugaran dan ketahanan peserta pelatihan.</p>
+
+        <div class="penghargaan-card">
+          <img src="{{ asset('img/penghargaan3.jpg') }}" alt="Lembaga Inovatif 2025" class="penghargaan-img">
+          <h3>Lembaga Inovatif 2025</h3>
+          <p>Penghargaan dari Pemerintah Kota Surabaya atas inovasi dalam pembelajaran berbasis teknologi digital di lingkungan lembaga pelatihan kerja.</p>
         </div>
-        <div class="fasilitas-card">
-          <i class="fas fa-bed fasilitas-icon"></i>
-          <h3>Asrama Nyaman</h3>
-          <p>Lingkungan yang kondusif untuk belajar dan beristirahat.</p>
-        </div>
+
       </div>
     </div>
   </section>
@@ -238,6 +237,97 @@
   .hero-title { font-size: 2.2rem; }
   .tentang-content { flex-direction: column; text-align: center; }
   .tentang-img { width: 100%; max-width: 350px; }
+}
+
+.penghargaan-section {
+  background: var(--light-bg); /* gunakan warna lembut seperti bagian legalitas */
+  padding: 80px 20px;
+}
+
+.penghargaan-section .section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 40px;
+}
+
+.penghargaan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.penghargaan-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.penghargaan-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.penghargaan-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 3px solid var(--primary);
+}
+
+.penghargaan-card h3 {
+  color: var(--dark);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 20px 15px 10px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.penghargaan-card p {
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0 20px 25px;
+  text-align: justify;
+}
+
+/* Efek hover tambahan */
+.penghargaan-card:hover h3 {
+  color: var(--primary);
+  transition: color 0.3s ease;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .penghargaan-section {
+    padding: 60px 15px;
+  }
+
+  .penghargaan-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .penghargaan-card p {
+    font-size: 0.9rem;
+  }
+
+  .penghargaan-img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .penghargaan-grid {
+    gap: 20px;
+  }
+
+  .penghargaan-card {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
 }
 </style>
 @endsection

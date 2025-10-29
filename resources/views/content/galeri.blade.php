@@ -45,27 +45,62 @@
   </section>
 
   <!-- Gallery Grid Section -->
-  <section class="gallery-section">
-    <div class="container">
-      <h2 class="gallery-title">Dokumentasi <span class="highlight">Kegiatan</span></h2>
+<section class="gallery-section">
+  <div class="container">
+    <h2 class="gallery-title">Dokumentasi <span class="highlight">Kegiatan</span></h2>
 
-      <div class="gallery-grid">
-        @for ($i = 1; $i <= 6; $i++)
-          <div class="gallery-item"
-               data-title="Kegiatan Pelatihan {{ $i }}"
-               data-date="19 Oktober 2025"
-               data-description="Deskripsi singkat mengenai kegiatan pelatihan ke-{{ $i }} yang dilakukan di LPK Seikou. Peserta mengikuti sesi pelatihan bahasa dan budaya Jepang.">
+    @php
+      $galeri = [
+        [
+          'gambar' => 'img/galeri6.jpg',
+          'judul' => 'Pelatihan Bahasa Jepang Dasar',
+          'tanggal' => '10 Oktober 2025',
+          'deskripsi' => 'Peserta mempelajari dasar percakapan dan tata bahasa Jepang.'
+        ],
+        [
+          'gambar' => 'img/galeri5.jpg',
+          'judul' => 'Kunjungan Budaya Jepang',
+          'tanggal' => '12 Oktober 2025',
+          'deskripsi' => 'Kegiatan kunjungan budaya dan praktik etika kerja Jepang.'
+        ],
+        [
+          'gambar' => 'img/galeri6.jpg',
+          'judul' => 'Pelatihan Bahasa Tingkat Lanjut',
+          'tanggal' => '16 Oktober 2025',
+          'deskripsi' => 'Sesi pelatihan lanjutan untuk meningkatkan kemampuan komunikasi.'
+        ],
+        [
+          'gambar' => 'img/galeri4.jpg',
+          'judul' => 'Ujian Sertifikasi JLPT',
+          'tanggal' => '18 Oktober 2025',
+          'deskripsi' => 'Peserta mengikuti simulasi ujian JLPT untuk persiapan keberangkatan.'
+        ],
+        [
+          'gambar' => 'img/galeri1.jpg',
+          'judul' => 'Pelepasan Peserta ke Jepang',
+          'tanggal' => '19 Oktober 2025',
+          'deskripsi' => 'Acara pelepasan peserta yang telah lolos seleksi ke Jepang.'
+        ],
+      ];
+    @endphp
 
-            <img src="{{ asset('img/galeri' . $i . '.jpg') }}" alt="Galeri LPK Seikou {{ $i }}" loading="lazy">
-            <div class="gallery-overlay">
-              <span class="gallery-caption">Kegiatan {{ $i }}</span>
-              <button class="detail-btn">Detail Foto</button>
-            </div>
+    <div class="gallery-grid">
+      @foreach ($galeri as $item)
+        <div class="gallery-item"
+             data-title="{{ $item['judul'] }}"
+             data-date="{{ $item['tanggal'] }}"
+             data-description="{{ $item['deskripsi'] }}">
+          <img src="{{ asset($item['gambar']) }}" alt="{{ $item['judul'] }}" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-caption">{{ $item['judul'] }}</span>
+            <button class="detail-btn">Detail Foto</button>
           </div>
-        @endfor
-      </div>
+        </div>
+      @endforeach
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Modal Detail Foto -->
   <div id="photoModal" class="modal">
