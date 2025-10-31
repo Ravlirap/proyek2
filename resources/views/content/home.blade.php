@@ -106,10 +106,18 @@
                         <p>“Kelas online-nya sangat fleksibel dan materi yang diberikan lengkap, cocok untuk saya yang harus bekerja sambil belajar.”</p>
                         <cite>- Budi, Peserta Online</cite>
                     </blockquote>
-                </div>
-                <div class="slider-controls" aria-hidden="false">
-                    <button class="prev" aria-label="Sebelumnya">&larr;</button>
-                    <button class="next" aria-label="Selanjutnya">&rarr;</button>
+                    <blockquote class="slide">
+                        <p>“Kelas online-nya sangat fleksibel dan materi yang diberikan lengkap, cocok untuk saya yang harus bekerja sambil belajar.”</p>
+                        <cite>- Budi, Peserta Online</cite>
+                    </blockquote>
+                    <blockquote class="slide">
+                        <p>“Kelas online-nya sangat fleksibel dan materi yang diberikan lengkap, cocok untuk saya yang harus bekerja sambil belajar.”</p>
+                        <cite>- Budi, Peserta Online</cite>
+                    </blockquote>
+                    <blockquote class="slide">
+                        <p>“Kelas online-nya sangat fleksibel dan materi yang diberikan lengkap, cocok untuk saya yang harus bekerja sambil belajar.”</p>
+                        <cite>- Budi, Peserta Online</cite>
+                    </blockquote>
                 </div>
             </div>
         </section>

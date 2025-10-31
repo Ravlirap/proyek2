@@ -365,19 +365,18 @@
                                 <li>Lulusan SMA/SMK sederajat</li>
                                 <li>Membawa dokumen asli saat verifikasi</li>
                             </ul>
-                        </div>
+                        </div>/
                         <div class="mb-3">
                             <h6><i class="fas fa-phone me-2 text-primary"></i>Kontak</h6>
-                            <p class="small mb-0">(021) 1234-5678<br>info@lpk-xyz.ac.id</p>
+                            <p class="small mb-0">(021) 1234-5678<br>info@lpk-seikou.ac.id</p>
                         </div>
                     </div>
                 </div>
-                
                 <div class="card shadow-sm border-0">
                     <div class="card-body text-center py-4">
                         <i class="fas fa-users fa-2x text-primary mb-3"></i>
                         <h5>Bergabung Dengan Kami</h5>
-                        <p class="small">Sudah lebih dari 1,000 alumni berhasil mengembangkan karir mereka setelah lulus dari LPK XYZ</p>
+                        <p class="small">Sudah lebih dari 1,000 alumni berhasil mengembangkan karir mereka setelah lulus dari LPK Seikou</p>
                     </div>
                 </div>
             </div>
