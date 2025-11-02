@@ -11,7 +11,7 @@ use App\Http\Controllers\kontakController;
 use App\Http\Controllers\fasilitasController;
 use App\Http\Controllers\grupPerusahaanController;
 use App\Http\Controllers\profilLembagaController;
-use App\Http\Controllers\Admin\KelolaPendaftarController;
+use App\Http\Controllers\KelolaPendaftarController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\artikelController;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Auth;
 
 // Rute Otentikasi (Login, Logout)
 // Menggunakan LoginController yang telah dimodifikasi
-
+ 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
@@ -60,11 +60,12 @@ Route::get('/fasilitas', [fasilitasController::class, 'index'])->name('fasilitas
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
-    // Kelola pendaftar
-    Route::get('/pendaftar', [AdminController::class, 'index'])->name('admin.pendaftar.index');
-    Route::get('/pendaftar/edit/{id}', [AdminController::class, 'edit'])->name('admin.pendaftar.edit');
-    Route::post('/pendaftar/update/{id}', [AdminController::class, 'update'])->name('admin.pendaftar.update');
-    Route::delete('/pendaftar/delete/{id}', [AdminController::class, 'destroy'])->name('admin.pendaftar.destroy');
+    // Kelola pendaftar_
+    Route::get('/kelola_pendaftar', [KelolaPendaftarController::class, 'index'])->name('admin.pendaftar.index');
+    Route::get('/pendaftaran/show/{id}', [PendaftaranController::class, 'show'])->name('admin.pendaftar.show');
+    Route::get('/pendaftaran/edit/{id}', [PendaftaranController::class, 'edit'])->name('admin.pendaftar.edit');
+    Route::post('/pendaftaran/update/{id}', [PendaftaranController::class, 'update'])->name('admin.pendaftar.update');
+    Route::get('/pendaftaran/destroy/{id}', [PendaftaranController::class, 'destroy'])->name('admin.pendaftar.destroy');
 });
 
 

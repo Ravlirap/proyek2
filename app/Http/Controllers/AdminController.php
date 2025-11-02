@@ -25,7 +25,8 @@ class AdminController extends Controller
     public function edit($id)
     {
         $pendaftar = Pendaftaran::findOrFail($id);
-        return view('admin.pendaftaran.edit', compact('pendaftar'));
+        $slug = 'dashboard';
+        return view('admin.pendaftaran.edit', compact('pendaftar, slug'));
     }
 
     // Simpan hasil edit
