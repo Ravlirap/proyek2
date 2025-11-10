@@ -62,12 +62,11 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
     // Kelola pendaftar_
     Route::get('/kelola_pendaftar', [KelolaPendaftarController::class, 'index'])->name('admin.pendaftar.index');
-    Route::get('/pendaftaran/show/{id}', [PendaftaranController::class, 'show'])->name('admin.pendaftar.show');
-    Route::get('/pendaftaran/edit/{id}', [PendaftaranController::class, 'edit'])->name('admin.pendaftar.edit');
-    Route::post('/pendaftaran/update/{id}', [PendaftaranController::class, 'update'])->name('admin.pendaftar.update');
-    Route::get('/pendaftaran/destroy/{id}', [PendaftaranController::class, 'destroy'])->name('admin.pendaftar.destroy');
+    Route::get('/pendaftaran/show/{id}', [KelolaPendaftarController::class, 'show'])->name('admin.pendaftar.show');
+    Route::get('/pendaftaran/edit/{id}', [KelolaPendaftarController::class, 'edit'])->name('admin.pendaftar.edit');
+    Route::post('/pendaftaran/update/{id}', [KelolaPendaftarController::class, 'update'])->name('admin.pendaftar.update');
+    Route::get('/pendaftaran/destroy/{id}', [KelolaPendaftarController::class, 'destroy'])->name('admin.pendaftar.destroy');
 });
-
 
 Route::get('/', function () {
     $title = "WebSaya.Com";

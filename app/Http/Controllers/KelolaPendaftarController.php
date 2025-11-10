@@ -41,8 +41,8 @@ class KelolaPendaftarController extends Controller
     {
         $title = 'Detail Pendaftar';
         $slug = 'pendaftaran';
-        $pendaftaran = Pendaftaran::findOrFail($id);
-        return view('admin.kelola_pendaftar.show', compact('title', 'slug', 'pendaftaran'));
+        $dataPendaftaran = Pendaftaran::findOrFail($id);
+        return view('admin.kelola_pendaftar.show', compact('title', 'slug', 'dataPendaftaran'));
     }
 
     /**
