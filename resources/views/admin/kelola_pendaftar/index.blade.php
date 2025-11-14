@@ -51,13 +51,17 @@
                             {{ $pendaftaran->email }}
                         </td>
 
-                        <td class="text-center">
-                            <span class="badge rounded-pill px-3 py-2
-                                @if ($pendaftaran->status == 'Diterima') bg-success
-                                @elseif ($pendaftaran->status == 'Ditolak') bg-danger
-                                @else bg-warning text-dark @endif">
-                                {{ $pendaftaran->status }}
-                            </span>
+                        <td>
+                        <form action="{{ route('admin.pendaftar.updateStatus', $pendaftaran->id) }}" method="POST" class="d-flex align-items-center gap-2 mb-0">
+                            @csrf
+                            @method('PUT')
+                            <select name="status" class="form-select form-select-sm">
+                                <option value="proses" {{ $pendaftaran->status == 'proses' ? 'selected' : '' }}>Proses</option>
+                                <option value="cek_kesehatan" {{ $pendaftaran->status == 'cek_kesehatan' ? 'selected' : '' }}>Cek Kesehatan</option>
+                                <option value="lulus" {{ $pendaftaran->status == 'lulus' ? 'selected' : '' }}>Lulus</option>
+                                <option value="tidak lulus" {{ $pendaftaran->status == 'tidak lulus' ? 'selected' : '' }}>Tidak Lulus</option>
+                            </select>
+                        </form>
                         </td>
 
                         <td class="text-center">
@@ -74,13 +78,21 @@
                                     <i class="fas fa-eye"></i>
                                 </a>
 
-                                <a href="{{ route('admin.pendaftar.update', $pendaftaran->id) }}"
-                                   class="btn btn-icon btn-sm btn-light-primary"
-                                   data-bs-toggle="tooltip"
-                                   data-bs-placement="top"
-                                   title="Edit">
-                                    <i class="fas fa-pen"></i>
-                                </a>
+                        <form action="{{ route('admin.pendaftar.updateStatus', $pendaftaran->id) }}" 
+                            method="POST" 
+                            style="display:inline" 
+                            class="edit-status-form">
+                            @csrf
+                            @method('PUT')
+                            <button type="button" 
+                                    class="btn btn-icon btn-sm btn-light-primary btn-edit-status" 
+                                    data-bs-toggle="tooltip" 
+                                    data-bs-placement="top" 
+                                    title="Edit">
+                                <i class="fas fa-pen"></i>
+                            </button>
+                        </form>
+
 
                                 <form action="{{ route('admin.pendaftar.destroy', $pendaftaran->id) }}"
                                       method="POST"
@@ -180,6 +192,71 @@
                 if (confirm('Yakin ingin menghapus data ini?')) {
                     this.closest('form').submit();
                 }
+            });
+        });
+
+        // Handle edit (submit selected status) — copy select value into the edit form then submit
+        document.querySelectorAll('.btn-edit-status').forEach(button => {
+            button.addEventListener('click', function() {
+                // find the row containing this button
+                const row = this.closest('tr');
+                if (!row) return;
+
+                // find the select[name="status"] within the same row
+                const statusSelect = row.querySelector('select[name="status"]');
+                if (!statusSelect) {
+                    // nothing to submit
+                    this.closest('form').submit();
+                    return;
+                }
+
+                const form = this.closest('form');
+                if (!form) return;
+
+                // remove existing hidden input if present
+                const existing = form.querySelector('input[name="status"]');
+                if (existing) existing.remove();
+
+                // create hidden input with the select value
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'status';
+                input.value = statusSelect.value;
+                form.appendChild(input);
+
+                form.submit();
+            });
+        });
+        // Handle edit (submit selected status) — copy select value into the edit form then submit
+        document.querySelectorAll('.btn-edit-status').forEach(button => {
+            button.addEventListener('click', function() {
+                // find the row containing this button
+                const row = this.closest('tr');
+                if (!row) return;
+
+                // find the select[name="status"] within the same row
+                const statusSelect = row.querySelector('select[name="status"]');
+                if (!statusSelect) {
+                    // nothing to submit
+                    this.closest('form').submit();
+                    return;
+                }
+
+                const form = this.closest('form');
+                if (!form) return;
+
+                // remove existing hidden input if present
+                const existing = form.querySelector('input[name="status"]');
+                if (existing) existing.remove();
+
+                // create hidden input with the select value
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'status';
+                input.value = statusSelect.value;
+                form.appendChild(input);
+
+                form.submit();
             });
         });
     });

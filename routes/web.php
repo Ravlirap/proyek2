@@ -64,8 +64,9 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/kelola_pendaftar', [KelolaPendaftarController::class, 'index'])->name('admin.pendaftar.index');
     Route::get('/pendaftaran/show/{id}', [KelolaPendaftarController::class, 'show'])->name('admin.pendaftar.show');
     Route::get('/pendaftaran/edit/{id}', [KelolaPendaftarController::class, 'edit'])->name('admin.pendaftar.edit');
-    Route::post('/pendaftaran/update/{id}', [KelolaPendaftarController::class, 'update'])->name('admin.pendaftar.update');
-    Route::get('/pendaftaran/destroy/{id}', [KelolaPendaftarController::class, 'destroy'])->name('admin.pendaftar.destroy');
+    Route::put('/pendaftar/{id}', [KelolaPendaftarController::class, 'updateStatus'])->name('admin.pendaftar.updateStatus');
+    // Use DELETE method for destroy to match form method spoofing (@method('DELETE'))
+    Route::delete('/pendaftaran/destroy/{id}', [KelolaPendaftarController::class, 'destroy'])->name('admin.pendaftar.destroy');
 });
 
 Route::get('/', function () {

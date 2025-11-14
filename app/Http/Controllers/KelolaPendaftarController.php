@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pendaftaran;
 use Illuminate\Http\Request;
+use OpenSpout\Common\Entity\Cell\StringCell;
 
 class KelolaPendaftarController extends Controller
 {
@@ -60,13 +61,11 @@ class KelolaPendaftarController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        $id = $request->id;
-        Pendaftaran::where('id', $id)->update([
-            'status' => $request->status,
-        ]);
-        return redirect()->route('admin.pendaftar.index')->with('success', 'Data pendaftar berhasil diperbarui.');
+    public function updateStatus(Request $request,string $id)
+    {  
+        $request->validate(['status' => 'required|in:proses,cek_kesehatan,lulus,tidak lulus',]);
+        Pendaftaran::where('id', $id)->update(['status' => $request->status,]);
+        return redirect()->route('admin.pendaftar.index')->with('success', 'Status pendaftar berhasil diperbarui.');
     }
 
     /**

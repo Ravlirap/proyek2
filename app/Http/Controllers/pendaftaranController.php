@@ -35,25 +35,26 @@ class pendaftaranController extends Controller
         ]);
         
         $uploadFields = ['foto', 'ijazah', 'ktp', 'kk'];
+        $folderMap = [
+            'foto' => 'img/data_pengguna/foto',
+            'ijazah' => 'img/data_pengguna/ijazah',
+            'ktp' => 'img/data_pengguna/ktp',
+            'kk' => 'img/data_pengguna/kk',
+        ];
+
         foreach ($uploadFields as $field) {
             if ($request->hasFile($field)) {
-                $validatedData[$field] = $request->file($field)->store('uploads', 'public');
+                $file = $request->file($field);
+                $filename = time().'_'.$file->getClientOriginalName();
+                $file->move(public_path($folderMap[$field]), $filename);
+                $validatedData[$field] = $filename;
             }
         }
 
-        // Simpan data pendaftaran ke database (asumsikan ada model Pendaftaran)
+        // Simpan data pendaftaran ke database
         Pendaftaran::create($validatedData);
 
         // Redirect atau tampilkan pesan sukses
         return redirect()->back()->with('success', 'Pendaftaran berhasil dikirim!');
-    }
-
-    public function show($slug)
-    {
-        // For now, just return to a generic detail view
-        // In the future, you can fetch registration details from a database
-        return view('content.pendaftaran_detail', [
-            'slug' => $slug
-        ]);
-    }
-}
+            }
+        }
