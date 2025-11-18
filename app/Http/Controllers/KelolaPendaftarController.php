@@ -61,12 +61,25 @@ class KelolaPendaftarController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function updateStatus(Request $request,string $id)
-    {  
-        $request->validate(['status' => 'required|in:proses,cek_kesehatan,lulus,tidak lulus',]);
-        Pendaftaran::where('id', $id)->update(['status' => $request->status,]);
-        return redirect()->route('admin.pendaftar.index')->with('success', 'Status pendaftar berhasil diperbarui.');
+    public function updateStatus(Request $request, string $id)
+    {
+        // Validasi status
+        $request->validate([
+            'status' => 'required|in:proses,cek kesehatan,lulus,tidak lulus',
+        ]);
+
+        // Ambil data berdasarkan ID
+        $pendaftar = Pendaftaran::findOrFail($id);
+
+        // Update status
+        $pendaftar->status = $request->status;
+        $pendaftar->save();
+
+        // Redirect berhasil
+        return redirect()->route('admin.pendaftar.index')
+                        ->with('success', 'Status pendaftar berhasil diperbarui.');
     }
+
 
     /**
      * Remove the specified resource from storage.

@@ -60,14 +60,17 @@ Route::get('/fasilitas', [fasilitasController::class, 'index'])->name('fasilitas
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
-    // Kelola pendaftar_
     Route::get('/kelola_pendaftar', [KelolaPendaftarController::class, 'index'])->name('admin.pendaftar.index');
     Route::get('/pendaftaran/show/{id}', [KelolaPendaftarController::class, 'show'])->name('admin.pendaftar.show');
-    Route::get('/pendaftaran/edit/{id}', [KelolaPendaftarController::class, 'edit'])->name('admin.pendaftar.edit');
-    Route::put('/pendaftar/{id}', [KelolaPendaftarController::class, 'updateStatus'])->name('admin.pendaftar.updateStatus');
-    // Use DELETE method for destroy to match form method spoofing (@method('DELETE'))
-    Route::delete('/pendaftaran/destroy/{id}', [KelolaPendaftarController::class, 'destroy'])->name('admin.pendaftar.destroy');
+
+    // Update status
+    Route::put('/pendaftar/{id}', [KelolaPendaftarController::class, 'updateStatus'])
+        ->name('admin.pendaftar.updateStatus');
+
+    Route::delete('/pendaftaran/destroy/{id}', [KelolaPendaftarController::class, 'destroy'])
+        ->name('admin.pendaftar.destroy');
 });
+
 
 Route::get('/', function () {
     $title = "WebSaya.Com";
