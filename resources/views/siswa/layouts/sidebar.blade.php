@@ -2,11 +2,10 @@
     <h2 class="text-xl font-bold mb-6">Menu Siswa</h2>
 
     <nav class="space-y-3">
-
         <a href="/siswa/dashboard" class="block p-2 rounded hover:bg-blue-100">Dashboard</a>
-        <a href="/siswa/konten/jadwal" class="block p-2 rounded hover:bg-blue-100">Jadwal Pelatihan</a>
-        <a href="/siswa/konten/materi" class="block p-2 rounded hover:bg-blue-100">Materi Pembelajaran</a>
-        <a href="/siswa/profil_siswa/dashboard" class="block p-2 rounded hover:bg-blue-100">Profil</a>
+        <a href="/siswa/jadwal" class="block p-2 rounded hover:bg-blue-100">Jadwal Pelatihan</a>
+        <a href="/siswa/materi" class="block p-2 rounded hover:bg-blue-100">Materi Pembelajaran</a>
+        <a href="/siswa/profil" class="block p-2 rounded hover:bg-blue-100">Profil</a>
 
         <form action="{{ route('logout') }}" method="POST">
             @csrf
