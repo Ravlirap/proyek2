@@ -2,31 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Materi;
+use App\Models\jadwal;
 
 class SiswaController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('role:siswa');
-    }
-
     public function dashboard()
     {
-        $user = Auth::user(); 
-
+        $user = Auth::user();
         return view('siswa.dashboard', compact('user'));
     }
 
     public function jadwal()
     {
-        return view('siswa.konten.jadwal');
+        $jadwal = Jadwal::orderBy('tanggal', 'asc')->get();
+        return view('siswa.konten.jadwal', compact('jadwal'));
     }
 
     public function materi()
     {
-        return view('siswa.konten.materi');
+        $materi = Materi::all();
+        return view('siswa.konten.materi', compact('materi'));
     }
+
+    public function profil(){
+        $user = Auth::user();
+        return view('siswa.profil_siswa.index', compact('user'));
+    } 
 }

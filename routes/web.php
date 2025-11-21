@@ -69,8 +69,9 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 //siswa routes
 Route::middleware(['auth'])->prefix('siswa')->group(function () {
     Route::get('/dashboard', [siswaController::class, 'dashboard'])->name('siswa.dashboard');
-    Route::get('/jadwal', [siswaController::class, 'jadwal'])->name('siswa.jadwal');
-    Route::get('/materi', [siswaController::class, 'materi'])->name('siswa.materi');
+    Route::get('/jadwal', [siswaController::class, 'jadwal'])->name('siswa.konten.jadwal');
+    Route::get('/materi', [siswaController::class, 'materi'])->name('siswa.konten.materi');
+    Route::get('/profil', [siswaController::class, 'profil'])->name('siswa.profil_siswa.dashboard');
 });
 
 //guru routes

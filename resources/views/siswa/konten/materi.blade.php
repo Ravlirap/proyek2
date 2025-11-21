@@ -1,17 +1,33 @@
 @extends('siswa.layouts.main')
 
 @section('content')
-<div class="p-4">
+<div class="p-6">
+
     <h1 class="text-2xl font-bold mb-4">Materi Pembelajaran</h1>
 
-    <div class="bg-white shadow rounded p-4">
-        <p>Berikut adalah daftar materi yang bisa kamu akses:</p>
+    @if ($materi->count() == 0)
+        <p class="text-gray-600">Belum ada materi.</p>
+    @endif
 
-        <ul class="mt-3 list-disc pl-5">
-            <li><a href="#" class="text-blue-600">Materi Bahasa Inggris - Module 1</a></li>
-            <li><a href="#" class="text-blue-600">Materi Komputer - Pengenalan Hardware</a></li>
-            <li><a href="#" class="text-blue-600">Soft Skill - Cara Berkomunikasi</a></li>
-        </ul>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        @foreach ($materi as $m)
+        <div class="bg-white p-4 rounded shadow">
+            <h2 class="text-lg font-bold">{{ $m->judul }}</h2>
+            <p class="text-sm text-gray-600 mb-2">{{ $m->kategori }}</p>
+            <p class="mb-3">{{ $m->deskripsi }}</p>
+
+            @if ($m->file_materi)
+                <a href="{{ asset('storage/materi/' . $m->file_materi) }}"
+                   class="text-blue-600 hover:underline"
+                   target="_blank">
+                    Download Materi
+                </a>
+            @else
+                <p class="text-gray-500 text-sm">Tidak ada file.</p>
+            @endif
+        </div>
+        @endforeach
     </div>
+
 </div>
 @endsection
