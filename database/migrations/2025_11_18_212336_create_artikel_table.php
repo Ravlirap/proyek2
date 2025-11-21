@@ -10,7 +10,7 @@ return new class extends Migration
      */
     public function up(): void
 {
-    Schema::create('artikels', function (Blueprint $table) {
+    Schema::create('artikel', function (Blueprint $table) {
        $table->id();
         $table->string('judul');
         $table->text('isi');
