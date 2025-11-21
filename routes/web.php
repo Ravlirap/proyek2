@@ -60,16 +60,10 @@ Route::get('/fasilitas', [fasilitasController::class, 'index'])->name('fasilitas
 //admin routes
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-
     Route::get('/kelola_pendaftar', [KelolaPendaftarController::class, 'index'])->name('admin.pendaftar.index');
     Route::get('/pendaftaran/show/{id}', [KelolaPendaftarController::class, 'show'])->name('admin.pendaftar.show');
-
-    // Update status
-    Route::put('/pendaftar/{id}', [KelolaPendaftarController::class, 'updateStatus'])
-        ->name('admin.pendaftar.updateStatus');
-
-    Route::delete('/pendaftaran/destroy/{id}', [KelolaPendaftarController::class, 'destroy'])
-        ->name('admin.pendaftar.destroy');
+    Route::put('/pendaftar/{id}', [KelolaPendaftarController::class, 'updateStatus'])->name('admin.pendaftar.updateStatus');
+    Route::delete('/pendaftaran/destroy/{id}', [KelolaPendaftarController::class, 'destroy'])->name('admin.pendaftar.destroy');
 });
 
 //siswa routes
