@@ -14,6 +14,7 @@ use App\Http\Controllers\profilLembagaController;
 use App\Http\Controllers\KelolaPendaftarController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\artikelController;
+use App\Http\Controllers\siswaController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -65,6 +66,17 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::delete('/pendaftaran/destroy/{id}', [KelolaPendaftarController::class, 'destroy'])->name('admin.pendaftar.destroy');
 });
 
+//siswa routes
+Route::middleware(['auth'])->prefix('siswa')->group(function () {
+    Route::get('/dashboard', [siswaController::class, 'dashboard'])->name('siswa.dashboard');
+    Route::get('/jadwal', [siswaController::class, 'jadwal'])->name('siswa.jadwal');
+    Route::get('/materi', [siswaController::class, 'materi'])->name('siswa.materi');
+});
+
+//guru routes
+Route::middleware(['auth'])->prefix('guru')->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('guru.dashboard');
+});
 
 Route::get('/', function () {
     $title = "WebSaya.Com";

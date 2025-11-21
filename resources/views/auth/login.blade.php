@@ -7,167 +7,414 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     /* === Global Styles === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background: linear-gradient(135deg, #007bff 0%, #6610f2 100%);
+      background: #003087;
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      margin: 0;
       font-family: "Poppins", sans-serif;
+      overflow: hidden;
+      background: url('img/lpk1.jpg') no-repeat center center fixed;
     }
 
-    /* === Login Card === */
-    .login-card {
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 1rem;
-      box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.25);
-      padding: 2.5rem;
-      width: 100%;
-      max-width: 420px;
-      animation: fadeIn 0.8s ease-in-out;
+    /* Background Pattern */
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 48, 135, 0.75); /* Overlay biru transparan */
+      z-index: 0;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Floating shapes */
+    .shape {
+      position: absolute;
+      opacity: 0.05;
+      pointer-events: none;
     }
 
-    /* === Title === */
-    .card-title {
+    .shape-1 {
+      width: 300px;
+      height: 300px;
+      background: white;
+      border-radius: 50%;
+      top: -100px;
+      left: -100px;
+      animation: float 20s infinite ease-in-out;
+    }
+
+    .shape-2 {
+      width: 200px;
+      height: 200px;
+      background: white;
+      border-radius: 50%;
+      bottom: -50px;
+      right: -50px;
+      animation: float 15s infinite ease-in-out reverse;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(30px, -30px) rotate(120deg); }
+      66% { transform: translate(-20px, 20px) rotate(240deg); }
+    }
+
+    /* === Container === */
+    .login-container {
+      position: relative;
+      z-index: 1;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      width: 90%;
+      max-width: 900px;
+      display: flex;
+      min-height: 500px;
+    }
+
+    /* === Left Side - Logo === */
+    .logo-section {
+      flex: 1;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem;
+      border-right: 1px solid #f0f0f0;
+    }
+
+    .logo-wrapper {
+      text-align: center;
+    }
+
+    .logo-wrapper img {
+      width: 280px;
+      height: auto;
+      max-width: 100%;
+      animation: fadeInScale 0.8s ease-out;
+    }
+
+    @keyframes fadeInScale {
+      from { 
+        opacity: 0; 
+        transform: scale(0.9);
+      }
+      to { 
+        opacity: 1; 
+        transform: scale(1);
+      }
+    }
+
+    /* === Right Side - Form === */
+    .form-section {
+      flex: 1;
+      padding: 3rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: slideIn 0.8s ease-out;
+    }
+
+    @keyframes slideIn {
+      from { 
+        opacity: 0; 
+        transform: translateX(30px);
+      }
+      to { 
+        opacity: 1; 
+        transform: translateX(0);
+      }
+    }
+
+    .form-title {
+      font-size: 2rem;
       font-weight: 700;
-      color: #0d6efd;
-      letter-spacing: 0.5px;
+      color: #1a1a1a;
+      margin-bottom: 2.5rem;
+      text-align: left;
     }
 
-    /* === Inputs === */
+    /* === Form Styles === */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
     .form-label {
+      display: block;
+      font-size: 0.9rem;
       font-weight: 600;
-      color: #333;
-    }
-
-    .input-group-text {
-      background-color: #f1f3f5;
-      border: 1px solid #ced4da;
+      color: #666;
+      margin-bottom: 0.5rem;
+      text-transform: capitalize;
     }
 
     .form-control {
-      border-left: none;
-      transition: box-shadow 0.3s ease;
+      width: 100%;
+      padding: 0.75rem 0;
+      font-size: 1rem;
+      color: #333;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid #e0e0e0;
+      outline: none;
+      transition: border-color 0.3s ease;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .form-control::placeholder {
+      color: #999;
     }
 
     .form-control:focus {
-      box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+      border-bottom-color: #003087;
     }
 
-    /* === Buttons === */
-    .btn-primary {
-      background: linear-gradient(90deg, #0d6efd, #6610f2);
+    .form-control.is-invalid {
+      border-bottom-color: #dc3545;
+    }
+
+    /* Password Toggle */
+    .password-wrapper {
+      position: relative;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
       border: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      color: #999;
+      cursor: pointer;
+      padding: 0.5rem;
+      transition: color 0.3s ease;
     }
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    .toggle-password:hover {
+      color: #003087;
     }
 
-    /* === Links & Checkbox === */
-    .text-primary {
-      color: #0d6efd !important;
+    /* Forgot Password Link */
+    .forgot-link {
+      text-align: right;
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
     }
 
-    a.text-primary:hover {
+    .forgot-link a {
+      color: #0066cc;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .forgot-link a:hover {
+      color: #003087;
       text-decoration: underline;
     }
 
-    .form-check-label {
-      color: #6c757d;
-      font-size: 0.9rem;
+    /* Submit Button */
+    .btn-submit {
+      width: 100%;
+      padding: 0.9rem;
+      background: #003087;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: capitalize;
     }
 
-    /* === Alert === */
-    .alert {
-      font-size: 0.9rem;
+    .btn-submit:hover {
+      background: #00247d;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 48, 135, 0.3);
     }
+
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    /* Alert */
+    .alert {
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      border-left: 4px solid #dc3545;
+      background: #ffe6e6;
+      color: #dc3545;
+    }
+
+    .invalid-feedback {
+      color: #dc3545;
+      font-size: 0.85rem;
+      margin-top: 0.25rem;
+      display: block;
+    }
+
+    /* === Responsive === */
+@media (max-width: 992px) {
+  .login-container {
+    flex-direction: column;
+    width: 95%;
+    max-width: 480px;
+  }
+
+  .logo-section {
+    border-right: none;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 2rem 1rem;
+  }
+
+  .logo-wrapper img {
+    width: 180px;
+  }
+
+  .form-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .form-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .btn-submit {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+
+  .login-container {
+    border-radius: 15px;
+  }
+
+  .form-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .form-title {
+    font-size: 1.4rem;
+  }
+
+  .form-control {
+    font-size: 0.95rem;
+  }
+
+  .btn-submit {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
+}
+
   </style>
 </head>
 
 <body>
-  <div class="card login-card">
-    <div class="card-body">
-      <h1 class="card-title text-center mb-4 fs-3">
-        <img src="{{ asset('img/logo1.png') }}" alt="logo" width="42" height="42"
-           class="me-2 rounded-circle border-2 border-light">LOGIN LPK SEIKOU
-      </h1>
+  <!-- Background Shapes -->
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+
+  <div class="login-container">
+    <!-- Logo Section -->
+    <div class="logo-section">
+      <div class="logo-wrapper">
+        <img src="{{ asset('img/logo1.png') }}" alt="LPK Seikou Logo">
+      </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-section">
+      <h1 class="form-title">Masuk</h1>
 
       <form method="POST" action="{{ url('/login') }}">
         @csrf
 
         @if ($errors->any())
-          <div class="alert alert-danger p-3 mb-4 small" role="alert">
-            <i class="bi bi-exclamation-triangle-fill me-2"></i> 
+          <div class="alert" role="alert">
+            <i class="bi bi-exclamation-circle me-2"></i>
             {{ $errors->first() ?: 'Terjadi kesalahan saat mencoba masuk.' }}
           </div>
         @endif
 
         <!-- Email -->
-        <div class="mb-3">
-          <label for="email" class="form-label">Alamat Email</label>
-          <div class="input-group">
-            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-            <input id="email" 
-                   type="email" 
-                   name="email"
-                   value="{{ old('email') }}" 
-                   required 
-                   placeholder="contoh@mail.com"
-                   class="form-control @error('email') is-invalid @enderror">
-            @error('email')
-              <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-          </div>
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input 
+            id="email" 
+            type="email" 
+            name="email"
+            value="{{ old('email') }}" 
+            required 
+            placeholder="contoh@mail.com"
+            class="form-control @error('email') is-invalid @enderror">
+          @error('email')
+            <span class="invalid-feedback">{{ $message }}</span>
+          @enderror
         </div>
 
         <!-- Password -->
-        <div class="mb-3">
+        <div class="form-group">
           <label for="password" class="form-label">Password</label>
-          <div class="input-group input-group-password">
-            <span class="input-group-text"><i class="bi bi-lock"></i></span>
-            <input id="password" 
-                   type="password" 
-                   name="password" 
-                   required
-                   placeholder="Minimal 8 karakter"
-                   class="form-control @error('password') is-invalid @enderror">
-            <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+          <div class="password-wrapper">
+            <input 
+              id="password" 
+              type="password" 
+              name="password" 
+              required
+              placeholder="Minimal 8 karakter"
+              class="form-control @error('password') is-invalid @enderror">
+            <button class="toggle-password" type="button" id="togglePassword">
               <i class="bi bi-eye-slash" id="toggleIcon"></i>
             </button>
-            @error('password')
-              <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
           </div>
+          @error('password')
+            <span class="invalid-feedback">{{ $message }}</span>
+          @enderror
         </div>
 
-        <!-- Remember & Forgot -->
-        <div class="d-flex justify-content-between align-items-center mb-4">
-          <div class="form-check">
-            <input type="checkbox" name="remember" id="remember" class="form-check-input">
-            <label class="form-check-label" for="remember">Ingat Saya</label>
-          </div>
-          <a href="#" class="text-primary small fw-semibold">Lupa Password?</a>
+        <!-- Forgot Password -->
+        <div class="forgot-link">
+          <a href="#">Lupa password?</a>
         </div>
 
         <!-- Submit Button -->
-        <div class="d-grid">
-          <button type="submit" class="btn btn-primary btn-lg rounded-pill fw-semibold">
-            <i class="bi bi-box-arrow-in-right me-2"></i> Masuk
-          </button>
-        </div>
+        <button type="submit" class="btn-submit">
+          Masuk
+        </button>
+
+        <!-- Remember Me (Hidden but can be enabled) -->
+        <input type="hidden" name="remember" value="1">
       </form>
     </div>
   </div>
@@ -180,12 +427,15 @@
       const password = document.getElementById('password');
       const toggleIcon = document.getElementById('toggleIcon');
 
-      togglePassword.addEventListener('click', function () {
-        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-        password.setAttribute('type', type);
-        toggleIcon.classList.toggle('bi-eye');
-        toggleIcon.classList.toggle('bi-eye-slash');
-      });
+      if (togglePassword) {
+        togglePassword.addEventListener('click', function (e) {
+          e.preventDefault();
+          const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+          password.setAttribute('type', type);
+          toggleIcon.classList.toggle('bi-eye');
+          toggleIcon.classList.toggle('bi-eye-slash');
+        });
+      }
     });
   </script>
 </body>
