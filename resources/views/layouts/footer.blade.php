@@ -6,7 +6,7 @@
       <div class="col-lg-4 col-md-6">
         <h5 class="fw-bold mb-3 text-uppercase text-danger">Kantor Perwakilan</h5>
         <div class="mb-3">
-          <img src="img/japan-office.jpg" alt="Kantor Jepang" class="img-fluid rounded shadow-sm" style="max-width: 100px;">
+          <img src="img/p1.jpeg" alt="Kantor Jepang" class="img-fluid rounded shadow-sm" style="max-width: 100px;">
         </div>
         <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i> <a href="tel:+818032792581" class="footer-link">+81 803-2792-581</a></p>
         <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i> <a href="mailto:allrep@lpkjapan.com" class="footer-link">allrep@lpkjapan.com</a></p>
@@ -41,7 +41,7 @@
       <div class="col-lg-4 col-md-6">
         <h5 class="fw-bold mb-3 text-uppercase text-danger">Kontak Indonesia</h5>
         <div class="mb-3">
-          <img src="img/indo-office.jpg" alt="Kantor Indonesia" class="img-fluid rounded shadow-sm" style="max-width: 100px;">
+          <img src="img/lpk1.jpg" alt="Kantor Indonesia" class="img-fluid rounded shadow-sm" style="max-width: 100px;">
         </div>
         <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i> <a href="tel:+622122837398" class="footer-link">+62 21-2283-7398</a></p>
         <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i> <a href="mailto:info@seikoujapan.com" class="footer-link">info@seikoujapan.com</a></p>
@@ -74,116 +74,116 @@
 
 <style>
     .footer-section {
-        background: linear-gradient(135deg, #0066ff 80%, #1b0c94 100%);
+        background: linear-gradient(135deg, #0a3d62, #1e5799);
         border-top-left-radius: 24px;
         border-top-right-radius: 24px;
-        position: relative;
-        box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.12);
-        overflow: hidden;
+        padding-top: 60px;
+        padding-bottom: 40px;
+        color: #ffffff; /* Semua font default jadi putih */
     }
 
     .footer-section h5 {
         font-size: 1.15rem;
         letter-spacing: 0.5px;
-        color: #ffffff;
-        border-bottom: 2px solid #0d6efd;
+        color: #ffffff; /* Putih */
+        border-bottom: 2px solid rgba(255, 255, 255, 0.35);
         display: inline-block;
         padding-bottom: 4px;
         margin-bottom: 16px;
     }
 
     .footer-link {
-        display: inline-block;
-        color: #adb5bd;
-        margin-bottom: 8px;
+        color: #ffffff !important; /* Link putih */
         text-decoration: none;
-        transition: all 0.3s;
+        transition: 0.3s ease;
         font-weight: 500;
     }
     .footer-link:hover {
-        color: #0d6efd;
-        transform: translateX(6px) scale(1.05);
-        text-decoration: underline;
+        color: #d0d0d0; /* Abu muda biar kelihatan hover */
+        transform: translateX(6px);
     }
 
+    .footer-section p,
+    .footer-section li,
+    .footer-section span,
+    .footer-section small {
+        color: #ffffff !important;
+    }
+
+
+    /* Social Icon */
     .social-icon {
-        color: #fff;
-        font-size: 1.5rem;
-        transition: all 0.3s;
-        background: #0d6efd;
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(4px);
+        font-size: 1.3rem;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
-        width: 38px;
-        height: 38px;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 2px 8px rgba(13,110,253,0.13);
+        transition: 0.3s;
     }
     .social-icon:hover {
-        color: #fff;
-        background: #fff;
-        border: 2px solid #0d6efd;
-        color: #0d6efd;
-        transform: scale(1.18) translateY(-3px);
+        background: #ffffff;
+        color: #0a3d62;
+        transform: scale(1.15);
     }
 
+    /* Footer Logo */
+    .footer-logo img {
+        background: #ffffff;
+        border-radius: 50%;
+        padding: 3px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    /* Scroll Button */
     .scroll-top-btn {
         position: fixed;
         bottom: 25px;
         right: 25px;
-        background: linear-gradient(135deg, #0d6efd 80%, #0040b0 100%);
+        background: #1e5799;
         color: white;
         border: none;
         border-radius: 50%;
-        width: 52px;
-        height: 52px;
+        width: 50px;
+        height: 50px;
         display: none;
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        box-shadow: 0 4px 16px rgba(13,110,253,0.2);
-        transition: all 0.3s;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+        transition: 0.3s;
         z-index: 999;
-        font-size: 1.7rem;
     }
     .scroll-top-btn:hover {
-        background: #fff;
-        color: #0d6efd;
-        transform: scale(1.08) translateY(-4px);
-        box-shadow: 0 6px 20px rgba(13,110,253,0.25);
+        background: #ffffff;
+        color: #1e5799;
+        transform: translateY(-4px);
     }
 
-    .footer-logo img {
-        background: #fff;
-        box-shadow: 0 2px 8px rgba(13,110,253,0.09);
-    }
-
+    /* Responsive */
     @media (max-width: 768px) {
         .footer-section {
             text-align: center;
         }
-        .footer-logo {
-            justify-content: center;
-        }
-        .social-icon {
-            font-size: 1.7rem;
-            width: 44px;
-            height: 44px;
-        }
-        .col-lg-4, .col-md-6 {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
         .list-unstyled {
-            width: fit-content;
-            text-align: left;
-        }
-        .footer-section h5 {
-            font-size: 1rem;
+            text-align: center;
         }
     }
+
+    .footer-section .text-center.text-md-end.small {
+    color: #ffffff !important;
+    }
+
+    .footer-section .text-center.text-md-end.small strong {
+        color: #ffffff !important;
+    }
+
 </style>
+
 
 <script>
   const scrollBtn = document.getElementById("scrollTopBtn");

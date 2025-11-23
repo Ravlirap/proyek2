@@ -44,11 +44,6 @@
           <a class="nav-link {{ ($slug === 'program_pelatihan') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/program_pelatihan">Program</a>
         </li>
 
-        <!-- GALERI -->
-        <li class="nav-item mx-2">
-          <a class="nav-link {{ ($slug === 'galeri') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/galeri">Galeri</a>
-        </li>
-
         <!-- INFORMASI -->
         <li class="nav-item dropdown mx-2">
           @php
@@ -61,7 +56,8 @@
           <ul class="dropdown-menu" aria-labelledby="informasiDropdown">
             <li><a class="dropdown-item" href="/fasilitas">Fasilitas</a></li>
             <li><a class="dropdown-item" href="/kontak">Kontak</a></li>
-            <li><a class="nav-link text-dark" {{ ($slug === 'artikel') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/artikel">Artikel</a>
+            <li><a class="dropdown-item" href="/artikel">Artikel</a></li>
+            <li><a class="dropdown-item" href="/galeri">Galeri</a></li>
             <li class="nav-item mx-2">
           </ul>
         </li>

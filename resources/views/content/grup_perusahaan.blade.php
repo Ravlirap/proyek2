@@ -29,7 +29,7 @@
 
       <div class="grup-grid">
         <div class="grup-card">
-          <img src="{{ asset('img/grup1.jpg') }}" alt="Seikou Japan Co., Ltd" class="grup-img">
+          <img src="{{ asset('img/p1.jpeg') }}" alt="Seikou Japan Co., Ltd" class="grup-img">
           <div class="grup-info">
             <h3>Seikou Japan Co., Ltd</h3>
             <p>Perusahaan mitra utama kami di Jepang yang berfokus pada rekrutmen dan pengembangan tenaga kerja Indonesia di berbagai sektor industri.</p>
@@ -37,7 +37,7 @@
         </div>
 
         <div class="grup-card">
-          <img src="{{ asset('img/grup2.jpg') }}" alt="Seikou Indonesia" class="grup-img">
+          <img src="{{ asset('img/p2.jpeg') }}" alt="Seikou Indonesia" class="grup-img">
           <div class="grup-info">
             <h3>Seikou Indonesia</h3>
             <p>Lembaga pelatihan dan pengiriman tenaga kerja di Indonesia yang terintegrasi dengan sistem pelatihan LPK Seikou.</p>
@@ -45,7 +45,7 @@
         </div>
 
         <div class="grup-card">
-          <img src="{{ asset('img/grup3.jpg') }}" alt="Nihon Kyoiku Center" class="grup-img">
+          <img src="{{ asset('img/p3.jpeg') }}" alt="Nihon Kyoiku Center" class="grup-img">
           <div class="grup-info">
             <h3>Nihon Kyoiku Center</h3>
             <p>Lembaga pendidikan Jepang yang menjadi mitra pengajaran bahasa dan budaya Jepang bagi peserta pelatihan.</p>
@@ -53,7 +53,7 @@
         </div>
 
         <div class="grup-card">
-          <img src="{{ asset('img/grup4.jpg') }}" alt="Seikou Global Training" class="grup-img">
+          <img src="{{ asset('img/p4.jpeg') }}" alt="Seikou Global Training" class="grup-img">
           <div class="grup-info">
             <h3>Seikou Global Training</h3>
             <p>Mengelola program pelatihan profesional dan sertifikasi keterampilan internasional untuk peserta sebelum diberangkatkan.</p>
@@ -71,10 +71,10 @@
         LPK Seikou menjalin hubungan dengan berbagai lembaga pemerintah, perusahaan swasta, dan instansi pendidikan untuk memastikan kualitas pelatihan dan penempatan kerja yang optimal di Jepang.
       </p>
       <div class="logo-grid">
-        <img src="{{ asset('img/logo1.png') }}" alt="Mitra 1">
-        <img src="{{ asset('img/logo2.png') }}" alt="Mitra 2">
-        <img src="{{ asset('img/logo3.png') }}" alt="Mitra 3">
-        <img src="{{ asset('img/logo4.png') }}" alt="Mitra 4">
+        <img src="{{ asset('img/logo11.jpeg') }}" alt="Mitra 1">
+        <img src="{{ asset('img/logo2.jpeg') }}" alt="Mitra 2">
+        <img src="{{ asset('img/logo3.jpeg') }}" alt="Mitra 3">
+        <img src="{{ asset('img/logo4.jpeg') }}" alt="Mitra 4">
       </div>
     </div>
   </section>
