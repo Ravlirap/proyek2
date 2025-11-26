@@ -12,6 +12,7 @@ use App\Http\Controllers\fasilitasController;
 use App\Http\Controllers\grupPerusahaanController;
 use App\Http\Controllers\profilLembagaController;
 use App\Http\Controllers\KelolaPendaftarController;
+use App\Http\Controllers\KelolaArtikelController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\artikelController;
 use App\Http\Controllers\siswaController;
@@ -60,10 +61,21 @@ Route::get('/fasilitas', [fasilitasController::class, 'index'])->name('fasilitas
 //admin routes
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+    //kelola pendaftar
     Route::get('/kelola_pendaftar', [KelolaPendaftarController::class, 'index'])->name('admin.pendaftar.index');
     Route::get('/pendaftaran/show/{id}', [KelolaPendaftarController::class, 'show'])->name('admin.pendaftar.show');
     Route::put('/pendaftar/{id}', [KelolaPendaftarController::class, 'updateStatus'])->name('admin.pendaftar.updateStatus');
     Route::delete('/pendaftaran/destroy/{id}', [KelolaPendaftarController::class, 'destroy'])->name('admin.pendaftar.destroy');
+
+    //kelola artikel
+    Route::get('/kelola_artikel', [KelolaArtikelController::class, 'index'])->name('admin.artikel.index');
+    Route::get('/artikel/create', [KelolaArtikelController::class, 'create'])->name('admin.artikel.create');
+    Route::post('/artikel/store', [KelolaArtikelController::class, 'store'])->name('admin.artikel.store');
+    Route::get('/artikel/show/{id}', [KelolaArtikelController::class, 'show']) ->name('admin.artikel.show');
+    Route::get('/artikel/edit/{id}', [KelolaArtikelController::class, 'edit'])->name('admin.artikel.edit');
+    Route::put('/artikel/update/{id}', [KelolaArtikelController::class, 'update'])->name('admin.artikel.update');
+    Route::delete('/artikel/destroy/{id}', [KelolaArtikelController::class, 'destroy'])->name('admin.artikel.destroy');
 });
 
 //siswa routes

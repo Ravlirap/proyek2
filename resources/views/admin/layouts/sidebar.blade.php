@@ -7,7 +7,6 @@
     </a>
 
     <div class="mb-3">
-
         <li class="nav-item mb-1 mt-3 list-unstyled">
             @php $isActive = request()->routeIs('admin.dashboard'); @endphp
             <a href="{{ route('admin.dashboard') }}" class="nav-link rounded-3 text-dark py-2 transition-ease {{ $isActive ? 'active bg-primary text-white fw-bold shadow-sm' : 'link-hover-light' }}" aria-current="{{ $isActive ? 'page' : '' }}">
@@ -17,10 +16,18 @@
 
         <li class="nav-item mb-1 list-unstyled">
             <a href="{{ route('admin.pendaftar.index') }}" 
-       class="nav-link {{ (Request::is('admin/pendaftaran*') ? 'active' : '')}} rounded-3 text-dark py-2 transition-ease">
-        <i class="bi bi-person-lines-fill me-2"></i> Kelola Pendaftar
-    </a>
+            class="nav-link {{ (Request::is('admin/pendaftaran*') ? 'active' : '')}} rounded-3 text-dark py-2 transition-ease">
+                <i class="bi bi-person-lines-fill me-2"></i> Kelola Pendaftar
+            </a>
         </li>
+       <li class="nav-item mb-1 list-unstyled">
+    <a href="{{ route('admin.artikel.index') }}" 
+       class="nav-link {{ Request::is('admin/kelola_artikel*') ? 'active' : '' }} 
+       rounded-3 text-dark py-2 transition-ease">
+        <i class="bi bi-file-text-fill me-2"></i> Kelola Artikel
+    </a>
+</li>
+
     </div>
 
     <div class="mb-auto">
