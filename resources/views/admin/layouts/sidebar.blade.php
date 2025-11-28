@@ -21,12 +21,11 @@
             </a>
         </li>
        <li class="nav-item mb-1 list-unstyled">
-    <a href="{{ route('admin.artikel.index') }}" 
-       class="nav-link {{ Request::is('admin/kelola_artikel*') ? 'active' : '' }} 
-       rounded-3 text-dark py-2 transition-ease">
-        <i class="bi bi-file-text-fill me-2"></i> Kelola Artikel
-    </a>
-</li>
+            <a href="{{ route('admin.artikel.index') }}" 
+            class="nav-link {{ Request::is('admin/kelola_artikel*') ? 'active' : '' }} rounded-3 text-dark py-2 transition-ease">
+                <i class="bi bi-file-text-fill me-2"></i> Kelola Artikel
+            </a>
+        </li>
 
     </div>
 
