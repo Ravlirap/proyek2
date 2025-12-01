@@ -17,7 +17,7 @@
                     <div class="row align-items-center">
                         <div class="col me-2">
                             <div class="text-uppercase fw-bold text-primary mb-1">
-                                Total Pendaftar Sepanjang Masa</div>
+                                Total Pendaftar Bulan ini</div>
                             <div class="h3 mb-0 fw-bolder">{{ $jumlah ?? 0 }}</div>
                         </div>
                         <div class="col-auto">
@@ -34,7 +34,7 @@
                     <div class="row align-items-center">
                         <div class="col me-2">
                             <div class="text-uppercase fw-bold text-success mb-1">
-                                Pendaftar Bulan Ini</div>
+                                Pendaftar Tahun ini</div>
                             <div class="h3 mb-0 fw-bolder">45</div>
                         </div>
                         <div class="col-auto">

@@ -29,7 +29,7 @@
 
             <div class="mb-3">
                 <label class="form-label fw-semibold">Konten</label>
-                <textarea name="konten" rows="6" class="form-control" required>{{ $artikel->konten }}</textarea>
+                <textarea name="isi" rows="6" class="form-control" required>{{ old('isi', $artikel->isi) }}</textarea>
             </div>
 
             <div class="d-flex justify-content-end">

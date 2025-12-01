@@ -165,11 +165,6 @@
 
                             <td class="text-center">
 
-                                <a href="{{ route('admin.artikel.show', $artikel->id) }}"
-                                   class="btn btn-outline-primary btn-action me-1">
-                                    <i class="bi bi-eye"></i>
-                                </a>
-
                                 <a href="{{ route('admin.artikel.edit', $artikel->id) }}"
                                    class="btn btn-outline-warning btn-action me-1">
                                     <i class="bi bi-pencil-square"></i>

@@ -56,13 +56,7 @@ class KelolaArtikelController extends Controller
     }
 
     public function show(string $id)
-    {
-        $title = 'Detail Artikel';
-        $slug = 'artikel';
-        $artikel = Artikel::findOrFail($id);
-
-        return view('admin.kelola_artikel.show', compact('title', 'slug', 'artikel'));
-    }
+    {}
 
     public function edit(string $id)
     {
@@ -70,7 +64,7 @@ class KelolaArtikelController extends Controller
         $slug = 'artikel';
         $artikel = Artikel::findOrFail($id);
 
-        return view('admin.kelola_artikel.update', compact('title', 'slug', 'artikel'));
+        return view('admin.kelola_artikel.edit', compact('title', 'slug', 'artikel'));
     }
 
     public function update(Request $request, string $id)

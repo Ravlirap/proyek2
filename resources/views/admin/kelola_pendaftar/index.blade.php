@@ -3,7 +3,7 @@
 
 @section('content')
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-{{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
 <div class="container-fluid py-4">
     <div class="mb-4 d-flex justify-content-between align-items-center border-bottom pb-3">
@@ -11,18 +11,12 @@
             <h1 class="h3 fw-bold text-gray-800">Kelola Pendaftar LPK Seikou</h1>
             <p class="text-muted mb-0">Daftar lengkap pendaftar LPK Seikou.</p>
         </div>
-        {{-- Tombol Tambah Pendaftar (opsional) --}}
-        {{-- <a href="{{ route('admin.pendaftar.create') }}" class="btn btn-primary shadow-sm">
-            <i class="fas fa-plus-circle me-1"></i> Tambah Pendaftar
-        </a> --}}
     </div>
 
     {{-- START: CARD UNTUK TABEL --}}
     <div class="card shadow mb-4">
         <div class="card-header py-3 bg-white border-bottom d-flex justify-content-between align-items-center">
             <h6 class="m-0 font-weight-bold text-primary">Data Pendaftar</h6>
-            {{-- Tambahkan fitur pencarian di sini jika menggunakan Livewire/Ajax/Datatables --}}
-            {{-- <input type="text" class="form-control form-control-sm w-auto" placeholder="Cari pendaftar..."> --}}
         </div>
         <div class="card-body px-0 pt-0 pb-2">
             <div class="table-responsive p-0">
@@ -126,21 +120,17 @@
                                 <td class="text-center">
                                     <div class="d-flex justify-content-center gap-2">
                                         <a href="{{ route('admin.pendaftar.show', $pendaftaran->id) }}"
-                                           class="btn btn-icon btn-sm btn-light-info"
-                                           data-bs-toggle="tooltip"
-                                           data-bs-placement="top"
-                                           title="Lihat detail">
-                                            <i class="fas fa-eye"></i>
+                                            class="btn btn-outline-primary btn-action me-1">
+                                            <i class="bi bi-eye"></i>
                                         </a>
-
                                         <button type="button"
-                                                class="btn btn-icon btn-sm btn-light-danger delete-btn"
+                                                class="btn btn-outline-danger btn-action"
                                                 data-id="{{ $pendaftaran->id }}"
                                                 data-nama="{{ $pendaftaran->nama_lengkap }}"
                                                 data-bs-toggle="tooltip"
                                                 data-bs-placement="top"
                                                 title="Hapus">
-                                            <i class="fas fa-trash"></i>
+                                            <i class="bi bi-trash"></i>
                                         </button>
                                         <form id="delete-form-{{ $pendaftaran->id }}" action="{{ route('admin.pendaftar.destroy', $pendaftaran->id) }}" method="POST" class="d-none">
                                             @csrf
@@ -211,7 +201,6 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    /* Light Button Variants (Ditingkatkan agar lebih modern) */
     .btn-light-info {
         color: #0dcaf0;
         background-color: rgba(13, 202, 240, 0.1);
@@ -236,8 +225,8 @@
 
     /* PERBAIKAN: Styling khusus untuk kolom kontak */
     .table td:nth-child(5) {
-        min-width: 200px; /* Memberikan lebar minimum untuk kolom kontak */
-        max-width: 250px; /* Membatasi lebar maksimum */
+        min-width: 200px;
+        max-width: 250px; 
     }
 
     /* Memastikan teks kontak tidak meluber */
@@ -246,7 +235,7 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         display: inline-block;
-        max-width: 180px; /* Sesuaikan dengan lebar kolom */
+        max-width: 180px;
     }
 </style>
 @endpush
