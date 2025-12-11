@@ -13,8 +13,11 @@ return new class extends Migration
     Schema::create('artikel', function (Blueprint $table) {
        $table->id();
         $table->string('judul');
+        $table->string('slug')->unique();
         $table->text('isi');
         $table->string('gambar')->nullable();
+        $table->string('penulis');
+        $table->date('tanggal_publikasi')->nullable();
         $table->timestamps();
     });
 }

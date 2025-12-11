@@ -2,63 +2,114 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artikel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class KelolaArtikelController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $title = 'Data Artikel';
+        $slug = 'artikel';
+        $dataArtikel = Artikel::orderBy('tanggal_publikasi', 'desc')->get();
+
+        return view('admin.kelola_artikel.index', compact('title', 'slug', 'dataArtikel'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $title = 'Tambah Artikel';
+        $slug = 'artikel';
+
+        return view('admin.kelola_artikel.create', compact('title', 'slug'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'judul'  => 'required',
+            'isi'    => 'required', 
+            'gambar' => 'nullable|image|max:2048'
+        ]);
+
+        $gambarPath = null;
+
+        if ($request->hasFile('gambar')) {
+            $file = $request->file('gambar');
+            $namaFile = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('img/artikel'), $namaFile);
+            $gambarPath = $namaFile;
+        }
+
+        Artikel::create([
+            'judul'             => $request->judul,
+            'slug'              => Str::slug($request->judul),
+            'isi'               => $request->isi,
+            'gambar'            => $gambarPath,
+            'penulis'           => 'Admin',
+            'tanggal_publikasi' => now(),
+        ]);
+
+        return redirect()->route('admin.artikel.index')
+            ->with('success', 'Artikel berhasil ditambahkan.');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
-    {
-        //
-    }
+    {}
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        //
+        $title = 'Edit Artikel';
+        $slug = 'artikel';
+        $artikel = Artikel::findOrFail($id);
+
+        return view('admin.kelola_artikel.edit', compact('title', 'slug', 'artikel'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'judul'  => 'required',
+            'isi'    => 'required',
+            'gambar' => 'nullable|image|max:2048'
+        ]);
+
+        $artikel = Artikel::findOrFail($id);
+
+        if ($request->hasFile('gambar')) {
+
+            if ($artikel->gambar && file_exists(public_path($artikel->gambar))) {
+                unlink(public_path($artikel->gambar));
+            }
+
+            $file = $request->file('gambar');
+            $namaFile = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('img/artikel'), $namaFile);
+
+            $artikel->gambar = 'img/artikel/' . $namaFile;
+        }
+
+        $artikel->judul = $request->judul;
+        $artikel->slug = Str::slug($request->judul);
+        $artikel->isi  = $request->isi;
+        $artikel->save();
+
+        return redirect()->route('admin.artikel.index')
+            ->with('success', 'Artikel berhasil diperbarui.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        //
+        $artikel = Artikel::findOrFail($id);
+
+        if ($artikel->gambar && file_exists(public_path($artikel->gambar))) {
+            unlink(public_path($artikel->gambar));
+        }
+
+        $artikel->delete();
+
+        return redirect()->route('admin.artikel.index')
+            ->with('success', 'Artikel berhasil dihapus.');
     }
 }
