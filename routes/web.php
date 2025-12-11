@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Auth;
 
 // Rute Otentikasi (Login, Logout)
 // Menggunakan LoginController yang telah dimodifikasi
- 
+
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
@@ -50,10 +50,14 @@ Route::get('/artikel', [artikelController::class, 'index'])->name('artikel.index
 
 //galeri
 Route::get('/galeri', [galeriController::class, 'index'])->name('galeri');
+
+//tentang kami
 Route::get('/visiMisi', [visiMisiController::class, 'index'])->name('visiMisi');
 Route::get('/timKami', [timKamiController::class, 'index'])->name('timKami');
 Route::get('/grup_perusahaan', [grupPerusahaanController::class, 'index'])->name('grup_perusahaan');
 Route::get('/profil_lembaga', [profilLembagaController::class, 'index'])->name('profil_lembaga');
+
+//
 Route::get('/kontak', [kontakController::class, 'index'])->name('kontak');
 Route::get('/fasilitas', [fasilitasController::class, 'index'])->name('fasilitas');
 
@@ -73,6 +77,8 @@ Route::middleware(['auth'])->prefix('siswa')->group(function () {
     Route::get('/materi', [siswaController::class, 'materi'])->name('siswa.konten.materi');
     Route::get('/profil', [siswaController::class, 'profil'])->name('siswa.profil_siswa.dashboard');
 });
+//Route::post('/materi/store', [MateriController::class, 'store'])->name('materi.store');
+
 
 //guru routes
 Route::middleware(['auth'])->prefix('guru')->group(function () {

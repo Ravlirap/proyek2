@@ -81,11 +81,11 @@
 
                         <form action="{{ route('pendaftaran.submit') }}" method="POST" enctype="multipart/form-data" id="pendaftaranForm">
                             @csrf
-                            
+
                             <!-- Step 1: Data Pribadi -->
                             <div class="form-step active" id="step1">
                                 <h4 class="form-step-title mb-4"><i class="fas fa-user me-2"></i>Data Pribadi</h4>
-                                
+
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
@@ -140,7 +140,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="d-flex justify-content-between mt-4">
                                     <div></div> <!-- Empty div for spacing -->
                                     <button type="button" class="btn btn-primary next-step" data-next="2">Selanjutnya <i class="fas fa-arrow-right ms-2"></i></button>
@@ -150,7 +150,7 @@
                             <!-- Step 2: Pendidikan & Kontak -->
                             <div class="form-step" id="step2">
                                 <h4 class="form-step-title mb-4"><i class="fas fa-school me-2"></i>Data Pendidikan & Kontak</h4>
-                                
+
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
@@ -172,7 +172,7 @@
                                             <label for="email">Alamat Email</label>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="col-md-6">
                                         <div class="form-floating">
                                             <select name="program_pilihan" class="form-select" id="programPilihan" required>
@@ -187,7 +187,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="d-flex justify-content-between mt-4">
                                     <button type="button" class="btn btn-outline-secondary prev-step" data-prev="1"><i class="fas fa-arrow-left me-2"></i> Sebelumnya</button>
                                     <button type="button" class="btn btn-primary next-step" data-next="3">Selanjutnya <i class="fas fa-arrow-right ms-2"></i></button>
@@ -197,7 +197,7 @@
                             <!-- Step 3: Dokumen -->
                             <div class="form-step" id="step3">
                                 <h4 class="form-step-title mb-4"><i class="fas fa-file-upload me-2"></i>Dokumen Pendukung</h4>
-                                
+
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="file-upload-wrapper">
@@ -267,7 +267,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="d-flex justify-content-between mt-4">
                                     <button type="button" class="btn btn-outline-secondary prev-step" data-prev="2"><i class="fas fa-arrow-left me-2"></i> Sebelumnya</button>
                                     <button type="button" class="btn btn-primary next-step" data-next="4">Selanjutnya <i class="fas fa-arrow-right ms-2"></i></button>
@@ -277,10 +277,10 @@
                             <!-- Step 4: Konfirmasi -->
                             <div class="form-step" id="step4">
                                 <h4 class="form-step-title mb-4"><i class="fas fa-clipboard-check me-2"></i>Konfirmasi Pendaftaran</h4>
-                                
+
                                 <div class="confirmation-card border rounded p-4 mb-4">
                                     <h5 class="mb-3">Ringkasan Data Pendaftaran</h5>
-                                    
+
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="mb-3">
@@ -319,7 +319,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="mt-3 pt-3 border-top">
                                         <h6>Dokumen yang Diupload:</h6>
                                         <ul class="list-unstyled" id="confirm-docs">
@@ -327,14 +327,14 @@
                                         </ul>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-check mb-4">
                                     <input class="form-check-input" type="checkbox" id="agreeTerms" required>
                                     <label class="form-check-label" for="agreeTerms">
                                         Saya menyatakan bahwa data yang saya berikan adalah benar dan siap bertanggung jawab atas keabsahan data tersebut.
                                     </label>
                                 </div>
-                                
+
                                 <div class="d-flex justify-content-between mt-4">
                                     <button type="button" class="btn btn-outline-secondary prev-step" data-prev="3"><i class="fas fa-arrow-left me-2"></i> Sebelumnya</button>
                                     <button type="submit" class="btn btn-success px-4">
@@ -346,7 +346,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Sidebar Info -->
             <div class="col-lg-4">
                 <div class="card shadow-sm border-0 mb-4">
@@ -390,25 +390,25 @@
             --light: #f8f9fa;
             --success: #198754;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f5f7fb;
             margin-top: 120px;
         }
-        
+
         .header-section {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
         }
-        
+
         .icon-container {
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .progress-container {
             z-index: 1020;
         }
-        
+
         .progress-steps::before {
             content: '';
             position: absolute;
@@ -419,7 +419,7 @@
             background-color: #e9ecef;
             z-index: 1;
         }
-        
+
         .step {
             display: flex;
             flex-direction: column;
@@ -427,7 +427,7 @@
             position: relative;
             z-index: 2;
         }
-        
+
         .step-circle {
             width: 40px;
             height: 40px;
@@ -441,65 +441,65 @@
             margin-bottom: 5px;
             transition: all 0.3s;
         }
-        
+
         .step.active .step-circle {
             background-color: var(--primary);
             color: white;
             box-shadow: 0 0 0 5px rgba(0, 102, 255, 0.2);
         }
-        
+
         .step-label {
             font-size: 0.8rem;
             font-weight: 500;
         }
-        
+
         .card {
             border-radius: 12px;
             overflow: hidden;
         }
-        
+
         .form-step {
             display: none;
         }
-        
+
         .form-step.active {
             display: block;
         }
-        
+
         .form-step-title {
             color: var(--primary);
             font-weight: 600;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid #f0f4ff;
         }
-        
+
         .form-floating {
             margin-bottom: 0.5rem;
         }
-        
+
         .form-control, .form-select {
             border-radius: 8px;
             padding: 0.75rem;
             border: 1px solid #d1d5db;
             transition: all 0.3s;
         }
-        
+
         .form-control:focus, .form-select:focus {
             border-color: var(--primary);
             box-shadow: 0 0 0 0.25rem rgba(0, 102, 255, 0.15);
         }
-        
+
         .file-upload-container {
             background-color: #f8f9fa;
             cursor: pointer;
             transition: all 0.3s;
         }
-        
+
         .file-upload-container:hover {
             background-color: #e9ecef;
             border-color: var(--primary) !important;
         }
-        
+
         .file-preview {
             background: white;
             padding: 0.5rem;
@@ -507,7 +507,7 @@
             font-size: 0.875rem;
             border: 1px solid #dee2e6;
         }
-        
+
         .btn-primary {
             background: linear-gradient(45deg, var(--primary), var(--primary-dark));
             border: none;
@@ -516,12 +516,12 @@
             font-weight: 600;
             transition: all 0.3s;
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(0, 102, 255, 0.4);
         }
-        
+
         .btn-success {
             background: linear-gradient(45deg, var(--success), #0f5132);
             border: none;
@@ -529,22 +529,22 @@
             padding: 0.75rem 1.5rem;
             font-weight: 600;
         }
-        
+
         .confirmation-card {
             background-color: #f8f9fa;
         }
-        
+
         .accordion-button:not(.collapsed) {
             background-color: rgba(0, 102, 255, 0.1);
             color: var(--primary);
             font-weight: 600;
         }
-        
+
         @media (max-width: 768px) {
             .progress-steps::before {
                 top: 15px;
             }
-            
+
             .step-circle {
                 width: 30px;
                 height: 30px;
@@ -559,23 +559,23 @@
             // Multi-step form functionality
             const steps = document.querySelectorAll('.form-step');
             const progressSteps = document.querySelectorAll('.step');
-            
+
             // Show first step by default
             showStep(1);
-            
+
             // Next step buttons
             document.querySelectorAll('.next-step').forEach(button => {
                 button.addEventListener('click', function() {
                     const currentStep = getCurrentStep();
                     const nextStep = parseInt(this.getAttribute('data-next'));
-                    
+
                     if (validateStep(currentStep)) {
                         showStep(nextStep);
                         updateProgress(nextStep);
                     }
                 });
             });
-            
+
             // Previous step buttons
             document.querySelectorAll('.prev-step').forEach(button => {
                 button.addEventListener('click', function() {
@@ -584,7 +584,7 @@
                     updateProgress(prevStep);
                 });
             });
-            
+
             // File upload functionality
             document.querySelectorAll('.upload-trigger').forEach(button => {
                 button.addEventListener('click', function() {
@@ -592,13 +592,13 @@
                     document.getElementById(target).click();
                 });
             });
-            
+
             document.querySelectorAll('.file-input').forEach(input => {
                 input.addEventListener('change', function() {
                     const file = this.files[0];
                     const preview = this.parentNode.querySelector('.file-preview');
                     const fileName = this.parentNode.querySelector('.file-name');
-                    
+
                     if (file) {
                         fileName.textContent = file.name;
                         preview.classList.remove('d-none');
@@ -607,19 +607,19 @@
                     }
                 });
             });
-            
+
             // Remove file
             document.querySelectorAll('.remove-file').forEach(button => {
                 button.addEventListener('click', function(e) {
                     e.stopPropagation();
                     const preview = this.parentNode;
                     const input = preview.parentNode.querySelector('.file-input');
-                    
+
                     preview.classList.add('d-none');
                     input.value = '';
                 });
             });
-            
+
             // Drag and drop for file upload
             document.querySelectorAll('.file-upload-container').forEach(container => {
                 container.addEventListener('dragover', function(e) {
@@ -627,29 +627,29 @@
                     this.style.backgroundColor = '#e3f2fd';
                     this.style.borderColor = '#0066ff';
                 });
-                
+
                 container.addEventListener('dragleave', function() {
                     this.style.backgroundColor = '#f8f9fa';
                     this.style.borderColor = '#dee2e6';
                 });
-                
+
                 container.addEventListener('drop', function(e) {
                     e.preventDefault();
                     this.style.backgroundColor = '#f8f9fa';
                     this.style.borderColor = '#dee2e6';
-                    
+
                     const files = e.dataTransfer.files;
                     if (files.length > 0) {
                         const input = this.querySelector('.file-input');
                         input.files = files;
-                        
+
                         // Trigger change event
                         const event = new Event('change');
                         input.dispatchEvent(event);
                     }
                 });
             });
-            
+
             // Form submission
             document.getElementById('pendaftaranForm').addEventListener('submit', function(e) {
                 if (!validateStep(4) || !document.getElementById('agreeTerms').checked) {
@@ -660,19 +660,19 @@
                     updateConfirmationData();
                 }
             });
-            
+
             // Helper functions
             function getCurrentStep() {
                 return parseInt(document.querySelector('.form-step.active').id.replace('step', ''));
             }
-            
+
             function showStep(stepNumber) {
                 steps.forEach(step => {
                     step.classList.remove('active');
                 });
                 document.getElementById(`step${stepNumber}`).classList.add('active');
             }
-            
+
             function updateProgress(stepNumber) {
                 progressSteps.forEach((step, index) => {
                     if (index < stepNumber) {
@@ -682,17 +682,17 @@
                     }
                 });
             }
-            
+
             function validateStep(stepNumber) {
                 let isValid = true;
                 const step = document.getElementById(`step${stepNumber}`);
                 const requiredFields = step.querySelectorAll('[required]');
-                
+
                 requiredFields.forEach(field => {
                     if (!field.value) {
                         isValid = false;
                         field.classList.add('is-invalid');
-                        
+
                         // Add invalid feedback if not exists
                         if (!field.nextElementSibling || !field.nextElementSibling.classList.contains('invalid-feedback')) {
                             const feedback = document.createElement('div');
@@ -704,33 +704,33 @@
                         field.classList.remove('is-invalid');
                     }
                 });
-                
+
                 if (!isValid) {
                     alert('Harap lengkapi semua field yang wajib diisi!');
                 }
-                
+
                 return isValid;
             }
-            
+
             function updateConfirmationData() {
                 // Update confirmation data from form inputs
                 document.getElementById('confirm-nama').textContent = document.getElementById('namaLengkap').value;
-                document.getElementById('confirm-ttl').textContent = 
-                    document.getElementById('tempatLahir').value + ', ' + 
+                document.getElementById('confirm-ttl').textContent =
+                    document.getElementById('tempatLahir').value + ', ' +
                     document.getElementById('tanggalLahir').value;
                 document.getElementById('confirm-jk').textContent = document.getElementById('jenisKelamin').options[document.getElementById('jenisKelamin').selectedIndex].text;
-                document.getElementById('confirm-tb-bb').textContent = 
-                    document.getElementById('tinggiBadan').value + ' cm / ' + 
+                document.getElementById('confirm-tb-bb').textContent =
+                    document.getElementById('tinggiBadan').value + ' cm / ' +
                     document.getElementById('beratBadan').value + ' kg';
                 document.getElementById('confirm-sekolah').textContent = document.getElementById('asalSekolah').value;
                 document.getElementById('confirm-nohp').textContent = document.getElementById('noHp').value;
                 document.getElementById('confirm-email').textContent = document.getElementById('email').value;
                 document.getElementById('confirm-program').textContent = document.getElementById('programPilihan').options[document.getElementById('programPilihan').selectedIndex].text;
-                
+
                 // Update document list
                 const docsList = document.getElementById('confirm-docs');
                 docsList.innerHTML = '';
-                
+
                 const fileInputs = document.querySelectorAll('.file-input');
                 fileInputs.forEach(input => {
                     if (input.files.length > 0) {

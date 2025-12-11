@@ -41,20 +41,22 @@
 </div>
 <style>
     .materi-card {
-        background: #ffffff;
-        padding: 22px;
-        border-radius: 12px;
-        box-shadow: rgba(0, 0, 0, 0.10) 0 4px 12px;
-        border-left: 6px solid #1d4ed8;
-        transition: all 0.25s ease;
-        position: relative;
-        display: flex;
-        flex-direction: column;
+    background: linear-gradient(135deg, #ffffff, #f3f7ff);
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 5px 14px rgba(0, 40, 140, 0.12);
+    border-left: 6px solid #1d4ed8;
+    transition: all 0.28s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     }
 
     .materi-card:hover {
         transform: translateY(-4px);
-        box-shadow: rgba(0, 0, 0, 0.15) 0 8px 22px;
+        box-shadow: 0 10px 26px rgba(0, 40, 140, 0.18);
+        background: linear-gradient(135deg, #f9fbff, #eef3ff);
     }
 
     .materi-header {
@@ -62,16 +64,23 @@
     }
 
     .materi-badge {
-        background: #1d4ed8;
+        background: linear-gradient(135deg, #1d4ed8, #153eaa);
         color: white;
         font-size: 11px;
         font-weight: bold;
-        padding: 4px 10px;
+        padding: 4px 12px;
         border-radius: 50px;
         text-transform: uppercase;
         width: max-content;
         margin-bottom: 6px;
         display: inline-block;
+        letter-spacing: 0.5px;
+        box-shadow: 0 2px 6px rgba(29, 78, 216, 0.35);
+        transition: 0.25s ease;
+    }
+
+    .materi-card:hover .materi-badge {
+        background: linear-gradient(135deg, #1e40af, #0f2f84);
     }
 
     .materi-title {
@@ -79,31 +88,34 @@
         font-weight: 700;
         color: #0f172a;
         margin: 0;
-        line-height: 1.3;
+        line-height: 1.35;
     }
 
     .materi-deskripsi {
         font-size: 14.5px;
         line-height: 1.6;
-        color: #4b5563;
+        color: #485067;
         margin-bottom: 14px;
         min-height: 60px;
     }
 
     .materi-download {
-        background: #1d4ed8;
+        background: linear-gradient(135deg, #1d4ed8, #0d2e8b);
         color: #ffffff;
-        padding: 8px 14px;
+        padding: 9px 16px;
         text-decoration: none;
-        font-size: 14px;
-        border-radius: 6px;
-        font-weight: 500;
-        transition: background 0.25s ease;
+        font-size: 14.5px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: 0.25s ease;
         display: inline-block;
+        box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
     }
 
     .materi-download:hover {
-        background: #1e40af;
+        background: linear-gradient(135deg, #1e40af, #0a256d);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(29, 78, 216, 0.30);
     }
 
     .materi-no-file {
@@ -115,10 +127,11 @@
     .materi-card::after {
         content: "";
         position: absolute;
-        top: 0; right: 0;
-        width: 70px;
-        height: 70px;
-        background: rgba(29, 78, 216, 0.07);
+        top: 0;
+        right: 0;
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(circle, rgba(29,78,216,0.12), transparent);
         border-bottom-left-radius: 100%;
         pointer-events: none;
     }
@@ -131,7 +144,5 @@
             font-size: 15px;
         }
     }
-
 </style>
-
 @endsection

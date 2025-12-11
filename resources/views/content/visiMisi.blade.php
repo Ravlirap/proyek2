@@ -20,6 +20,13 @@
         <div class="circle circle-2"></div>
         <div class="circle circle-3"></div>
       </div>
+
+    <span class="sakura" style="left: 12%; animation-delay: 0s;"></span>
+    <span class="sakura" style="left: 28%; animation-delay: 1.2s;"></span>
+    <span class="sakura" style="left: 45%; animation-delay: 2.4s;"></span>
+    <span class="sakura" style="left: 60%; animation-delay: 0.8s;"></span>
+    <span class="sakura" style="left: 78%; animation-delay: 1.8s;"></span>
+
     </div>
   </section>
 
@@ -79,193 +86,343 @@
   </section>
 </div>
 
-<style>
-:root {
-  --primary: #c9003c;
-  --dark: #1a1a1a;
-  --gray: #666;
-  --light-bg: #f8f9fa;
-  --radius: 10px;
-  --shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
+    <style>
+    :root {
+    --primary: #c9003c;
+    --secondary: #0057ff;
+    --dark: #1a1a1a;
+    --gray: #666;
+    --light-bg: #f5f7fb;
+    --radius: 12px;
+    --shadow: 0 8px 18px rgba(0,0,0,0.08);
+    }
 
-.visi-misi-page {
-  width: 100%;
-}
+    .visi-misi-page {
+    width: 100%;
+    animation: fadeIn .8s ease-out;
+    }
 
-/* Reuse hero-section style from program_pelatihan */
-.hero-section {
-  position: relative;
-  background: linear-gradient(135deg, #6671ea 0%, #273d9c 100%);
-  padding: 100px 20px;
-  margin-top: 84px;
-  overflow: hidden;
-  width: 100vw;
-  left: 50%;
-  margin-left: -50vw;
-  right: 50%;
-  margin-right: -50vw;
-  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
-}
+    @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+    }
 
-.hero-title {
-  font-size: 3rem;
-  color: white;
-  font-weight: 800;
-  line-height: 1.2;
-}
+    /* hero section */
+    .hero-section {
+    position: relative;
+    background: linear-gradient(135deg, #1a2e6f, #0044cc);
+    padding: 140px 20px 150px;
+    margin-top: 84px;
+    overflow: hidden;
+    width: 100vw;
+    left: 50%;
+    margin-left: -50vw;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    color: white;
+    }
 
-.hero-description {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.9);
-  margin-top: 20px;
-}
+    .hero-decoration .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+    animation: float 6s ease-in-out infinite;
+    }
 
-/* Section Titles */
-.section-title {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 20px;
-  text-align: center;
-}
+    .circle-1 { width: 120px; height: 120px; top: 50px; left: 5%; animation-delay: 0s; }
+    .circle-2 { width: 180px; height: 180px; bottom: 40px; right: 10%; animation-delay: 1.5s; }
+    .circle-3 { width: 80px; height: 80px; top: 160px; right: 35%; animation-delay: 3s; }
 
-.section-title i {
-  margin-right: 10px;
-}
+    @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    }
 
-.section-text {
-  text-align: center;
-  font-size: 1.1rem;
-  color: var(--gray);
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto;
-}
+    .hero-section::after {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -120px;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(255,255,255,0.25), transparent);
+    filter: blur(20px);
+    animation: pulse 6s infinite ease-in-out;
+    }
 
-/* Visi Card */
-.visi-card {
-  background: white;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 40px;
-  margin-top: 60px;
-}
+    @keyframes pulse {
+        0% { transform: scale(1); opacity: .5; }
+        50% { transform: scale(1.15); opacity: .8; }
+        100% { transform: scale(1); opacity: .5; }
+    }
 
-/* Misi */
-.misi-section {
-  padding: 80px 20px;
-  background: var(--light-bg);
-}
+    .hero-title {
+        font-size: 3rem;
+        font-weight: 900;
+        line-height: 1.2;
+        animation: slideDown .9s ease-out;
+    }
 
-.misi-list {
-  max-width: 800px;
-  margin: 0 auto;
-  list-style: none;
-  padding: 0;
-}
+    .hero-title .highlight {
+        color: #ffcbde;
+        text-shadow: 0 0 12px rgba(255,255,255,0.5);
+    }
 
-.misi-list li {
-  font-size: 1.05rem;
-  color: var(--gray);
-  margin-bottom: 15px;
-  position: relative;
-  padding-left: 28px;
-}
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-25px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 
-.misi-list li::before {
-  content: "✔";
-  color: var(--primary);
-  position: absolute;
-  left: 0;
-}
+    .hero-description {
+        font-size: 1.2rem;
+        margin-top: 18px;
+        max-width: 650px;
+        animation: fadeUp .9s ease-out .2s backwards;
+    }
 
-/* Nilai Section */
-.nilai-section {
-  padding: 80px 20px;
-}
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(25px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 
-.nilai-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
+    .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 220px;
+    height: 220px;
+    background-image:
+        radial-gradient(rgba(255,255,255,0.07) 20%, transparent 21%),
+        radial-gradient(rgba(255,255,255,0.07) 20%, transparent 21%);
+    background-size: 18px 18px;
+    background-position: 0 0, 9px 9px;
+    mask-image: radial-gradient(circle, white, transparent 70%);
+    opacity: .25;
+    pointer-events: none;
+   }
 
-.nilai-card {
-  background: white;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 30px 20px;
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+   .sakura {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 205, 222, 0.85);
+    border-radius: 75% 25% 75% 25%;
+    filter: blur(0.5px);
+    animation: sakuraFall 8s linear infinite;
+    pointer-events: none;
+    }
 
-.nilai-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-}
+    @keyframes sakuraFall {
+        0% {
+            transform: translateY(-30px) rotate(0deg);
+            opacity: .9;
+        }
+        100% {
+            transform: translateY(320px) rotate(360deg);
+            opacity: .2;
+        }
+    }
 
-.nilai-icon {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 15px;
-}
+    /* visi section */
+    .visi-section {
+    padding: 80px 20px;
+    }
 
-.nilai-card h3 {
-  color: var(--dark);
-  font-size: 1.25rem;
-  margin-bottom: 10px;
-}
+    .visi-card {
+        background: white;
+        border-radius: var(--radius);
+        padding: 45px;
+        box-shadow: var(--shadow);
+        border-left: 7px solid var(--secondary);
+        transition: transform .25s ease, box-shadow .25s ease;
+    }
 
-.nilai-card p {
-  color: var(--gray);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
+    .visi-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+    }
 
-/* CTA Section reused */
-.cta-section {
-  background: linear-gradient(to right, var(--primary), #ff4d6d);
-  color: white;
-  padding: 60px 20px;
-  margin-top: 60px;
-  text-align: center;
-  width: 100vw;
-  left: 50%;
-  margin-left: -50vw;
-  right: 50%;
-  margin-right: -50vw;
-}
+    .section-title {
+        font-size: 2.3rem;
+        color: var(--secondary);
+        margin-bottom: 18px;
+        text-align: center;
+        position: relative;
+    }
 
-.cta-content {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-}
+    .section-title::after {
+        content: "";
+        width: 80px;
+        height: 4px;
+        background: var(--secondary);
+        display: block;
+        margin: 12px auto 0;
+        border-radius: 2px;
+        box-shadow: 0 4px 12px rgba(0,87,255,0.4);
+    }
 
-.btn-primary {
-  display: inline-block;
-  padding: 12px 30px;
-  background: white;
-  color: var(--primary);
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.2s ease;
-}
+    .section-text {
+        text-align: center;
+        font-size: 1.15rem;
+        color: var(--gray);
+        max-width: 820px;
+        margin: 0 auto;
+        line-height: 1.85;
+    }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-}
+    /* misi section */
+    .misi-section {
+    padding: 90px 20px;
+    background: linear-gradient(135deg, #f5f8ff, #eef2ff);
+    }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.2rem;
-  }
-  .section-title {
-    font-size: 1.6rem;
-  }
-}
-</style>
+    .misi-list {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        animation: fadeList 1s ease-out;
+    }
+
+    @keyframes fadeList {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .misi-list li {
+        font-size: 1.08rem;
+        color: var(--dark);
+        margin-bottom: 18px;
+        padding: 16px 20px 16px 48px;
+
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(6px);
+        border-radius: var(--radius);
+
+        border: 1px solid rgba(0, 0, 0, 0.06);
+
+        box-shadow:
+            0 4px 10px rgba(0, 0, 0, 0.04),
+            0 8px 28px rgba(0, 0, 0, 0.06);
+
+        position: relative;
+        transition:
+            transform .25s ease,
+            box-shadow .25s ease,
+            background .25s ease;
+    }
+
+    .misi-list li:hover {
+        transform: translateX(8px);
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow:
+            0 8px 18px rgba(0, 0, 0, 0.06),
+            0 14px 34px rgba(0, 0, 0, 0.12);
+    }
+
+    .misi-list li::before {
+        content: "";
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+
+        background: var(--primary);
+        box-shadow: 0 0 8px rgba(0, 102, 255, 0.4);
+    }
+
+
+    /* nilai section */
+    .nilai-section {
+        padding: 90px 20px;
+        background: #ffffff;
+    }
+
+    .nilai-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+        gap: 32px;
+        margin-top: 40px;
+    }
+
+    .nilai-card {
+        background: #ffffff;
+        padding: 34px 24px;
+        border-radius: var(--radius);
+        text-align: center;
+        border: 1px solid rgba(0, 85, 255, 0.12);
+
+        box-shadow:
+            0 8px 18px rgba(0, 0, 0, 0.07),
+            inset 0 0 12px rgba(0, 115, 255, 0.05);
+
+        transition:
+            transform .35s ease,
+            box-shadow .35s ease,
+            border .35s ease;
+    }
+
+    .nilai-card:hover {
+        transform: translateY(-10px) scale(1.03);
+
+        border: 1px solid rgba(0, 85, 255, 0.35);
+
+        box-shadow:
+            0 14px 35px rgba(0, 87, 255, 0.16),
+            inset 0 0 18px rgba(0, 115, 255, 0.10);
+    }
+
+    .nilai-icon {
+        font-size: 2.4rem;
+        color: var(--secondary);
+        margin-bottom: 18px;
+
+        padding: 16px;
+        width: 68px;
+        height: 68px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 50%;
+        background: rgba(0, 89, 255, 0.10);
+
+        box-shadow:
+            0 4px 10px rgba(0, 87, 255, 0.20),
+            inset 0 0 6px rgba(255,255,255,0.6);
+
+        animation: floatIcon 3.2s infinite ease-in-out;
+    }
+
+    @keyframes floatIcon {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
+    }
+
+    .nilai-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 8px;
+        font-weight: 700;
+        color: #0f1c3f;
+    }
+
+    .nilai-card p {
+        color: var(--gray);
+        font-size: .96rem;
+        line-height: 1.65;
+    }
+
+    @media (max-width: 768px) {
+        .nilai-card {
+            padding: 28px 20px;
+        }
+    }
+
+
+    </style>
 @endsection

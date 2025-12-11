@@ -37,12 +37,26 @@
         width: 250px;
         height: 100vh;
         background: #ffffff;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        padding: 25px 20px;
         position: fixed;
         top: 0;
         left: 0;
+        padding: 25px 20px;
         border-right: 3px solid #dbeafe;
+
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+
+        animation: fadeSlide 0.4s ease;
+    }
+
+    @keyframes fadeSlide {
+        from {
+            opacity: 0;
+            transform: translateX(-15px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
 
     .sidebar-header {
@@ -59,10 +73,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 10px auto;
+        margin: 0 auto 10px;
         font-size: 22px;
         font-weight: bold;
-        box-shadow: 0 3px 10px rgba(37,99,235,0.3);
+
+        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+
+        transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .logo-circle:hover {
+        transform: scale(1.07);
+        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.55);
     }
 
     .sidebar-title {
@@ -87,7 +109,9 @@
         font-weight: 500;
         color: #1e40af;
         border-radius: 10px;
-        transition: all 0.25s;
+        cursor: pointer;
+
+        transition: background 0.25s, color 0.25s, transform 0.25s, box-shadow 0.25s;
     }
 
     .menu-item i {
@@ -97,14 +121,19 @@
     .menu-item:hover {
         background: #e0f2fe;
         color: #0c4a6e;
-        transform: translateX(4px);
+        transform: translateX(5px);
+
+        box-shadow: 0 4px 12px rgba(0, 150, 255, 0.18);
     }
 
     .menu-item.active {
         background: #2563eb;
-        color: white;
+        color: #ffffff;
         font-weight: 600;
-        box-shadow: 0 3px 8px rgba(37,99,235,0.4);
+
+        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.5);
+
+        transform: translateX(4px);
     }
 
     .logout {
@@ -114,5 +143,6 @@
     .logout:hover {
         background: #fee2e2;
         color: #b91c1c !important;
+        box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
     }
 </style>
