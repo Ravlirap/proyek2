@@ -4,17 +4,17 @@
     <!-- Hero Section -->
   <section class="hero-section">
     <div class="container">
-        <div class="hero-content">  
+        <div class="hero-content">
             <h1 class="hero-title">
                 Program Pelatihan
                 <span class="highlight">LPK Seikou</span>
             </h1>
-            
+
             <p class="hero-description">
-                Pilih jalur karir impian Anda di Jepang melalui program pelatihan berkualitas dari LPK Seikou. 
+                Pilih jalur karir impian Anda di Jepang melalui program pelatihan berkualitas dari LPK Seikou.
                 Kami menyediakan berbagai program yang disesuaikan dengan kebutuhan dan tujuan karir Anda.
             </p>
-            
+
             <div class="hero-features">
                 <div class="feature-item">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -39,12 +39,18 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="hero-decoration">
             <div class="circle circle-1"></div>
             <div class="circle circle-2"></div>
             <div class="circle circle-3"></div>
         </div>
+
+        <span class="sakura" style="left: 12%; animation-delay: 0s;"></span>
+        <span class="sakura" style="left: 28%; animation-delay: 1.2s;"></span>
+        <span class="sakura" style="left: 45%; animation-delay: 2.4s;"></span>
+        <span class="sakura" style="left: 60%; animation-delay: 0.8s;"></span>
+        <span class="sakura" style="left: 78%; animation-delay: 1.8s;"></span>
     </div>
 </section>
 
@@ -327,153 +333,116 @@
 
     /* Hero Section */
     .hero-section {
-        position: relative;
-        background: linear-gradient(135deg, #6671ea 0%, #273d9c 100%);
-        padding: 80px 20px;
-        margin-bottom: 20px;
-        margin-top: 84px;
-        overflow: hidden;
-        box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
+    position: relative;
+    background: linear-gradient(135deg, #1a2e6f, #0044cc);
+    padding: 140px 20px 150px;
+    margin-top: 84px;
+    overflow: hidden;
+    width: 100vw;
+    left: 50%;
+    margin-left: -50vw;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    color: white;
     }
 
-    .hero-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: 
-            radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-        pointer-events: none;
+    .hero-decoration .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+    animation: float 6s ease-in-out infinite;
     }
 
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        position: relative;
-        z-index: 1;
+    .circle-1 { width: 120px; height: 120px; top: 50px; left: 5%; animation-delay: 0s; }
+    .circle-2 { width: 180px; height: 180px; bottom: 40px; right: 10%; animation-delay: 1.5s; }
+    .circle-3 { width: 80px; height: 80px; top: 160px; right: 35%; animation-delay: 3s; }
+
+    @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
     }
 
-    .hero-content {
-        position: relative;
-        max-width: 700px;
-        margin: 0;
-        animation: fadeInUp 1s ease-out;
-        z-index: 2;
+    .hero-section::after {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -120px;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(255,255,255,0.25), transparent);
+    filter: blur(20px);
+    animation: pulse 6s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); opacity: .5; }
+        50% { transform: scale(1.15); opacity: .8; }
+        100% { transform: scale(1); opacity: .5; }
     }
 
     .hero-title {
         font-size: 3rem;
-        color: white;
-        margin-bottom: 24px;
-        font-weight: 800;
+        font-weight: 900;
         line-height: 1.2;
-        letter-spacing: -0.5px;
+        animation: slideDown .9s ease-out;
     }
 
-    .highlight {
-        display: block;
-        background: linear-gradient(90deg, #fff 0%, #f8bbd0 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+    .hero-title .highlight {
+        color: #ffcbde;
+        text-shadow: 0 0 12px rgba(255,255,255,0.5);
     }
 
-    .hero-description {
-        font-size: 1.125rem;
-        color: rgba(255, 255, 255, 0.9);
-        line-height: 1.8;
-        margin-bottom: 32px;
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-25px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     .hero-features {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 24px;
+    display: flex;
+    gap: 25px;
+    margin-top: 28px;
+    flex-wrap: wrap;
     }
 
-    .feature-item {
+    .hero-features li {
         display: flex;
         align-items: center;
         gap: 8px;
-        color: white;
-        font-size: 0.9rem;
-        font-weight: 500;
+        font-size: 1.1rem;
+        list-style: none;
+        white-space: nowrap; 
     }
 
-    .feature-item svg {
-        flex-shrink: 0;
-        opacity: 0.9;
+    .hero-description {
+        font-size: 1.2rem;
+        margin-top: 18px;
+        max-width: 650px;
+        animation: fadeUp .9s ease-out .2s backwards;
     }
 
-    .hero-decoration {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 50%;
-        height: 100%;
-        pointer-events: none;
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(25px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
-    .circle {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(5px);
+    .sakura {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 205, 222, 0.85);
+    border-radius: 75% 25% 75% 25%;
+    filter: blur(0.5px);
+    animation: sakuraFall 8s linear infinite;
+    pointer-events: none;
     }
 
-    .circle-1 {
-        width: 300px;
-        height: 300px;
-        top: -50px;
-        right: -50px;
-        animation: float 6s ease-in-out infinite;
-    }
-
-    .circle-2 {
-        width: 200px;
-        height: 200px;
-        top: 50%;
-        right: 10%;
-        animation: float 8s ease-in-out infinite;
-        animation-delay: 1s;
-    }
-
-    .circle-3 {
-        width: 150px;
-        height: 150px;
-        bottom: -30px;
-        right: 30%;
-        animation: float 7s ease-in-out infinite;
-        animation-delay: 2s;
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
+    @keyframes sakuraFall {
+        0% {
+            transform: translateY(-30px) rotate(0deg);
+            opacity: .9;
         }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(0) rotate(0deg);
-        }
-        50% {
-            transform: translateY(-20px) rotate(5deg);
+        100% {
+            transform: translateY(320px) rotate(360deg);
+            opacity: .2;
         }
     }
 
@@ -671,12 +640,12 @@
         .hero-title {
             font-size: 2.5rem;
         }
-        
+
         .programs-grid {
             grid-template-columns: repeat(2, 1fr);
             gap: 25px;
         }
-        
+
         .circle-3 {
             display: none;
         }
@@ -826,46 +795,61 @@
     }
 
     .chart-section {
-        background: #f3f5f6;
-        padding: 40px 30px;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        margin-top: 100px;
+        background: linear-gradient(180deg, #ffffff, #f5f7fa);
+        padding: 55px 38px;
+        border-radius: 26px;
+        box-shadow: 0 15px 38px rgba(0, 0, 0, 0.08);
+        margin-top: 90px;
+        border: 1px solid rgba(0,0,0,0.06);
+        animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     .chart-title {
         text-align: center;
-        font-size: 2rem;
-        color: #333;
-        margin-bottom: 40px;
+        font-size: 2.1rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 42px;
+        letter-spacing: 0.4px;
     }
 
     .chart-title .highlight {
-        color: #d32f2f;
+        color: #214fcd;
     }
 
     .chart-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
-        gap: 50px;
+        align-items: flex-start;
+        gap: 55px;
     }
 
     .chart-left {
         text-align: center;
+        animation: floatUp 0.9s ease;
+    }
+
+    @keyframes floatUp {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
     }
 
     .chart-note {
-        color: #555;
-        font-size: 0.9rem;
+        color: #6b7280;
+        font-size: 0.95rem;
         margin-top: 12px;
     }
 
     .chart-right {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        gap: 20px;
     }
 
     .chart-legend {
@@ -874,37 +858,67 @@
         margin: 0;
         display: grid;
         grid-template-columns: repeat(2, minmax(220px, 1fr));
-        gap: 12px 30px;
+        gap: 18px 32px;
     }
 
     .chart-legend li {
-        background: #fff;
-        padding: 10px 14px;
-        border-radius: 10px;
+        background: #ffffff;
+        padding: 14px 18px;
+        border-radius: 14px;
         font-size: 1rem;
-        color: #333;
-        font-weight: 500;
+        color: #1f2937;
+        font-weight: 600;
         display: flex;
         align-items: center;
-        gap: 10px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        gap: 14px;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+        border: 1px solid rgba(0,0,0,0.04);
+        transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease,
+            background 0.25s ease;
+    }
+
+    .chart-legend li:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+        background: #f8fafc;
     }
 
     .color-box {
-        width: 18px;
-        height: 18px;
-        border-radius: 4px;
-        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 6px;
+        flex-shrink: 0;
     }
 
     @media (max-width: 900px) {
-    .chart-container {
-        flex-direction: column;
-        text-align: center;
+        .chart-container {
+            flex-direction: column;
+            text-align: center;
+            gap: 45px;
+        }
+
+        .chart-legend {
+            grid-template-columns: 1fr;
+            justify-items: center;
+            width: 100%;
+        }
+
+        .chart-legend li {
+            width: 85%;
+            margin: auto;
+        }
     }
-    .chart-legend {
-        grid-template-columns: 1fr;
-    }
+
+    @media (max-width: 500px) {
+        .chart-title {
+            font-size: 1.7rem;
+        }
+
+        .chart-section {
+            padding: 40px 24px;
+        }
     }
 </style>
 @endsection

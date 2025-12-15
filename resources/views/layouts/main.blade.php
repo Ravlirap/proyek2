@@ -11,9 +11,12 @@
         @include('layouts.header')
     </header>
 
+    @yield('hero')
+
     <div class="container">
         @yield('content')
     </div>
+
 
     <footer>
         @include('layouts.footer')
