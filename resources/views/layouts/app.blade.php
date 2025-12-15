@@ -8,8 +8,6 @@ use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
-    // Hapus public function __construct() { ... }
-
     public function showLoginForm()
     {
         return view('auth.login');
@@ -38,7 +36,7 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/home');
+        return redirect()->route('content.home');
     }
     protected function redirectToDashboard()
     {

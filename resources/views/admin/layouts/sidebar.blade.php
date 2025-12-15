@@ -1,6 +1,6 @@
 <div class="d-flex flex-column flex-shrink-0 p-3 bg-white border-end vh-100" style="width: 220px; position: fixed; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);">
 
-   <a class="navbar-brand fw-bold d-flex align-items-center" href="/home">
+   <a class="navbar-brand fw-bold d-flex align-items-center" href="{{ route('home') }}">
       <img src="{{ asset('img/logo1.png') }}" alt="logo" width="42" height="42"
            class="me-2 rounded-circle border-2 border-light">
         <span class="fs-5 text-primary">SEIKOU ADMIN</span>
@@ -31,8 +31,9 @@
             </a>
         </li>
         <li class="nav-item mb-1 list-unstyled">
+            @php $isActive = request()->routeIs('admin.artikel.index'); @endphp
             <a href="{{ route('admin.artikel.index') }}" 
-            class="nav-link {{ Request::is('admin/kelola_artikel*') ? 'active' : '' }} rounded-3 text-dark py-2 transition-ease">
+            class="nav-link rounded-3 text-dark py-2 transition-ease {{ $isActive ? 'active bg-primary text-white fw-bold shadow-sm' : 'link-hover-light' }}" aria-current="{{ $isActive ? 'page' : '' }}">
                 <i class="bi bi-images me-2"></i> Kelola Galeri
             </a>
         </li>
@@ -57,9 +58,13 @@
     <hr class="my-3">
 
     <div>
-        <a href="{{ url('logout') }}" class="nav-link text-danger rounded-3 p-2 mb-2 transition-ease hover-danger-bg-light">
-            <i class="bi bi-box-arrow-right me-2"></i> Keluar
-        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-inline">
+            @csrf
+            <button type="submit" class="nav-link text-danger rounded-3 p-2 mb-2 transition-ease hover-danger-bg-light border-0 bg-transparent">
+                <i class="bi bi-box-arrow-right me-2"></i> Keluar
+            </button>
+        </form>
+
 
         <div class="text-center small text-secondary mt-2">
             &copy; {{ date('Y') }} Seikou

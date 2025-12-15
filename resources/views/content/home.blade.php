@@ -9,10 +9,20 @@
                 <p class="lead">
                     Transformasi karir Anda dimulai di sini. Kami menyediakan pelatihan intensif Bahasa Jepang (N5-N2), pembinaan budaya, dan jaminan penyaluran untuk program Magang (IM) dan Tokutei Ginou (SSW).
                 </p>
+                
                 <div class="cta-group">
-                    <a href="{{ route('pendaftaran') }}" class="btn btn-primary">Daftar Sekarang!</a>
+                    @if(!empty($pendaftar) || request()->cookie('kode_pendaftaran'))
+                        <a href="{{ route('cek.status') }}" class="btn btn-success">
+                            Cek Status Pendaftaran
+                        </a>
+                    @else
+                        <a href="{{ route('pendaftaran') }}" class="btn btn-primary">
+                            Daftar Sekarang!
+                        </a>
+                    @endif
                     <a href="#legalitas" class="btn btn-outline">Cek Legalitas Kami</a>
                 </div>
+
                 <ul class="hero-meta">
                     <li><strong>2010+</strong> Berdiri Sejak</li>
                     <li><strong>100%</strong> Izin Kemenaker RI</li>

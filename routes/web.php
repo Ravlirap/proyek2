@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\homeController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\program_pelatihanController;
 use App\Http\Controllers\LoginController;
@@ -19,13 +19,13 @@ use App\Http\Controllers\siswaController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-// Rute Otentikasi (Login, Logout)
-// Menggunakan LoginController yang telah dimodifikasi
- 
+//Home
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+//Auth
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
 
 // Rute yang Memerlukan Otentikasi
 Route::middleware(['auth'])->group(function () {
@@ -36,6 +36,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');
 Route::post('/pendaftaran', [PendaftaranController::class, 'submit'])->name('pendaftaran.submit');
 Route::get('/pendaftaran/{slug}', [PendaftaranController::class, 'show'])->name('pendaftaran.detail');
+Route::get('/cek-status', [PendaftaranController::class, 'cekStatus'])->name('cek.status');
 
 //Program
 Route::get('/program_pelatihan', [program_pelatihanController::class, 'index'])->name('program_pelatihan');
@@ -89,19 +90,3 @@ Route::middleware(['auth'])->prefix('siswa')->group(function () {
 Route::middleware(['auth'])->prefix('guru')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('guru.dashboard');
 });
-
-Route::get('/', function () {
-    $title = "WebSaya.Com";
-    $slug = "home";
-    return view('content.home', compact('title','slug'));
-});
-
-Route::get('/home', function(){
-    $title = "WebSaya.Com";
-    $slug = "home";
-    $content = "Ini adalah content WebSaya.Com";
-    return view('content.home', compact('title','slug','content'));
-})->name('home');
-
-// Optional fallback: allow GET and POST for logout (temporary, less secure).
-Route::match(['get','post'], '/logout', [LoginController::class, 'logout'])->name('logout');
