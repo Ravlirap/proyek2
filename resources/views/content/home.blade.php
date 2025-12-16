@@ -12,6 +12,7 @@
                 <p class="lead">
                     Transformasi karir Anda dimulai di sini. Kami menyediakan pelatihan intensif Bahasa Jepang (N5-N2), pembinaan budaya, dan jaminan penyaluran untuk program Magang (IM) dan Tokutei Ginou (SSW).
                 </p>
+                
                 <div class="cta-group">
                     @if(!empty($pendaftar) || request()->cookie('kode_pendaftaran'))
                         <a href="{{ route('cek.status') }}" class="btn btn-success">
@@ -33,7 +34,6 @@
             </div>
         </section>
 @endsection
-
         <section id="legalitas" class="trust-section">
             <h2 class="section-title text-center">Terdaftar Resmi & Terjamin Kualitas</h2>
             <div class="trust-grid">
