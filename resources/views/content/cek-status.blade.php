@@ -3,7 +3,7 @@
 @section('title', 'Cek Status Pendaftaran')
 
 @section('content')
-<div class="container py-5">
+<div class="container py-5 mt-5">
 
     <h1 class="text-center fw-bold mb-4">Status Pendaftaran Anda</h1>
 

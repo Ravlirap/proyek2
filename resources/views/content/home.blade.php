@@ -23,7 +23,6 @@
                             Daftar Sekarang!
                         </a>
                     @endif
-                    <a href="#legalitas" class="btn btn-outline">Cek Legalitas Kami</a>
                 </div>
 
                 <ul class="hero-meta">
