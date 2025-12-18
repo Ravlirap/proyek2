@@ -71,7 +71,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/pendaftaran/show/{id}', [KelolaPendaftarController::class, 'show'])->name('admin.pendaftar.show');
     Route::put('/pendaftar/{id}', [KelolaPendaftarController::class, 'updateStatus'])->name('admin.pendaftar.updateStatus');
     Route::delete('/pendaftaran/destroy/{id}', [KelolaPendaftarController::class, 'destroy'])->name('admin.pendaftar.destroy');
-    
+
     //kelola artikel
     Route::get('/kelola_artikel', [KelolaArtikelController::class, 'index'])->name('admin.artikel.index');
     Route::get('/artikel/create', [KelolaArtikelController::class, 'create'])->name('admin.artikel.create');
@@ -108,9 +108,3 @@ Route::get('/home', function(){
     $content = "Ini adalah content WebSaya.Com";
     return view('content.home', compact('title','slug','content'));
 })->name('home');
-<<<<<<< HEAD
-=======
-
-// Optional fallback: allow GET and POST for logout (temporary, less secure).
-Route::match(['get','post'], '/logout', [LoginController::class, 'logout'])->name('logout');
->>>>>>> 71fbae4882d7d039d45f1faf6f7f3f1696eaae95
