@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\homeController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\program_pelatihanController;
 use App\Http\Controllers\LoginController;
@@ -26,7 +26,6 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-
 // Rute yang Memerlukan Otentikasi
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
@@ -36,6 +35,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');
 Route::post('/pendaftaran', [PendaftaranController::class, 'submit'])->name('pendaftaran.submit');
 Route::get('/pendaftaran/{slug}', [PendaftaranController::class, 'show'])->name('pendaftaran.detail');
+Route::get('/cek-status', [PendaftaranController::class, 'cekStatus'])->name('cek.status');
 
 //Program
 Route::get('/program_pelatihan', [program_pelatihanController::class, 'index'])->name('program_pelatihan');

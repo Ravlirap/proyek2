@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('asal_sekolah');
             $table->string('no_hp');
-            $table->string('email')->unique();
+            $table->string('email')->nullable();
             $table->string('foto')->nullable();
             $table->string('ijazah')->nullable();
             $table->string('ktp')->nullable();

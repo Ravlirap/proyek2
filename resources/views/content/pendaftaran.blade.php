@@ -89,54 +89,61 @@
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" name="nama_lengkap" class="form-control" id="namaLengkap" placeholder="Nama Lengkap" required>
+                                            <input type="text" name="nama_lengkap" class="form-control {{ $errors->has('nama_lengkap') ? 'is-invalid' : '' }}" id="namaLengkap" placeholder="Nama Lengkap" required value="{{ old('nama_lengkap') }}">
                                             <label for="namaLengkap">Nama Lengkap</label>
+                                            @if($errors->has('nama_lengkap')) <div class="invalid-feedback">{{ $errors->first('nama_lengkap') }}</div> @endif
                                         </div>
                                     </div>
 
                                     <div class="col-md-3">
                                         <div class="form-floating">
-                                            <input type="text" name="tempat_lahir" class="form-control" id="tempatLahir" placeholder="Tempat Lahir" required>
+                                            <input type="text" name="tempat_lahir" class="form-control {{ $errors->has('tempat_lahir') ? 'is-invalid' : '' }}" id="tempatLahir" placeholder="Tempat Lahir" required value="{{ old('tempat_lahir') }}">
                                             <label for="tempatLahir">Tempat Lahir</label>
+                                            @if($errors->has('tempat_lahir')) <div class="invalid-feedback">{{ $errors->first('tempat_lahir') }}</div> @endif
                                         </div>
                                     </div>
 
                                     <div class="col-md-3">
                                         <div class="form-floating">
-                                            <input type="date" name="tanggal_lahir" class="form-control" id="tanggalLahir" required>
+                                            <input type="date" name="tanggal_lahir" class="form-control {{ $errors->has('tanggal_lahir') ? 'is-invalid' : '' }}" id="tanggalLahir" required value="{{ old('tanggal_lahir') }}">
                                             <label for="tanggalLahir">Tanggal Lahir</label>
+                                            @if($errors->has('tanggal_lahir')) <div class="invalid-feedback">{{ $errors->first('tanggal_lahir') }}</div> @endif
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <select name="jenis_kelamin" class="form-select" id="jenisKelamin" required>
+                                            <select name="jenis_kelamin" class="form-select {{ $errors->has('jenis_kelamin') ? 'is-invalid' : '' }}" id="jenisKelamin" required>
                                                 <option value="">-- Pilih --</option>
-                                                <option value="laki-laki">Laki-laki</option>
-                                                <option value="perempuan">Perempuan</option>
+                                                <option value="laki-laki" {{ old('jenis_kelamin') == 'laki-laki' ? 'selected' : '' }}>Laki-laki</option>
+                                                <option value="perempuan" {{ old('jenis_kelamin') == 'perempuan' ? 'selected' : '' }}>Perempuan</option>
                                             </select>
                                             <label for="jenisKelamin">Jenis Kelamin</label>
+                                            @if($errors->has('jenis_kelamin')) <div class="invalid-feedback">{{ $errors->first('jenis_kelamin') }}</div> @endif
                                         </div>
                                     </div>
 
                                     <div class="col-md-3">
                                         <div class="form-floating">
-                                            <input type="number" name="tinggi_badan" class="form-control" id="tinggiBadan" placeholder="Tinggi Badan" required>
+                                            <input type="number" name="tinggi_badan" class="form-control {{ $errors->has('tinggi_badan') ? 'is-invalid' : '' }}" id="tinggiBadan" placeholder="Tinggi Badan" required value="{{ old('tinggi_badan') }}">
                                             <label for="tinggiBadan">Tinggi Badan (cm)</label>
+                                            @if($errors->has('tinggi_badan')) <div class="invalid-feedback">{{ $errors->first('tinggi_badan') }}</div> @endif
                                         </div>
                                     </div>
 
                                     <div class="col-md-3">
                                         <div class="form-floating">
-                                            <input type="number" name="berat_badan" class="form-control" id="beratBadan" placeholder="Berat Badan" required>
+                                            <input type="number" name="berat_badan" class="form-control {{ $errors->has('berat_badan') ? 'is-invalid' : '' }}" id="beratBadan" placeholder="Berat Badan" required value="{{ old('berat_badan') }}">
                                             <label for="beratBadan">Berat Badan (kg)</label>
+                                            @if($errors->has('berat_badan')) <div class="invalid-feedback">{{ $errors->first('berat_badan') }}</div> @endif
                                         </div>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea name="alamat" class="form-control" id="alamat" placeholder="Alamat" style="height: 100px" required></textarea>
+                                            <textarea name="alamat" class="form-control {{ $errors->has('alamat') ? 'is-invalid' : '' }}" id="alamat" placeholder="Alamat" style="height: 100px" required>{{ old('alamat') }}</textarea>
                                             <label for="alamat">Alamat Lengkap</label>
+                                            @if($errors->has('alamat')) <div class="invalid-feedback">{{ $errors->first('alamat') }}</div> @endif
                                         </div>
                                     </div>
                                 </div>
@@ -154,36 +161,52 @@
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" name="asal_sekolah" class="form-control" id="asalSekolah" placeholder="Asal Sekolah" required>
+                                            <input type="text" name="asal_sekolah" class="form-control {{ $errors->has('asal_sekolah') ? 'is-invalid' : '' }}" id="asalSekolah" placeholder="Asal Sekolah" required value="{{ old('asal_sekolah') }}">
                                             <label for="asalSekolah">Asal Sekolah</label>
+                                            @if($errors->has('asal_sekolah')) <div class="invalid-feedback">{{ $errors->first('asal_sekolah') }}</div> @endif
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" name="no_hp" class="form-control" id="noHp" placeholder="No HP" required>
+                                            <input type="text" name="no_hp" class="form-control {{ $errors->has('no_hp') ? 'is-invalid' : '' }}" id="noHp" placeholder="No HP" required value="{{ old('no_hp') }}">
                                             <label for="noHp">No HP</label>
+                                            @if($errors->has('no_hp')) <div class="invalid-feedback">{{ $errors->first('no_hp') }}</div> @endif
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
+                                            <input type="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" id="email" placeholder="Email" required value="{{ old('email') }}">
                                             <label for="email">Alamat Email</label>
+                                            @if($errors->has('email'))
+                                                <div class="invalid-feedback d-block">
+                                                    @php
+                                                        $msg = $errors->first('email');
+                                                        // jika pesan default bahasa inggris "has already been taken", tampilkan pesan indonesia yang lebih informatif
+                                                        if (stripos($msg, 'taken') !== false || stripos($msg, 'already been') !== false) {
+                                                            echo 'Email sudah terdaftar. Gunakan email lain atau login/jika lupa hubungi admin.';
+                                                        } else {
+                                                            echo $msg;
+                                                        }
+                                                    @endphp
+                                                </div>
+                                            @endif
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <select name="program_pilihan" class="form-select" id="programPilihan" required>
+                                            <select name="program_pilihan" class="form-select {{ $errors->has('program_pilihan') ? 'is-invalid' : '' }}" id="programPilihan" required>
                                                 <option value="">-- Pilih Program --</option>
-                                                <option value="teknik-informatika">Teknik Informatika</option>
-                                                <option value="administrasi-perkantoran">Administrasi Perkantoran</option>
-                                                <option value="akuntansi">Akuntansi</option>
-                                                <option value="bahasa-inggris">Bahasa Inggris</option>
-                                                <option value="lainnya">Lainnya</option>
+                                                <option value="teknik-informatika" {{ old('program_pilihan') == 'teknik-informatika' ? 'selected' : '' }}>Teknik Informatika</option>
+                                                <option value="administrasi-perkantoran" {{ old('program_pilihan') == 'administrasi-perkantoran' ? 'selected' : '' }}>Administrasi Perkantoran</option>
+                                                <option value="akuntansi" {{ old('program_pilihan') == 'akuntansi' ? 'selected' : '' }}>Akuntansi</option>
+                                                <option value="bahasa-inggris" {{ old('program_pilihan') == 'bahasa-inggris' ? 'selected' : '' }}>Bahasa Inggris</option>
+                                                <option value="lainnya" {{ old('program_pilihan') == 'lainnya' ? 'selected' : '' }}>Lainnya</option>
                                             </select>
                                             <label for="programPilihan">Program Pilihan</label>
+                                            @if($errors->has('program_pilihan')) <div class="invalid-feedback">{{ $errors->first('program_pilihan') }}</div> @endif
                                         </div>
                                     </div>
                                 </div>

@@ -124,7 +124,7 @@
                                             <i class="bi bi-eye"></i>
                                         </a>
                                         <button type="button"
-                                                class="btn btn-outline-danger btn-action"
+                                                class="btn btn-outline-danger btn-action delete-btn"
                                                 data-id="{{ $pendaftaran->id }}"
                                                 data-nama="{{ $pendaftaran->nama_lengkap }}"
                                                 data-bs-toggle="tooltip"

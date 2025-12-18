@@ -1,7 +1,7 @@
 <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top navbar-dark py-3">
   <div class="container">
     <!-- Logo -->
-    <a class="navbar-brand fw-bold d-flex align-items-center" href="/home">
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="{{ route('home') }}">
       <img src="{{ asset('img/logo1.png') }}" alt="logo" width="42" height="42"
            class="me-2 rounded-circle border-2 border-light">
       <span class="fs-5">SEIKOU </span> <span class="text-primary">JAPAN</span>
@@ -19,7 +19,7 @@
 
         <!-- HOME -->
         <li class="nav-item mx-2">
-          <a class="nav-link {{ ($slug === 'home') ? 'active text-primary fw-semibold' : 'text-light' }}" href="/home">Beranda</a>
+          <a class="nav-link {{ ($slug === 'home') ? 'active text-primary fw-semibold' : 'text-light' }}" href="{{ route('home') }}">Beranda</a>
         </li>
 
         <!-- TENTANG KAMI -->

@@ -1,39 +1,21 @@
 @extends('layouts.main')
 
 @section('content')
-<<<<<<< HEAD
-<section class="hero-section">
-    <div class="container">
-      <div class="hero-content">
-        <h1 class="hero-title">
-          Artikel <span class="highlight">LPK Seikou</span>
-        </h1>
-        <p class="hero-description">
-          Kumpulan artikel tentang LPK Seikou dan kegiatan-kegiatan di LPK Seikou
-        </p>
-      </div>
 
-      <div class="hero-decoration">
-        <div class="circle circle-1"></div>
-        <div class="circle circle-2"></div>
-        <div class="circle circle-3"></div>
-
-        <span class="sakura" style="left: 12%; animation-delay: 0s;"></span>
-        <span class="sakura" style="left: 28%; animation-delay: 1.2s;"></span>
-        <span class="sakura" style="left: 45%; animation-delay: 2.4s;"></span>
-        <span class="sakura" style="left: 60%; animation-delay: 0.8s;"></span>
-        <span class="sakura" style="left: 78%; animation-delay: 1.8s;"></span>
-      </div>
+    <section class="hero-section">
+        <div class="container ">
+        <div class="hero-content">
+            <h1 class="hero-title text-center">
+            Artikel <span class="highlight">LPK Seikou</span>
+            </h1>
+            <p class="hero-description text-center mx-auto">
+            Kumpulan artikel tentang LPK Seikou dan kegiatan-kegiatan di LPK Seikou
+            </p>
+        </div>
     </div>
-  </section>
-=======
->>>>>>> 71fbae4882d7d039d45f1faf6f7f3f1696eaae95
-
-<div class="container py-5">
-    <h1 class="text-center mt-5 mb-5 fw-bold text-gradient">Artikel Terbaru</h1>
-
+    </section>
+    <div class="container py-5">
     <div class="articles-grid">
-
         @foreach ($artikels as $artikel)
         <div class="article-card">
             <div class="card h-100 shadow-sm">
@@ -53,9 +35,9 @@
                     </p>
 
                     <p class="card-text flex-grow-1">
-                        {{ Str::limit(strip_tags($artikel->isi), 120, '...') }}
+                        {{ Str::limit(strip_tags($artikel->isi), 150, '...') }}
                     </p>
-
+            
                     <a href="{{ url('/artikel/' . $artikel->slug) }}"
                        class="btn btn-primary mt-auto">
                         <i class="bi bi-arrow-right-circle"></i> Baca Selengkapnya
@@ -64,9 +46,6 @@
             </div>
         </div>
         @endforeach
-
-    </div>
-</div>
 
 <style>
     /* Import Google Fonts untuk font modern (opsional, tambahkan di head layout jika belum ada)
@@ -96,13 +75,12 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-<<<<<<< HEAD
     /* Hero Section */
 .hero-section {
     position: relative;
     background: linear-gradient(135deg, #1a2e6f, #0044cc);
-    padding: 140px 20px 150px;
-    margin-top: 84px;
+    padding: 80px 20px 150px;
+    margin-top: 86px;
     overflow: hidden;
     width: 100vw;
     left: 50%;
@@ -130,7 +108,6 @@
     .hero-section::after {
     content: "";
     position: absolute;
-    top: -80px;
     right: -120px;
     width: 380px;
     height: 380px;
@@ -196,7 +173,6 @@
         }
     }
 
-=======
 /* CARD */
 .card {
     border: none;
@@ -231,15 +207,10 @@
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
->>>>>>> 71fbae4882d7d039d45f1faf6f7f3f1696eaae95
+
     .articles-grid {
         grid-template-columns: 1fr;
     }
 }
 </style>
-<<<<<<< HEAD
 @endsection
-=======
-
-@endsection
->>>>>>> 71fbae4882d7d039d45f1faf6f7f3f1696eaae95
