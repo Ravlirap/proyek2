@@ -12,8 +12,9 @@ return new class extends Migration
             $table->id();
             $table->string('judul');
             $table->text('deskripsi')->nullable();
-            $table->string('file_materi')->nullable(); 
+            $table->string('file_materi')->nullable();
             $table->string('kategori')->nullable();
+
             $table->timestamps();
         });
     }
