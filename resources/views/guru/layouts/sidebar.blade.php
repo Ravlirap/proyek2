@@ -1,110 +1,96 @@
-<div class="sidebar">
-    <div class="sidebar-header">
-        <div class="logo-circle">
-            <span>LPK</span>
+<aside id="sidebar"
+    class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg
+           transform -translate-x-full md:translate-x-0
+           transition-transform duration-300 ease-in-out
+           z-40">
+
+    <div class="p-6 h-full flex flex-col">
+
+        <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3">
+                <img src="{{ asset('img/logo1.png') }}"
+                     class="w-10 h-10 object-contain" alt="Logo">
+                <span class="panel-title">Guru Panel</span>
+            </div>
+
+            <button id="btnCloseSidebar"
+                class="md:hidden p-1 rounded text-gray-600 hover:bg-gray-100">
+                ✕
+            </button>
         </div>
-        <h2 class="sidebar-title">Guru Panel</h2>
-    </div>
 
-    <nav class="sidebar-menu">
-        <a href="/guru/dashboard" class="menu-item {{ request()->is('guru/dashboard') ? 'active' : '' }}">
-            <i class="fas fa-home"></i> Dashboard
-        </a>
+        <nav class="flex-1 space-y-1">
+            <a href="/guru/dashboard"
+               class="block px-3 py-2 rounded-md
+               {{ request()->is('guru/dashboard') ? 'bg-blue-600 text-white' : 'text-gray-700 hover:bg-gray-100' }}">
+                Dashboard
+            </a>
 
-        <a href="/guru/materi" class="menu-item {{ request()->is('guru/meteri') ? 'active' : '' }}">
-            <i class="fas fa-calendar-alt"></i> Materi
-        </a>
+            <a href="/guru/materi"
+               class="block px-3 py-2 rounded-md
+               {{ request()->is('guru/materi*') ? 'bg-blue-600 text-white' : 'text-gray-700 hover:bg-gray-100' }}">
+                Materi
+            </a>
+        </nav>
 
-        <form action="{{ route('logout') }}" method="POST" class="mt-4">
+        <form action="{{ route('logout') }}" method="POST">
             @csrf
-            <button type="submit" class="menu-item logout">
-                <i class="fas fa-sign-out-alt"></i> Logout
+            <button type="submit"
+                class="logout-btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Keluar
             </button>
         </form>
-    </nav>
-</div>
+    </div>
+</aside>
 
 <style>
-    .sidebar {
-        width: 250px;
-        height: 100vh;
-        background: #ffffff;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        padding: 25px 20px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        border-right: 3px solid #dbeafe;
+    .panel-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
     }
 
-    .sidebar-header {
-        text-align: center;
-        margin-bottom: 35px;
+    @media (max-width: 768px) {
+        .panel-title {
+            font-size: 16px;
+        }
     }
 
-    .logo-circle {
-        width: 70px;
-        height: 70px;
-        background: #2563eb;
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 10px auto;
-        font-size: 22px;
-        font-weight: bold;
-        box-shadow: 0 3px 10px rgba(37,99,235,0.3);
+    @media (max-width: 480px) {
+        .panel-title {
+            font-size: 15px;
+        }
     }
 
-    .sidebar-title {
-        font-size: 18px;
-        font-weight: 700;
-        color: #1e3a8a;
-        letter-spacing: 0.5px;
+    .logout-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+
+    padding: 10px 14px;
+    border-radius: 6px;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    color: #dc2626;
+    font-weight: 500;
+    font-size: 14px;
+
+    transition: background 0.2s ease;
     }
 
-    .sidebar-menu {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+    .logout-btn:hover {
+        background-color: #fee2e2;
     }
 
-    .menu-item {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 12px 14px;
-        font-size: 15px;
-        font-weight: 500;
-        color: #1e40af;
-        border-radius: 10px;
-        transition: all 0.25s;
-    }
-
-    .menu-item i {
-        font-size: 18px;
-    }
-
-    .menu-item:hover {
-        background: #e0f2fe;
-        color: #0c4a6e;
-        transform: translateX(4px);
-    }
-
-    .menu-item.active {
-        background: #2563eb;
-        color: white;
-        font-weight: 600;
-        box-shadow: 0 3px 8px rgba(37,99,235,0.4);
-    }
-
-    .logout {
-        color: #dc2626 !important;
-    }
-
-    .logout:hover {
-        background: #fee2e2;
-        color: #b91c1c !important;
+    .logout-btn i {
+        font-size: 16px;
+        /* ensure icon sits close to text */
+        margin-left: 0;
     }
 </style>

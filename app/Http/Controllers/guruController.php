@@ -12,8 +12,19 @@ class guruController extends Controller
 {
     public function dashboard()
     {
-        $user = Auth::user();
-        return view('guru.dashboard', compact('user'));
+        $user = auth()->user();
+
+        $materiCount = Materi::where('id_guru', $user->id)->count();
+
+        $materiTerbaru = Materi::where('id_guru', $user->id)
+                                ->latest()
+                                ->value('judul');
+
+        return view('guru.dashboard', compact(
+            'user',
+            'materiCount',
+            'materiTerbaru'
+        ));
     }
 
     public function materi(){
