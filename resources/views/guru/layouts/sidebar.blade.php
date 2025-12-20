@@ -10,7 +10,7 @@
             <div class="flex items-center gap-3">
                 <img src="{{ asset('img/logo1.png') }}"
                      class="w-10 h-10 object-contain" alt="Logo">
-                <span class="panel-title">Guru Panel</span>
+                <span class="panel-title">Sensei LPK Seikou</span>
             </div>
 
             <button id="btnCloseSidebar"

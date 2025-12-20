@@ -17,6 +17,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\artikelController;
 use App\Http\Controllers\siswaController;
 use App\Http\Controllers\guruController;
+use App\Http\Controllers\materiController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -77,6 +78,14 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/artikel/edit/{id}', [KelolaArtikelController::class, 'edit'])->name('admin.artikel.edit');
     Route::put('/artikel/update/{id}', [KelolaArtikelController::class, 'update'])->name('admin.artikel.update');
     Route::delete('/artikel/destroy/{id}', [KelolaArtikelController::class, 'destroy'])->name('admin.artikel.destroy');
+
+    //kelola guru
+    Route::get('/guru', [App\Http\Controllers\Admin\GuruController::class, 'index'])->name('admin.guru.index');
+    Route::get('/guru/create', [App\Http\Controllers\Admin\GuruController::class, 'create'])->name('admin.guru.create');
+    Route::post('/guru/store', [App\Http\Controllers\Admin\GuruController::class, 'store'])->name('admin.guru.store');
+    Route::get('/guru/edit/{id}', [App\Http\Controllers\Admin\GuruController::class, 'edit'])->name('admin.guru.edit');
+    Route::put('/guru/update/{id}', [App\Http\Controllers\Admin\GuruController::class, 'update'])->name('admin.guru.update');
+    Route::delete('/guru/destroy/{id}', [App\Http\Controllers\Admin\GuruController::class, 'destroy'])->name('admin.guru.destroy');
 });
 
 //siswa routes
@@ -84,6 +93,7 @@ Route::middleware(['auth'])->prefix('siswa')->group(function () {
     Route::get('/dashboard', [siswaController::class, 'dashboard'])->name('siswa.dashboard');
     Route::get('/jadwal', [siswaController::class, 'jadwal'])->name('siswa.konten.jadwal');
     Route::get('/materi', [siswaController::class, 'materi'])->name('siswa.konten.materi');
+    Route::get('/siswa/materi/{id}', [MateriController::class, 'show'])->name('siswa.materi.show');
     Route::get('/profil', [siswaController::class, 'profil'])->name('siswa.profil_siswa.dashboard');
 });
 
