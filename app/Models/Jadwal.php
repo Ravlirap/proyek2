@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Databse\Eloqunent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Jadwal extends Model

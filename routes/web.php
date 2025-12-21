@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\homeController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\program_pelatihanController;
 use App\Http\Controllers\LoginController;
@@ -17,15 +17,18 @@ use App\Http\Controllers\KelolaGaleriController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\artikelController;
 use App\Http\Controllers\siswaController;
+use App\Http\Controllers\guruController;
+use App\Http\Controllers\materiController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 // Rute Otentikasi (Login, Logout)
 // Menggunakan LoginController yang telah dimodifikasi
- 
+
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
 
 // Rute yang Memerlukan Otentikasi
 Route::middleware(['auth'])->group(function () {
@@ -36,7 +39,6 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');
 Route::post('/pendaftaran', [PendaftaranController::class, 'submit'])->name('pendaftaran.submit');
 Route::get('/pendaftaran/{slug}', [PendaftaranController::class, 'show'])->name('pendaftaran.detail');
-Route::get('/cek-status', [PendaftaranController::class, 'cekStatus'])->name('cek.status');
 
 //Program
 Route::get('/program_pelatihan', [program_pelatihanController::class, 'index'])->name('program_pelatihan');
@@ -52,14 +54,10 @@ Route::get('/artikel', [artikelController::class, 'index'])->name('artikel.index
 
 //galeri
 Route::get('/galeri', [galeriController::class, 'index'])->name('galeri');
-
-//tentang kami
 Route::get('/visiMisi', [visiMisiController::class, 'index'])->name('visiMisi');
 Route::get('/timKami', [timKamiController::class, 'index'])->name('timKami');
 Route::get('/grup_perusahaan', [grupPerusahaanController::class, 'index'])->name('grup_perusahaan');
 Route::get('/profil_lembaga', [profilLembagaController::class, 'index'])->name('profil_lembaga');
-
-//
 Route::get('/kontak', [kontakController::class, 'index'])->name('kontak');
 Route::get('/fasilitas', [fasilitasController::class, 'index'])->name('fasilitas');
 
@@ -72,14 +70,16 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/pendaftaran/show/{id}', [KelolaPendaftarController::class, 'show'])->name('admin.pendaftar.show');
     Route::put('/pendaftar/{id}', [KelolaPendaftarController::class, 'updateStatus'])->name('admin.pendaftar.updateStatus');
     Route::delete('/pendaftaran/destroy/{id}', [KelolaPendaftarController::class, 'destroy'])->name('admin.pendaftar.destroy');
-    
+
     //kelola artikel
     Route::get('/kelola_artikel', [KelolaArtikelController::class, 'index'])->name('admin.artikel.index');
     Route::get('/artikel/create', [KelolaArtikelController::class, 'create'])->name('admin.artikel.create');
     Route::post('/artikel/store', [KelolaArtikelController::class, 'store'])->name('admin.artikel.store');
+    Route::get('/artikel/show/{id}', [KelolaArtikelController::class, 'show']) ->name('admin.artikel.show');
     Route::get('/artikel/edit/{id}', [KelolaArtikelController::class, 'edit'])->name('admin.artikel.edit');
     Route::put('/artikel/update/{id}', [KelolaArtikelController::class, 'update'])->name('admin.artikel.update');
     Route::delete('/artikel/destroy/{id}', [KelolaArtikelController::class, 'destroy'])->name('admin.artikel.destroy');
+
 
     //kelola galeri
     Route::get('/kelola_galeri', [KelolaGaleriController::class, 'index'])->name('admin.galeri.index');
@@ -88,6 +88,15 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/galeri/edit/{id}', [KelolaGaleriController::class, 'edit'])->name('admin.galeri.edit');
     Route::put('/galeri/update/{id}', [KelolaGaleriController::class, 'update'])->name('admin.galeri.update');
     Route::delete('/galeri/destroy/{id}', [KelolaGaleriController::class, 'destroy'])->name('admin.galeri.destroy');
+
+    //kelola guru
+    Route::get('/guru', [App\Http\Controllers\Admin\GuruController::class, 'index'])->name('admin.guru.index');
+    Route::get('/guru/create', [App\Http\Controllers\Admin\GuruController::class, 'create'])->name('admin.guru.create');
+    Route::post('/guru/store', [App\Http\Controllers\Admin\GuruController::class, 'store'])->name('admin.guru.store');
+    Route::get('/guru/edit/{id}', [App\Http\Controllers\Admin\GuruController::class, 'edit'])->name('admin.guru.edit');
+    Route::put('/guru/update/{id}', [App\Http\Controllers\Admin\GuruController::class, 'update'])->name('admin.guru.update');
+    Route::delete('/guru/destroy/{id}', [App\Http\Controllers\Admin\GuruController::class, 'destroy'])->name('admin.guru.destroy');
+
 });
 
 //siswa routes
@@ -95,14 +104,20 @@ Route::middleware(['auth'])->prefix('siswa')->group(function () {
     Route::get('/dashboard', [siswaController::class, 'dashboard'])->name('siswa.dashboard');
     Route::get('/jadwal', [siswaController::class, 'jadwal'])->name('siswa.konten.jadwal');
     Route::get('/materi', [siswaController::class, 'materi'])->name('siswa.konten.materi');
+    Route::get('/siswa/materi/{id}', [MateriController::class, 'show'])->name('siswa.materi.show');
     Route::get('/profil', [siswaController::class, 'profil'])->name('siswa.profil_siswa.dashboard');
 });
-//Route::post('/materi/store', [MateriController::class, 'store'])->name('materi.store');
-
 
 //guru routes
 Route::middleware(['auth'])->prefix('guru')->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('guru.dashboard');
+    Route::get('/dashboard', [guruController::class, 'dashboard'])->name('guru.dashboard');
+    
+    Route::get('/materi', [guruController::class, 'materi'])->name('guru.materi.index');
+    Route::get('/materi/create', [guruController::class, 'create'])->name('guru.materi.create');
+    Route::post('/materi/store', [guruController::class, 'store'])->name('guru.materi.store');
+    Route::get('/materi/edit/{id}', [guruController::class, 'edit'])->name('guru.materi.edit');
+    Route::put('/materi/update/{id}', [guruController::class, 'update'])->name('guru.materi.update');
+    Route::delete('/materi/destroy/{id}', [guruController::class, 'destroy'])->name('guru.materi.destroy');
 });
 
 Route::get('/', function () {
@@ -117,6 +132,3 @@ Route::get('/home', function(){
     $content = "Ini adalah content WebSaya.Com";
     return view('content.home', compact('title','slug','content'));
 })->name('home');
-
-// Optional fallback: allow GET and POST for logout (temporary, less secure).
-Route::match(['get','post'], '/logout', [LoginController::class, 'logout'])->name('logout');
