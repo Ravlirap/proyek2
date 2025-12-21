@@ -51,9 +51,10 @@
 
             @php
                 $badge = [
-                    'pending' => 'warning',
-                    'diterima' => 'success',
-                    'ditolak' => 'danger',
+                    'proses' => 'warning',
+                    'cek kesehatan' => 'info',
+                    'lulus' => 'success',
+                    'tidak lulus' => 'danger',
                 ][$pendaftar->status] ?? 'secondary';
             @endphp
 
@@ -62,8 +63,45 @@
                     {{ strtoupper($pendaftar->status) }}
                 </span>
             </div>
-
+            
             <hr>
+
+            {{-- JADWAL CEK KESEHATAN --}}
+            @if ($pendaftar->status === 'cek kesehatan' && $jadwal)
+                <h5 class="fw-bold mb-3 text-center text-info">
+                    Informasi Jadwal Cek Kesehatan
+                </h5>
+
+                <div class="card border-info shadow-sm">
+                    <div class="card-body">
+
+                        <div class="row mb-2">
+                            <div class="col-md-4 fw-bold">Periode</div>
+                            <div class="col-md-8">{{ $jadwal->periode }}</div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-md-4 fw-bold">Tanggal</div>
+                            <div class="col-md-8">{{ $jadwal->tanggal }}</div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-md-4 fw-bold">Jam</div>
+                            <div class="col-md-8">{{ $jadwal->jam }}</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4 fw-bold">Tempat</div>
+                            <div class="col-md-8">{{ $jadwal->tempat }}</div>
+                        </div>
+
+                        <div class="alert alert-info mt-3 mb-0">
+                            Harap datang tepat waktu dan membawa dokumen yang diperlukan.
+                        </div>
+
+                    </div>
+                </div>
+            @endif
 
             {{-- Tombol Aksi --}}
             <div class="text-center mt-4">

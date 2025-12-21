@@ -14,6 +14,7 @@ use App\Http\Controllers\profilLembagaController;
 use App\Http\Controllers\KelolaPendaftarController;
 use App\Http\Controllers\KelolaArtikelController;
 use App\Http\Controllers\KelolaGaleriController;
+use App\Http\Controllers\Admin\JadwalCekKesehatanController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\artikelController;
 use App\Http\Controllers\siswaController;
@@ -99,6 +100,13 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::put('/guru/update/{id}', [App\Http\Controllers\Admin\GuruController::class, 'update'])->name('admin.guru.update');
     Route::delete('/guru/destroy/{id}', [App\Http\Controllers\Admin\GuruController::class, 'destroy'])->name('admin.guru.destroy');
 
+    //Kelola jadwal
+    Route::get('/jadwal', [App\Http\Controllers\Admin\JadwalCekKesehatanController::class, 'index'])->name('admin.jadwal.index');
+    Route::get('/jadwal/create', [App\Http\Controllers\Admin\JadwalCekKesehatanController::class, 'create'])->name('admin.jadwal.create');
+    Route::post('/jadwal/store', [App\Http\Controllers\Admin\JadwalCekKesehatanController::class, 'store'])->name('admin.jadwal.store');
+    Route::get('/jadwal/edit/{id}', [App\Http\Controllers\Admin\JadwalCekKesehatanController::class, 'edit'])->name('admin.jadwal.edit');
+    Route::put('/jadwal/update/{id}', [App\Http\Controllers\Admin\JadwalCekKesehatanController::class, 'update'])->name('admin.jadwal.update');
+    Route::delete('/jadwal/destroy/{id}', [App\Http\Controllers\Admin\JadwalCekKesehatanController::class, 'destroy'])->name('admin.jadwal.destroy');
 });
 
 //siswa routes

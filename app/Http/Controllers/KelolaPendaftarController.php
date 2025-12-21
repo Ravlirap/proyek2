@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pendaftaran;
+use App\Models\JadwalCekKesehatan;
 use Illuminate\Http\Request;
 
 class KelolaPendaftarController extends Controller
@@ -72,6 +73,13 @@ class KelolaPendaftarController extends Controller
 
         // Update status
         $pendaftar->status = $request->status;
+        if ($request->status === 'cek kesehatan') {
+            // Ambil jadwal TERAKHIR yang dibuat admin
+            $jadwal = JadwalCekKesehatan::latest()->first();
+            if ($jadwal) {
+                $pendaftar->jadwal_cek_kesehatan_id = $jadwal->id;
+            }
+        }
         $pendaftar->save();
 
         // Redirect berhasil

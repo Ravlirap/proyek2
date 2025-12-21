@@ -27,6 +27,10 @@ class Pendaftaran extends Model
         'ijazah',
         'ktp',
         'kk',
-        'status'
+        'status',
+        'jadwal_cek_kesehatan_id'
     ];
+    public function jadwalCekKesehatan(){
+    return $this->belongsTo(JadwalCekKesehatan::class);
+    }
 }

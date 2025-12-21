@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pendaftaran;
+use App\Models\JadwalCekKesehatan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 
@@ -107,8 +108,14 @@ class PendaftaranController extends Controller
                 ->with('error', 'Data pendaftaran tidak ditemukan.');
         }
 
+        $jadwal = JadwalCekKesehatan::where(
+            'periode',
+            $pendaftar->created_at->translatedFormat('F Y')
+        )->first();
+
         return view('content.cek-status', [
             'pendaftar' => $pendaftar,
+            'jadwal' => $jadwal,
             'title'     => 'Cek Status Pendaftaran',
             'slug'      => 'cek-status'
         ]);
