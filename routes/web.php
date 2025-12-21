@@ -36,9 +36,11 @@ Route::middleware(['auth'])->group(function () {
 });
 
 // Rute Publik
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');
 Route::post('/pendaftaran', [PendaftaranController::class, 'submit'])->name('pendaftaran.submit');
 Route::get('/pendaftaran/{slug}', [PendaftaranController::class, 'show'])->name('pendaftaran.detail');
+Route::get('/cek-status', [PendaftaranController::class, 'cekStatus'])->name('cek.status');
 
 //Program
 Route::get('/program_pelatihan', [program_pelatihanController::class, 'index'])->name('program_pelatihan');
@@ -119,16 +121,3 @@ Route::middleware(['auth'])->prefix('guru')->group(function () {
     Route::put('/materi/update/{id}', [guruController::class, 'update'])->name('guru.materi.update');
     Route::delete('/materi/destroy/{id}', [guruController::class, 'destroy'])->name('guru.materi.destroy');
 });
-
-Route::get('/', function () {
-    $title = "WebSaya.Com";
-    $slug = "home";
-    return view('content.home', compact('title','slug'));
-});
-
-Route::get('/home', function(){
-    $title = "WebSaya.Com";
-    $slug = "home";
-    $content = "Ini adalah content WebSaya.Com";
-    return view('content.home', compact('title','slug','content'));
-})->name('home');
