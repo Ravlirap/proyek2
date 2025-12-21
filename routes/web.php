@@ -13,6 +13,7 @@ use App\Http\Controllers\grupPerusahaanController;
 use App\Http\Controllers\profilLembagaController;
 use App\Http\Controllers\KelolaPendaftarController;
 use App\Http\Controllers\KelolaArtikelController;
+use App\Http\Controllers\KelolaGaleriController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\artikelController;
 use App\Http\Controllers\siswaController;
@@ -79,6 +80,14 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/artikel/edit/{id}', [KelolaArtikelController::class, 'edit'])->name('admin.artikel.edit');
     Route::put('/artikel/update/{id}', [KelolaArtikelController::class, 'update'])->name('admin.artikel.update');
     Route::delete('/artikel/destroy/{id}', [KelolaArtikelController::class, 'destroy'])->name('admin.artikel.destroy');
+
+    //kelola galeri
+    Route::get('/kelola_galeri', [KelolaGaleriController::class, 'index'])->name('admin.galeri.index');
+    Route::get('/galeri/create', [KelolaGaleriController::class, 'create'])->name('galeri.create');
+    Route::post('/galeri/store', [KelolaGaleriController::class, 'store'])->name('admin.galeri.store');
+    Route::get('/galeri/edit/{id}', [KelolaGaleriController::class, 'edit'])->name('admin.galeri.edit');
+    Route::put('/galeri/update/{id}', [KelolaGaleriController::class, 'update'])->name('admin.galeri.update');
+    Route::delete('/galeri/destroy/{id}', [KelolaGaleriController::class, 'destroy'])->name('admin.galeri.destroy');
 });
 
 //siswa routes

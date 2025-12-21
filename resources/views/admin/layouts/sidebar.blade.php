@@ -7,6 +7,7 @@
     </a>
 
     <div class="mb-3">
+        
         <li class="nav-item mb-1 mt-3 list-unstyled">
             @php $isActive = request()->routeIs('admin.dashboard'); @endphp
             <a href="{{ route('admin.dashboard') }}" 
@@ -30,13 +31,15 @@
                 <i class="bi bi-file-text-fill me-2"></i> Kelola Artikel
             </a>
         </li>
+
         <li class="nav-item mb-1 list-unstyled">
-            @php $isActive = request()->routeIs('admin.artikel.index'); @endphp
-            <a href="{{ route('admin.artikel.index') }}" 
+            @php $isActive = request()->routeIs('admin.galeri.index'); @endphp
+            <a href="{{ route('admin.galeri.index') }}" 
             class="nav-link rounded-3 text-dark py-2 transition-ease {{ $isActive ? 'active bg-primary text-white fw-bold shadow-sm' : 'link-hover-light' }}" aria-current="{{ $isActive ? 'page' : '' }}">
                 <i class="bi bi-images me-2"></i> Kelola Galeri
             </a>
         </li>
+
     </div>
 
     <div class="mb-auto">

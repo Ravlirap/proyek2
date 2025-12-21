@@ -27,6 +27,6 @@ class Pendaftaran extends Model
         'ijazah',
         'ktp',
         'kk',
-        'status',
+        'status'
     ];
 }

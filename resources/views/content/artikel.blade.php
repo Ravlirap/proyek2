@@ -48,9 +48,7 @@
         @endforeach
 
 <style>
-    /* Import Google Fonts untuk font modern (opsional, tambahkan di head layout jika belum ada)
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap'); */
-
+    
 /* GRID */
 .articles-grid {
     display: grid;

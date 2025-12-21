@@ -2,45 +2,57 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Pendaftaran; // Model untuk ambil data pendaftar
+use App\Models\Pendaftaran;
 
 class AdminController extends Controller
 {
-    // Halaman dashboard admin
     public function dashboard()
     {
-        $jumlah = Pendaftaran::count();
-        return view('admin.dashboard', compact('jumlah'));
-    }
+        // KPI
+        $totalPendaftar = Pendaftaran::count();
+        $diproses = Pendaftaran::where('status', 'diproses')->count();
+        $cekKesehatan = Pendaftaran::where('status', 'cek kesehatan')->count();
+        $lulus = Pendaftaran::where('status', 'lulus')->count();
+        $tidakLulus = Pendaftaran::where('status', 'tidak lulus')->count();
 
-    // Halaman daftar pendaftar
-    public function index()
-    {
-        $pendaftar = Pendaftaran::all();
-        return view('admin.pendaftaran.index', compact('pendaftar'));
-    }
+        // Pendaftar terbaru
+        $pendaftarTerbaru = Pendaftaran::latest()->take(5)->get();
 
-    // Halaman edit pendaftar
-    public function edit($id)
-    {
-        $pendaftar = Pendaftaran::findOrFail($id);
-        $slug = 'dashboard';
-        return view('admin.pendaftaran.edit', compact('pendaftar, slug'));
-    }
+        // Chart status
+        $statusChart = Pendaftaran::selectRaw('status, COUNT(*) as total')
+            ->groupBy('status')
+            ->pluck('total', 'status');
 
-    // Simpan hasil edit
-    public function update(Request $request, $id)
-    {
-        $pendaftar = Pendaftaran::findOrFail($id);
-        $pendaftar->update($request->all());
-        return redirect()->route('admin.pendaftar.index')->with('success', 'Data berhasil diperbarui.');
-    }
+        // Chart gender
+        $genderChart = Pendaftaran::selectRaw('jenis_kelamin, COUNT(*) as total')
+            ->groupBy('jenis_kelamin')
+            ->pluck('total', 'jenis_kelamin');
 
-    // Hapus data
-    public function destroy($id)
-    {
-        Pendaftaran::destroy($id);
-        return redirect()->route('admin.pendaftar.index')->with('success', 'Data berhasil dihapus.');
+        // Trend per bulan (Jan–Des)
+        $trendBulanan = Pendaftaran::selectRaw('MONTH(created_at) as bulan, COUNT(*) as total')
+            ->whereYear('created_at', now()->year)
+            ->groupBy('bulan')
+            ->orderBy('bulan')
+            ->get();
+
+        // Top sekolah
+        $topSekolah = Pendaftaran::selectRaw('asal_sekolah, COUNT(*) as total')
+            ->groupBy('asal_sekolah')
+            ->orderByDesc('total')
+            ->take(5)
+            ->get();
+
+        return view('admin.dashboard', compact(
+            'totalPendaftar',
+            'diproses',
+            'cekKesehatan',
+            'lulus',
+            'tidakLulus',
+            'pendaftarTerbaru',
+            'statusChart',
+            'genderChart',
+            'trendBulanan',
+            'topSekolah'
+        ));
     }
 }
