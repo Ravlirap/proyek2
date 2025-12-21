@@ -10,9 +10,6 @@ use Illuminate\Support\Facades\Hash;
 
 class GuruController extends Controller
 {
-    /**
-     * Tampilkan daftar guru
-     */
     public function index()
     {
         $guru = User::where('role', 'guru')
@@ -22,17 +19,11 @@ class GuruController extends Controller
         return view('admin.kelola_guru.index', compact('guru'));
     }
 
-    /**
-     * Form tambah guru
-     */
     public function create()
     {
         return view('admin.kelola_guru.create');
     }
 
-    /**
-     * Simpan guru baru
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -53,9 +44,6 @@ class GuruController extends Controller
             ->with('success', 'Guru berhasil ditambahkan');
     }
 
-    /**
-     * Form edit guru
-     */
     public function edit($id)
     {
         $guru = User::where('role', 'guru')->findOrFail($id);
@@ -63,9 +51,6 @@ class GuruController extends Controller
         return view('admin.kelola_guru.update', compact('guru'));
     }
 
-    /**
-     * Update data guru
-     */
     public function update(Request $request, $id)
     {
         $guru = User::where('role', 'guru')->findOrFail($id);
@@ -92,22 +77,14 @@ class GuruController extends Controller
             ->with('success', 'Data guru berhasil diperbarui');
     }
 
-    /**
-     * Hapus guru (materi tetap ada)
-     */
     public function destroy($id)
     {
         $guru = User::where('role', 'guru')->findOrFail($id);
 
-        // ❌ cegah admin menghapus dirinya sendiri
         if ($guru->id === auth()->id()) {
             return back()->with('error', 'Tidak dapat menghapus akun sendiri');
         }
 
-        /**
-         * SET NULL semua materi milik guru
-         * (materi tetap ada)
-         */
         Materi::where('id_guru', $guru->id)
               ->update(['id_guru' => null]);
 

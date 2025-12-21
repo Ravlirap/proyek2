@@ -17,6 +17,6 @@ class MateriController extends Controller
     public function show($id)
     {
         $materi = Materi::findOrFail($id);
-        return view('siswa.konten.materi_detail', compact('materi'));
+        return view('siswa.konten.materi', compact('materi'));
     }
 }
