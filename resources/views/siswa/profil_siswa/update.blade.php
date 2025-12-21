@@ -21,11 +21,6 @@
             </div>
 
             <div>
-                <label class="label">Program Pelatihan</label>
-                <input type="text" name="program" value="{{ $user->program }}" class="input">
-            </div>
-
-            <div>
                 <label class="label">Foto Profil</label>
                 <input type="file" name="foto" class="file-input">
             </div>

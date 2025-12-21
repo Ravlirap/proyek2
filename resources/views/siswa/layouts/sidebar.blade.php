@@ -1,9 +1,13 @@
-<div class="sidebar">
+<div id="sidebarOverlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<aside id="sidebar" class="sidebar">
     <div class="sidebar-header">
         <div class="logo-circle">
             <span>LPK</span>
         </div>
         <h2 class="sidebar-title">Siswa Panel</h2>
+
+        <button class="sidebar-close" onclick="toggleSidebar()">✕</button>
     </div>
 
     <nav class="sidebar-menu">
@@ -30,7 +34,7 @@
             </button>
         </form>
     </nav>
-</div>
+</aside>
 
 <style>
     .sidebar {
@@ -42,16 +46,20 @@
         left: 0;
         padding: 25px 20px;
         border-right: 3px solid #dbeafe;
-
         box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+        z-index: 50;
+    }
 
-        animation: fadeSlide 0.4s ease;
+    @media (min-width: 1025px) {
+        .sidebar {
+            animation: fadeSlide 0.35s ease;
+        }
     }
 
     @keyframes fadeSlide {
         from {
             opacity: 0;
-            transform: translateX(-15px);
+            transform: translateX(-12px);
         }
         to {
             opacity: 1;
@@ -60,6 +68,7 @@
     }
 
     .sidebar-header {
+        position: relative;
         text-align: center;
         margin-bottom: 35px;
     }
@@ -68,7 +77,7 @@
         width: 70px;
         height: 70px;
         background: #2563eb;
-        color: white;
+        color: #ffffff;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -76,15 +85,7 @@
         margin: 0 auto 10px;
         font-size: 22px;
         font-weight: bold;
-
         box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
-
-        transition: transform 0.25s, box-shadow 0.25s;
-    }
-
-    .logo-circle:hover {
-        transform: scale(1.07);
-        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.55);
     }
 
     .sidebar-title {
@@ -110,8 +111,7 @@
         color: #1e40af;
         border-radius: 10px;
         cursor: pointer;
-
-        transition: background 0.25s, color 0.25s, transform 0.25s, box-shadow 0.25s;
+        transition: all 0.25s ease;
     }
 
     .menu-item i {
@@ -121,8 +121,7 @@
     .menu-item:hover {
         background: #e0f2fe;
         color: #0c4a6e;
-        transform: translateX(5px);
-
+        transform: translateX(4px);
         box-shadow: 0 4px 12px rgba(0, 150, 255, 0.18);
     }
 
@@ -130,10 +129,7 @@
         background: #2563eb;
         color: #ffffff;
         font-weight: 600;
-
-        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.5);
-
-        transform: translateX(4px);
+        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.45);
     }
 
     .logout {
@@ -143,6 +139,51 @@
     .logout:hover {
         background: #fee2e2;
         color: #b91c1c !important;
-        box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.45);
+        display: none;
+        z-index: 40;
+    }
+
+    .sidebar-close {
+        display: none;
+        position: absolute;
+        top: 10px;
+        right: 14px;
+        font-size: 22px;
+        background: none;
+        border: none;
+        color: #1e40af;
+        cursor: pointer;
+    }
+
+    @media (max-width: 1024px) {
+        .sidebar {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar.active {
+            transform: translateX(0);
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+        }
+
+        .sidebar-close {
+            display: block;
+        }
     }
 </style>
+
+<script>
+    function toggleSidebar() {
+        document.getElementById('sidebar').classList.toggle('active');
+        document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+</script>

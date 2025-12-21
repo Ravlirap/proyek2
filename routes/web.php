@@ -20,6 +20,7 @@ use App\Http\Controllers\artikelController;
 use App\Http\Controllers\siswaController;
 use App\Http\Controllers\guruController;
 use App\Http\Controllers\materiController;
+use App\Http\Controllers\SiswaMateriController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -113,10 +114,15 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 Route::middleware(['auth'])->prefix('siswa')->group(function () {
     Route::get('/dashboard', [siswaController::class, 'dashboard'])->name('siswa.dashboard');
     Route::get('/jadwal', [siswaController::class, 'jadwal'])->name('siswa.konten.jadwal');
-    Route::get('/materi', [siswaController::class, 'materi'])->name('siswa.konten.materi');
-    Route::get('/siswa/materi/{id}', [MateriController::class, 'show'])->name('siswa.materi.show');
+    Route::get('/materi', [SiswaMateriController::class, 'index'])->name('siswa.konten.materi');
     Route::get('/profil', [siswaController::class, 'profil'])->name('siswa.profil_siswa.dashboard');
+    
+    //siswa preview materi routes
+    Route::get('/materi/{id}/view', [SiswaMateriController::class, 'view'])->name('siswa.materi.view');
+    Route::get('/materi/{id}/download', [SiswaMateriController::class, 'download'])->name('siswa.materi.download');
+    Route::get('/materi/{id}', [SiswaMateriController::class, 'show'])->name('siswa.materi.show');
 });
+
 
 //guru routes
 Route::middleware(['auth'])->prefix('guru')->group(function () {

@@ -16,7 +16,6 @@
         <div>
             <h2 class="text-2xl font-semibold">{{ $user->name }}</h2>
             <p class="text-gray-700">Email: {{ $user->email }}</p>
-            <p class="text-gray-700">ID Siswa: {{ $user->id }}</p>
             <p class="text-gray-700">Program Pelatihan: {{ $user->program ?? '-' }}</p>
 
             {{-- <a href="{{ route('siswa.profile.edit') }}"
