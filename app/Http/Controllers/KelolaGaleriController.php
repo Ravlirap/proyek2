@@ -44,8 +44,7 @@ class KelolaGaleriController extends Controller
 
         $gambarPath = null;
         if ($request->hasFile('gambar')) {
-            $gambarPath = $request->file('gambar')
-                                  ->store('galeri', 'public');
+            $gambarPath = $request->file('gambar')->store('galeri', 'public');
         }
 
         Galeri::create([
@@ -54,10 +53,10 @@ class KelolaGaleriController extends Controller
             'gambar'    => $gambarPath,
         ]);
 
-        return redirect()
-            ->route('galeri.index')
-            ->with('success', 'Data galeri berhasil ditambahkan');
+        return redirect()->route('admin.galeri.index')
+                        ->with('success', 'Data galeri berhasil ditambahkan');
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -100,7 +99,7 @@ class KelolaGaleriController extends Controller
         ]);
 
         return redirect()
-            ->route('galeri.index')
+            ->route('admin.galeri.index')
             ->with('success', 'Data galeri berhasil diperbarui');
     }
 
@@ -112,7 +111,7 @@ class KelolaGaleriController extends Controller
         Galeri::findOrFail($id)->delete();
 
         return redirect()
-            ->route('galeri.index')
+            ->route('admin.galeri.index')
             ->with('success', 'Data galeri berhasil dihapus');
     }
 }

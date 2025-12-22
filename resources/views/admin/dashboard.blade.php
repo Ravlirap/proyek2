@@ -79,7 +79,7 @@
             @php
                 $kpi = [
                     ['Total', $totalPendaftar, 'primary', 'people-fill'],
-                    ['Diproses', $diproses, 'warning', 'hourglass-split'],
+                    ['Di Proses', $diproses, 'warning', 'hourglass-split'],
                     ['Cek Kesehatan', $cekKesehatan, 'info', 'clipboard-heart'],
                     ['lulus', $lulus, 'success', 'check-circle-fill'],
                     ['tidak lulus', $tidakLulus, 'danger', 'x-circle-fill'],

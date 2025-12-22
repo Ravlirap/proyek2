@@ -10,7 +10,7 @@ class AdminController extends Controller
     {
         // KPI
         $totalPendaftar = Pendaftaran::count();
-        $diproses = Pendaftaran::where('status', 'diproses')->count();
+        $diproses = Pendaftaran::where('status', 'proses')->count();
         $cekKesehatan = Pendaftaran::where('status', 'cek kesehatan')->count();
         $lulus = Pendaftaran::where('status', 'lulus')->count();
         $tidakLulus = Pendaftaran::where('status', 'tidak lulus')->count();

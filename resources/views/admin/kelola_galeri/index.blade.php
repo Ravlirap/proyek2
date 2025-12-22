@@ -59,12 +59,12 @@
                                 </td>
 
                                 <td class="text-center">
-                                    <a href="{{ route('galeri.edit', $galeri->id) }}"
+                                    <a href="{{ route('admin.galeri.edit', $galeri->id) }}"
                                        class="btn btn-sm btn-warning">
                                         <i class="fas fa-edit"></i>
                                     </a>
 
-                                    <form action="{{ route('galeri.destroy', $galeri->id) }}"
+                                    <form action="{{ route('admin.galeri.destroy', $galeri->id) }}"
                                           method="POST"
                                           class="d-inline"
                                           onsubmit="return confirm('Yakin hapus data ini?')">
