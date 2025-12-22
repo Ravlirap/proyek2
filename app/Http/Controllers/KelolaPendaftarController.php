@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pendaftaran;
+use App\Models\User;
 use App\Models\JadwalCekKesehatan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class KelolaPendaftarController extends Controller
 {
@@ -74,7 +76,6 @@ class KelolaPendaftarController extends Controller
         // Update status
         $pendaftar->status = $request->status;
         if ($request->status === 'cek kesehatan') {
-            // Ambil jadwal TERAKHIR yang dibuat admin
             $jadwal = JadwalCekKesehatan::latest()->first();
             if ($jadwal) {
                 $pendaftar->jadwal_cek_kesehatan_id = $jadwal->id;
@@ -82,10 +83,23 @@ class KelolaPendaftarController extends Controller
         }
         $pendaftar->save();
 
+        if ($request->status === 'lulus') {
+        $userExist = User::where('email', $pendaftar->email)->first();
+
+        if (!$userExist) {
+            User::create([
+                'name'     => $pendaftar->nama_lengkap,
+                'email'    => $pendaftar->email,
+                'password' => Hash::make($pendaftar->kode_pendaftaran),
+                'role'     => 'siswa',
+            ]);
+        }
+    }
+
         // Redirect berhasil
         return redirect()->route('admin.pendaftar.index')
-                        ->with('success', 'Status pendaftar berhasil diperbarui.');
-    }
+            ->with('success', 'Status pendaftar berhasil diperbarui.');
+        }
 
 
     /**

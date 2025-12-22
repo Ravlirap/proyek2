@@ -103,6 +103,37 @@
                 </div>
             @endif
 
+            {{-- INFORMASI DITERIMA / LULUS --}}
+            @if ($pendaftar->status === 'lulus')
+                <hr>
+
+                <div class="alert alert-success text-center shadow-sm">
+                    <h4 class="fw-bold mb-3">🎉 Selamat!</h4>
+
+                    <p class="mb-2">
+                        Anda <strong>DITERIMA</strong> sebagai peserta di LPK Seikou Jepang.
+                    </p>
+
+                    <p class="mb-2">
+                        Akun <strong>SISWA</strong> Anda telah <strong>dibuat secara otomatis</strong>.
+                    </p>
+
+                    <hr>
+
+                    <p class="mb-1 fw-bold">Informasi Login:</p>
+                    <p class="mb-1">
+                        <strong>Email:</strong> {{ $pendaftar->email }}
+                    </p>
+                    <p class="mb-3">
+                        <strong>Password:</strong> Kode Pendaftaran Anda
+                    </p>
+
+                    <a href="{{ route('login') }}" class="btn btn-success px-4">
+                        Login Sekarang
+                    </a>
+                </div>
+            @endif
+
             {{-- Tombol Aksi --}}
             <div class="text-center mt-4">
                 <a href="{{ url('/') }}" class="btn btn-secondary">Kembali ke Beranda</a>
