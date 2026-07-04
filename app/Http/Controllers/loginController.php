@@ -56,5 +56,4 @@ class LoginController extends Controller
                 return redirect('/login')->withErrors(['email' => 'Role tidak dikenali.']);
         }
     }
-
 }
